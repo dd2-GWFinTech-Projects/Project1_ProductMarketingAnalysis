@@ -31,5 +31,6 @@
 - Real estate
     - Real estate data investigation to predict future market demand & supply, or analyze recent events
     - Real estate vs stock market activity & returns
+    - Returns of REIT's vs direct investment (representative examples). Identify best specific REIT's based on performance.
 - Consumer trends
     - Tablets vs laptops AND netbooks vs laptops
