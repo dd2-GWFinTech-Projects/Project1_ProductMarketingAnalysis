@@ -13,7 +13,7 @@
         - Customer properties relation to various quantities/distribution: Product type, duration, frequency...
         - Correlations between product types.
         - Simple sales analysis: Which quarters, years etc. have the highest sales; highest growth.
-        - Correlation (and plots) between sales and external factors (school year, holidays, events, stock market indices, interest rates, student loan issuance, ...).
+        - Correlation (and plots) between ADDED SOME TEXT sales and external factors (school year, holidays, events, stock market indices, interest rates, student loan issuance, ...).
         - Correlation between competitor products.
         - Drop-down menu for college names - show sales and various detailed figures in panel.
     - Data Needed
@@ -21,6 +21,7 @@
         - Lists of schools.
         - School locations.
 - Stock market analysis
+    - ADDED A LINE
     - Stocks vs options&futures trading volume VS time, trader composition (retail), GDP/stock indices
     - Stocks vs cryptocurrencies
     - Returns for all security categories & markets plotted against various event and market indicators
