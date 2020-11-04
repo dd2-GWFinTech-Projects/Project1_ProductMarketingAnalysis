@@ -30,7 +30,11 @@ F
 - Final review
 - Submission
 
+## Project Location
 
+[GWFinTech2020 - Project 8 - ATLAS Analysis](https://github.com/dd2-GWFinTech-Projects/Project_8)
+
+[ATLAS Analysis - Automation](https://github.com/miladnazar/AuotomateWork)
 
 ## Data Sources
 
