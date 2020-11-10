@@ -6,7 +6,7 @@ import alpaca_trade_api as tradeapi
 import datetime as dt
 import pytz
 
-class MCSimulation:
+class MCSimulation2:
     """
     A Python class for runnning Monte Carlo simulation on portfolio price data. 
     
@@ -58,12 +58,12 @@ class MCSimulation:
                 raise AttributeError("Sum of portfolio weights must equal one.")
         
         # Calculate daily return if not within dataframe
-        if not "daily_return" in portfolio_data.columns.get_level_values(1).unique():
-            close_df = portfolio_data.xs('close',level=1,axis=1).pct_change()
-            tickers = portfolio_data.columns.get_level_values(0).unique()
-            column_names = [(x,"daily_return") for x in tickers]
-            close_df.columns = pd.MultiIndex.from_tuples(column_names)
-            portfolio_data = portfolio_data.merge(close_df,left_index=True,right_index=True).reindex(columns=tickers,level=0)    
+        # if not "daily_return" in portfolio_data.columns.get_level_values(1).unique():
+        close_df = portfolio_data.xs('close',level=1,axis=1).pct_change()
+        tickers = portfolio_data.columns.get_level_values(0).unique()
+        column_names = [(x,"daily_return") for x in tickers]
+        close_df.columns = pd.MultiIndex.from_tuples(column_names)
+        portfolio_data = portfolio_data.merge(close_df,left_index=True,right_index=True).reindex(columns=tickers,level=0)    
         
         # Set class attributes
         self.portfolio_data = portfolio_data
