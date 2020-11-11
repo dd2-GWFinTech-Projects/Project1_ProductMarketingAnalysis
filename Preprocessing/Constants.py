@@ -39,3 +39,8 @@ class Constants:
         self.ANON_FORECAST_DATA_FILE_PATH    = os.path.join(self.DATA_DIR_ANONYMIZED, Path("2021 forecast CSV.csv"))
         self.ANON_REVENUE2020_FILE_PATH      = os.path.join(self.DATA_DIR_ANONYMIZED, Path("Revenue2020.csv"))
         self.ANON_REVENUE2020A_FILE_PATH     = os.path.join(self.DATA_DIR_ANONYMIZED, Path("Revenue2020A.csv"))
+
+        self.PREPROCESSED_ATLAS_FILE_PATH            = os.path.join(self.DATA_DIR_PREPROCESSED, Path("ATLAS.pkl"))
+        self.PREPROCESSED_FORECAST_DATA_FILE_PATH    = os.path.join(self.DATA_DIR_PREPROCESSED, Path("2021 forecast CSV.pkl"))
+        self.PREPROCESSED_REVENUE2020_FILE_PATH      = os.path.join(self.DATA_DIR_PREPROCESSED, Path("Revenue2020.pkl"))
+        self.PREPROCESSED_REVENUE2020A_FILE_PATH     = os.path.join(self.DATA_DIR_PREPROCESSED, Path("Revenue2020A.pkl"))
