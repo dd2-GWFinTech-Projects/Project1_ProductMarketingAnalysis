@@ -41,8 +41,8 @@ class CustomerNameCleaningFunctions:
         for customer in paying_customers_raw:
             corrected_customer_name = str(customer)
             #corrected_customer_name = str(customer).upper()
-            corrected_customer_name = remove_strings_from_customer_names(corrected_customer_name)
-            corrected_customer_name = remove_numbers_from_customer_names(corrected_customer_name)
+            corrected_customer_name = self.remove_strings_from_customer_names(corrected_customer_name)
+            corrected_customer_name = self.remove_numbers_from_customer_names(corrected_customer_name)
             #corrected_customer_name = corrected_customer_name.title()
             paying_customers_cleanedup.append(corrected_customer_name)
         return paying_customers_cleanedup
@@ -57,10 +57,10 @@ class CustomerNameCleaningFunctions:
         return name_mapping
 
     def read_name_mapping(self):
-        with open(MAPPING_FILE_PATH, "r") as file:
+        with open(self.constants.MAPPING_FILE_PATH, "r") as file:
             return json.loads(file.read())
 
-    def anonymize_customer_list(self, customer_list):
+    def anonymize_customer_list(self, customer_list, customer_name_mapping):
         anonymized_customer_list = []
         for customer in customer_list:
             anonymized_customer_list.append(customer_name_mapping[customer])
@@ -76,7 +76,7 @@ class DateCleaningFunctions:
         date_list = []
         for date_string in date_string_list:
             try:
-                date_list.append(parse_date_string(date_string))
+                date_list.append(self.parse_date_string(date_string))
             except:
                 print(f"Failed to parse: {date_string}")
         return date_list
@@ -89,25 +89,25 @@ class DateCleaningFunctions:
         for dollars_string in dollars_list_in:
             # debug_level >= 3 and print(f"Parsing: {dollars_string}")
             try:
-                dollars_list_out.append( cleanup_dollar_string(dollars_string) )
+                dollars_list_out.append( self.cleanup_dollar_string(dollars_string) )
             except:
-                debug_level >= 2 and print(f"Failed to parse: {dollars_string}")
+                self.debug_level >= 2 and print(f"Failed to parse: {dollars_string}")
         return dollars_list_out
 
     def parse_date_string(self, date_str):
         
-        debug_level >= 3 and print(f"parse_date_string - date_str before: {date_str}")
+        self.debug_level >= 3 and print(f"parse_date_string - date_str before: {date_str}")
 
         # Basic cleanup
         date_str = date_str.replace("//", "/")
         date_str = date_str.strip("/")
         
-        debug_level >= 3 and print(f"parse_date_string - date_str after: {date_str}")
+        self.debug_level >= 3 and print(f"parse_date_string - date_str after: {date_str}")
 
         # Parsing
         try:
             date = dateparser.parse(date_str)
-            return convert_datetime_to_timestamp(date)
+            return self.convert_datetime_to_timestamp(date)
         except:
             print(f"Failed to parse: {date_str}")
             return ""
@@ -124,6 +124,7 @@ class SpecializedDateCleaningFunctions:
     def __init__(self, debug_level):
         self.constants = Constants()
         self.debug_level = debug_level
+        self.tool_date = DateCleaningFunctions(debug_level)
     
     def extract_subscription_dates_list(self, subscription_dates_string_list):
         """
@@ -147,7 +148,7 @@ class SpecializedDateCleaningFunctions:
 
         for subscription_dates_string in subscription_dates_string_list:
 
-            debug_level >= 2 and print(f"extract_subscription_dates_list - parsing: {subscription_dates_string}")
+            self.debug_level >= 2 and print(f"extract_subscription_dates_list - parsing: {subscription_dates_string}")
 
             # Find "Subscription"
             split1 = subscription_dates_string.find("Subscription")
@@ -184,11 +185,11 @@ class SpecializedDateCleaningFunctions:
             date2_str = date_range[split2:split3].strip()
 
             # Parse dates
-            debug_level >= 2 and print(f"date1_str: {date1_str}  date2_str: {date2_str}")
-            date1 = parse_date_string(date1_str)
-            date2 = parse_date_string(date2_str)
-            debug_level >= 2 and print(f"    date1_str: {date1_str}  date1: {date1}")
-            debug_level >= 2 and print(f"    date2_str: {date2_str}  date2: {date2}")
+            self.debug_level >= 2 and print(f"date1_str: {date1_str}  date2_str: {date2_str}")
+            date1 = self.tool_date.parse_date_string(date1_str)
+            date2 = self.tool_date.parse_date_string(date2_str)
+            self.debug_level >= 2 and print(f"    date1_str: {date1_str}  date1: {date1}")
+            self.debug_level >= 2 and print(f"    date2_str: {date2_str}  date2: {date2}")
 
             # Build lists
             subscription_dates_start_list.append(date1)

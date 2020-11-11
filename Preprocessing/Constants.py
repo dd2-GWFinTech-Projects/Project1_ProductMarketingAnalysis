@@ -28,14 +28,14 @@ class Constants:
         self.DATA_DIR_PREPROCESSED           = Path("../Resources/03_Preprocessed")
         self.DATA_DIR_PROCESSED              = Path("../Resources/04_Processed")
 
-        self.MAPPING_FILE_PATH               = os.path.join(MAPPING_DIR, Path("CustomerNameMapping.json"))
+        self.MAPPING_FILE_PATH               = os.path.join(self.MAPPING_DIR, Path("CustomerNameMapping.json"))
 
-        self.RAW_ATLAS_FILE_PATH             = os.path.join(DATA_DIR_RAW, Path("ATLAS.csv"))
-        self.RAW_FORECAST_DATA_FILE_PATH     = os.path.join(DATA_DIR_RAW, Path("2021 forecast CSV.csv"))
-        self.RAW_REVENUE2020_FILE_PATH       = os.path.join(DATA_DIR_RAW, Path("Revenue2020.csv"))
-        self.RAW_REVENUE2020A_FILE_PATH      = os.path.join(DATA_DIR_RAW, Path("Revenue2020A.csv"))
+        self.RAW_ATLAS_FILE_PATH             = os.path.join(self.DATA_DIR_RAW, Path("ATLAS.csv"))
+        self.RAW_FORECAST_DATA_FILE_PATH     = os.path.join(self.DATA_DIR_RAW, Path("2021 forecast CSV.csv"))
+        self.RAW_REVENUE2020_FILE_PATH       = os.path.join(self.DATA_DIR_RAW, Path("Revenue2020.csv"))
+        self.RAW_REVENUE2020A_FILE_PATH      = os.path.join(self.DATA_DIR_RAW, Path("Revenue2020A.csv"))
 
-        self.ANON_ATLAS_FILE_PATH            = os.path.join(DATA_DIR_ANONYMIZED, Path("ATLAS.csv"))
-        self.ANON_FORECAST_DATA_FILE_PATH    = os.path.join(DATA_DIR_ANONYMIZED, Path("2021 forecast CSV.csv"))
-        self.ANON_REVENUE2020_FILE_PATH      = os.path.join(DATA_DIR_ANONYMIZED, Path("Revenue2020.csv"))
-        self.ANON_REVENUE2020A_FILE_PATH     = os.path.join(DATA_DIR_ANONYMIZED, Path("Revenue2020A.csv"))
+        self.ANON_ATLAS_FILE_PATH            = os.path.join(self.DATA_DIR_ANONYMIZED, Path("ATLAS.csv"))
+        self.ANON_FORECAST_DATA_FILE_PATH    = os.path.join(self.DATA_DIR_ANONYMIZED, Path("2021 forecast CSV.csv"))
+        self.ANON_REVENUE2020_FILE_PATH      = os.path.join(self.DATA_DIR_ANONYMIZED, Path("Revenue2020.csv"))
+        self.ANON_REVENUE2020A_FILE_PATH     = os.path.join(self.DATA_DIR_ANONYMIZED, Path("Revenue2020A.csv"))
