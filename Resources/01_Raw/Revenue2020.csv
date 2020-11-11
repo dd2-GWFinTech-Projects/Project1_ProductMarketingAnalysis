@@ -1,0 +1,405 @@
+﻿Month,Name,Total
+Jan,AL A&M Univ College,1820
+Jan,Albertus Magnus College,1890
+Jan,American College of Ed,883.33
+Jan,Bainbridge Island,1200
+Jan,CERRA SCNBN,1166.67
+Jan,Clark County Educ Assoc,2450
+Jan,Columbus State,5250
+Jan,East Carolina University,1250
+Jan,Floyd County School,2275
+Jan,Georgia College & State University,2350
+Jan,Georgia Southern State,4866.67
+Jan,Homewood City Schools,2100
+Jan,Illinois College,3050
+Jan,Milligan College,1000
+Jan,Monroe County SD,903.33
+Jan,Piedmont College,3000
+Jan,Portland State Univ,1750
+Jan,Radford University,2808.33
+Jan,Southeast South-Central Educational Cooperative,150
+Jan,Southern Conn St Univ,2450
+Jan,Southern South Cent,2150
+Jan,St Thomas Aquinas College,750
+Jan,Stanford University/SCALE,250
+Jan,Univ of West Alabama,2100
+Jan,University of Missouri - Kansas City,1666.67
+Jan,University of Tennessee at Martin,1326.66
+Jan,VA NBCT Network,1500
+Jan,Walla Walla Public Schools,766.67
+Jan,Washington County School,1925
+Jan,Western Governors University,16000
+Feb,Southeast South-Central Educational Cooperative,225
+Mar,Augusta University,2462
+Mar,Catawba College,1000
+Mar,Colgate University,1000
+Mar,College of Coastal Georgia,563
+Mar,Cumberland University,625
+Mar,Department of Defense Education Activity,1730
+Mar,East Carolina University,1625
+Mar,East Tennessee State University,438
+Mar,George Mason University,2125
+Mar,Georgia Gwinnett College,250
+Mar,Governors State University,625
+Mar,Illinois National Board Resource Center,2000
+Mar,James Madison University College of Education,2875
+Mar,Kentucky Community & Technical College,3922
+Mar,Kutztown University of Pennsylvania,5500
+Mar,Marietta College,1643.34
+Mar,Mercer University,3500
+Mar,Midland University,875
+Mar,Millersville University of Pennsylvania,1666
+Mar,Montclair State University,1375
+Mar,Murray State University,1825
+Mar,Piedmont College,1000
+Mar,Purdue University,2500
+Mar,Richland Elementary School,1600
+Mar,State University of New York (SUNY),13920
+Mar,SUNY College of Oneonta,455
+Mar,Swarthmore College,412
+Mar,Tennessee Wesleyan University,687
+Mar,"University of California, Davis",807
+Mar,University of Guam,250
+Mar,University of Hawaii at Manoa,425
+Mar,University of New Orleans,625
+Mar,University of North Carolina Wilmington,1750
+Mar,University of Tennessee at Martin,155.01
+Mar,University of the Arts,500
+Mar,Western Carolina University,7500
+Mar,Winthrop University,875
+Apr,Auburn University,512
+Apr,Birmingham Southern College,1000
+Apr,Central Washington University,532
+Apr,Chapman University,625
+Apr,City University of New York,850
+Apr,College of Coastal Georgia,2700
+Apr,College of Mount Saint Vincent,625
+Apr,Concordia University Chicago,875
+Apr,Georgia Southern University,1000
+Apr,Governors State University,250
+Apr,Ithaca College,875
+Apr,KYDOE-Educator Recruitment and Development,1270
+Apr,Manhattanville College,875
+Apr,Mississippi State University-Meridian,500
+Apr,Montclair State University,265
+Apr,Morehead State University,875
+Apr,National Louis University,625
+Apr,Oregon State University,1000
+Apr,Piedmont College,2000
+Apr,Seattle University,500
+Apr,Southern Adventist University,625
+Apr,Spelman College,1900
+Apr,SUNY College at Brockport,750
+Apr,SUNY Erie Community College,150
+Apr,SUNY Plattsburgh,450
+Apr,Swarthmore College,130
+Apr,Syracuse University,1375
+Apr,"Teachers College, Columbia University",1625
+Apr,Texas A&M University,21500
+Apr,Troy University,5500
+Apr,Union University,1600
+Apr,University of Alabama,50000
+Apr,University of Jamestown,425
+Apr,University of North Alabama,500
+Apr,"University of North Carolina,Charlotte",5250
+Apr,University of North Georgia,4000
+Apr,University of Richmond,1700
+Apr,University of San Francisco,3500
+Apr,University of South Alabama,2500
+Apr,University of Tennessee at Martin,132.5
+Apr,University of West Alabama,62.5
+Apr,University of Wisconsin Stevens Point,250
+Apr,Western Governors University,16000
+May,Bellarmine University,2500
+May,Fayetteville State University,2000
+May,Kennesaw State University,2500
+May,Louisiana State University Baton Rouge,3000
+May,NC A&T State University,3500
+May,Northampton County Public Schools,750
+May,Northwestern State University,2000
+May,Saint Joseph’s College,1000
+May,Sam Houston State University,2000
+May,Stanford University/SCALE,476
+May,Troy University,2000
+May,"University of California, Davis",2882
+May,University of North Alabama,500
+May,William Paterson University,1900
+Jun,Brigham Young University – Hawaii,3000
+Jun,California State Polytechnic University Pomona-Education/CEI,1029
+Jun,Central Connecticut State University,2500
+Jun,Clemson University,525
+Jun,East Tennessee State University,4500
+Jun,Emporia University,1000
+Jun,George Mason University,2500
+Jun,Husson University,1000
+Jun,James Madison University College of Education,15750
+Jun,Johns Hopkins University,1800
+Jun,Kansas State University,7500
+Jun,Manhattanville College,875
+Jun,New York University,4500
+Jun,Northeastern Illinois University,6500
+Jun,Northern Arizona University,625
+Jun,Rider University,4500
+Jun,Saint Xavier University,3000
+Jun,San Jose State University,4500
+Jun,Santa Rosa County District Schools,1125
+Jun,SUNY College of Oneonta,2500
+Jun,Swarthmore College,1600
+Jun,Tacoma Public Schools,1833
+Jun,The Support Network,1800
+Jun,"The University of Tennessee, Knoxville",3500
+Jun,Troy University,2000
+Jun,"University of California,Riverside",500
+Jun,University of Kentucky Libraries,1600
+Jun,University of Louisiana at Monroe,2250
+Jun,"University of North Carolina,Charlotte",375
+Jun,University of North Colorado,1750.68
+Jun,University of Southern Mississippi,2000
+Jun,University of St. Francis,2500
+Jun,Vitero University,160
+Jul,Auburn University,2300
+Jul,Augusta University,3000
+Jul,Belhaven University,2650
+Jul,Brock University,1222
+Jul,"California State University, Chico",4000
+Jul,"California State University, Stanislaus",2000
+Jul,Chicago State University,2500
+Jul,City University of New York,1700
+Jul,Clayton State University,2500
+Jul,Delta State University,1500
+Jul,Duke University,1920
+Jul,East Carolina University,1500
+Jul,Lorain County Community College,525
+Jul,Mississippi State University-Meridian,1000
+Jul,Montclair State University,1000
+Jul,Morehead State University,3500
+Jul,National Louis University,2200
+Jul,Roosevelt University,2500
+Jul,Salve Regina University,1650
+Jul,San Jose State University,2000
+Jul,Skidmore College,1850
+Jul,Southeast KCTCS,1621
+Jul,Southern Adventist University,2500
+Jul,Southern Illinois University Carbondale,750
+Jul,Syracuse University,2750
+Jul,Texas State University,1850
+Jul,University of Illinois Springfield,2250
+Jul,"University of Kentucky, IHE Special Education Consortium",3500
+Jul,University of La Verne,7000
+Jul,University of Lynchburg,525
+Jul,University of Maryland,1470
+Jul,University of North Alabama,2000
+Jul,University of North Carolina Chapel Hill,2250
+Jul,Utah Valley University,6500
+Jul,Western Illinois University,3000
+Aug,Appalachian State University,5700
+Aug,Arcadia University,1800
+Aug,Bard College,437
+Aug,Bellarmine University,800
+Aug,Berea College,2600
+Aug,Berry College,1650
+Aug,Bradley University,565
+Aug,Brenau University,2600
+Aug,Bridgewater College,2600
+Aug,California State University Long Beach,2000
+Aug,"California State University, Fullerton",4000
+Aug,"California State University, Stanislaus",950
+Aug,California University of Pennsylvania,8500
+Aug,Coastal Carolina University,3300
+Aug,Columbia College,1000
+Aug,Concord University,717
+Aug,Concordia University Irvine,550
+Aug,Creighton University,425
+Aug,Cumberland University,2510
+Aug,East Carolina University,8000
+Aug,Ferris State University,2200
+Aug,Florida SouthWestern State College,4000
+Aug,Francis Marion University,2100
+Aug,FSU-Teach Florida State University,4050
+Aug,Georgia Gwinnett College,1300
+Aug,Governors State University,1750
+Aug,Hanover College,550
+Aug,"Harding University, College of Education",1375
+Aug,Hope International University,1500
+Aug,Humboldt State University,4000
+Aug,Kentucky Community & Technical College,11350
+Aug,Kutztown University of Pennsylvania,9000
+Aug,Lee University School of Music,450
+Aug,Louisiana State University Baton Rouge,4000
+Aug,Louisiana State University of Alexandria,562
+Aug,Manhattanville College,875
+Aug,Maryville College,562
+Aug,Mercer University,5000
+Aug,Meredith College,800
+Aug,Middle Tennessee State University,4200
+Aug,"Mississippi State University, College of Education",8500
+Aug,NC New Teacher Support Program- East Carolina University,1500
+Aug,North Carolina Central University,750
+Aug,North Central College,2500
+Aug,Ouachita Baptist University,2070
+Aug,Providence College,750
+Aug,Reinhardt University,2300
+Aug,Rutgers University Graduate School of Education,4500
+Aug,Saint Joseph’s University,2520
+Aug,Salem University,2500
+Aug,Seattle University,2500
+Aug,Seton Hall University,4300
+Aug,Shippensburg University,5000
+Aug,Skidmore College,50
+Aug,Southeast KCTCS,-1200
+Aug,St. Bonaventure University-School of Education,5100
+Aug,St. Louis Community College,575
+Aug,"Temple University, Tyler School of Art and Architecture",550
+Aug,Texas State University,50
+Aug,The College of Wooster,1610
+Aug,The University of Texas at Tyler,1250
+Aug,University of Central Arkansas,1000
+Aug,University of Hawaii at Manoa,3030
+Aug,University of Lynchburg,237.5
+Aug,University of Montevallo,1500
+Aug,University of New Mexico,2000
+Aug,University of New Orleans,3000
+Aug,University of North Alabama,1750
+Aug,University of North Carolina at Greensboro,3500
+Aug,University of North Dakota,1280
+Aug,"University of South Carolina, Beaufort",750
+Aug,University of West Georgia,3500
+Aug,University of Wisconsin-Madison,1680
+Aug,Utica College,1750
+Sep,Alverno College,2750
+Sep,Anderson University,800
+Sep,Aquinas College,875
+Sep,Austin Peay State Universtiy,1500
+Sep,Ball State University,3250
+Sep,Barton College,2300
+Sep,"BloomBoard,Inc",0
+Sep,Bowling Green State University,1270
+Sep,Brandeis University,2000
+Sep,Brock University,290
+Sep,CA State University Dominguez Hills,2125
+Sep,California State University Northridge,1900
+Sep,"California State University, Chico",500
+Sep,"California State University, Stanislaus",4310
+Sep,Calvert County Public Schools,1840
+Sep,Charleston Southern University,3600
+Sep,Clarion University of Pennsylvania,4500
+Sep,College for Creative Studies,1900
+Sep,Colorado State University Pueblo,4500
+Sep,Concordia University Chicago,1000
+Sep,Crowder College,2500
+Sep,CSU San Bernardino,5000
+Sep,East Tennessee State University,1710
+Sep,Eastern Michigan University,1710
+Sep,Gettysburg College,2000
+Sep,Hobart and William Smith Colleges,525
+Sep,Houghton College,2500
+Sep,Humboldt State University,500
+Sep,Ithaca College,875
+Sep,John Carroll University,1500
+Sep,Lebanon Valley College,3700
+Sep,Lehigh Carbon Community College,2250
+Sep,Lewis University,3000
+Sep,Medaille College,3000
+Sep,Metro RESA,8000
+Sep,Minnesota State University Moorhead,3000
+Sep,Mississippi State University-Meridian,1000
+Sep,Modesto Junior College,1500
+Sep,Morehead State University,1000
+Sep,Morgan State University,2250
+Sep,Murray State University,5750
+Sep,National Louis University,15800
+Sep,North Carolina Central University,375
+Sep,North Carolina State University,4500
+Sep,Northern Virginia Community College,3500
+Sep,Oregon State University,3000
+Sep,"Pathway to Practice,NCSU",2000
+Sep,Ramapo College,400
+Sep,Rhodes College,2100
+Sep,Rochester Institute of Technology,800
+Sep,Roosevelt University,1500
+Sep,Saint Catherine University,391
+Sep,Saint Joseph’s College of Maine,2250
+Sep,Saint Joseph’s University,500
+Sep,Salve Regina University,200
+Sep,Siena College,1250
+Sep,Southeast Missouri State University,1825
+Sep,Springfield College,625
+Sep,"Teachers College, Columbia University",5000
+Sep,Texas State University,4100
+Sep,"The Citadel, Zucker Family School of Education",750
+Sep,The University of Texas at Tyler,355
+Sep,Thiel College,500
+Sep,Thomas College,625
+Sep,University of California Berkeley,875
+Sep,"University of California, Davis",875
+Sep,University of Central Oklahoma,700
+Sep,University of Georgia,4500
+Sep,University of Illinois at Urbana-Champaign,2480
+Sep,University of Jamestown,-425
+Sep,"University of Kentucky, IHE Special Education Consortium",500
+Sep,University of Louisiana at Lafayette,875
+Sep,University of Maryland,130
+Sep,University of Maryland Baltimore County,2500
+Sep,University of Maryland College of Education,3500
+Sep,University of Minnesota Duluth,5090
+Sep,University of Montevallo,750
+Sep,University of North Alabama,250
+Sep,University of North Carolina Wilmington,7500
+Sep,University of North Florida,1400
+Sep,University of Rhode Island (School of Education),4250
+Sep,University of San Francisco,100
+Sep,University of the Arts,555
+Sep,University of the Pacific,2750
+Sep,University of Wisconsin-Eau Claire,4650
+Sep,University of Wisconsin-River Falls,462
+Sep,"University of Wyoming, College of Education",1450
+Sep,Washington State University,2500
+Sep,Western Illinois University,1000
+Sep,Westfield State University,5500
+Sep,Wheaton College,512.5
+Sep,Williams Baptist University,587
+Sep,Wingate University,625
+Sep,Winthrop University,937.5
+Sep,Yakima Valley College,1030
+Oct,Alderson Broaddus University,500
+Oct,Bellarmine University,-400
+Oct,"BloomBoard,Inc",15520
+Oct,Brown University,425
+Oct,Butte College,0
+Oct,"California State University, Stanislaus",190
+Oct,Capital University,1640
+Oct,City University of New York,495
+Oct,Crowley’s Ridge College,395
+Oct,Department of the Interior,21000
+Oct,Hudson Valley Community College,400
+Oct,Indiana Universities Libraries,6500
+Oct,Miami University,1250
+Oct,Middlesex County College,200
+Oct,Minnesota State University Moorhead,100
+Oct,Mississippi State University-Meridian,100
+Oct,Niagara University,4210
+Oct,Northern Illinois University,8880
+Oct,Northern Virginia Community College,-1750
+Oct,Pierce College,750
+Oct,Prince George’s Community College,500
+Oct,Purdue University Fort Wayne,5000
+Oct,Ripon College,1900
+Oct,Salisbury University,3250
+Oct,San Jose State University,200
+Oct,Southern Illinois University Edwardsville,4700
+Oct,State University of New York (SUNY),16052
+Oct,University of Arkansas,3250
+Oct,University of Louisville,4500
+Oct,University of Maryland College of Education,500
+Oct,University of Michigan-Dearborn,450
+Oct,University of Montevallo,0
+Oct,University of North Florida,200
+Oct,University of North Texas,3000
+Oct,University of Rochester-Warner School of Education,1600
+Oct,University of Southern Mississippi,1200
+Oct,University of Wisconsin Stevens Point,4500
+Oct,University of Wisconsin-River Falls,2500
+Oct,Valdosta State University,1625
+Oct,Western Washington University,700
+Oct,Winston-Salem State University,562
+Oct,Winthrop University,1000
