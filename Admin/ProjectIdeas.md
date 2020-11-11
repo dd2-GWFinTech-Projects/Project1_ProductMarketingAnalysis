@@ -28,6 +28,7 @@
         - Security markets: US, Europe, Asia, emerging, etc.
         - Event indicators: "Events" calendar showing important events that impact the markets/economies (recessions, booms, bubbles, world events, country friendliness score (friendly vs unfriendly) etc.).
         - Market indicators: GDP, stock market indices, interest rates, etc.
+    - Predict stock price in various timeframes (3-months, 6-months, 1-year, 3-year, etc.) based on fundamental analysis. Compare with real stock market data. Compute success rate, rates of return, etc. Group results by industry, market cap, avg volume etc.
 - Real estate
     - Real estate data investigation to predict future market demand & supply, or analyze recent events
     - Real estate vs stock market activity & returns
