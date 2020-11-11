@@ -78,7 +78,8 @@ class DateCleaningFunctions:
             try:
                 date_list.append(self.parse_date_string(date_string))
             except:
-                print(f"Failed to parse: {date_string}")
+                self.debug_level >= 2 and print(f"Failed to parse: {date_string}")
+                date_list.append(None)
         return date_list
 
     def cleanup_dollar_string(self, dollars_string):
@@ -92,6 +93,7 @@ class DateCleaningFunctions:
                 dollars_list_out.append( self.cleanup_dollar_string(dollars_string) )
             except:
                 self.debug_level >= 2 and print(f"Failed to parse: {dollars_string}")
+                dollars_list_out.append(None)
         return dollars_list_out
 
     def parse_date_string(self, date_str):
@@ -109,8 +111,8 @@ class DateCleaningFunctions:
             date = dateparser.parse(date_str)
             return self.convert_datetime_to_timestamp(date)
         except:
-            print(f"Failed to parse: {date_str}")
-            return ""
+            self.debug_level >= 3 and print(f"Failed to parse: {date_str}")
+            return None
 
     def convert_datetime_to_timestamp(self, date_datetime):
         try:
