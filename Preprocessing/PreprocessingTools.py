@@ -149,6 +149,8 @@ class SpecializedDateCleaningFunctions:
         subscription_dates_end_list = []
 
         for subscription_dates_string in subscription_dates_string_list:
+            
+            subscription_dates_string = str(subscription_dates_string)
 
             self.debug_level >= 2 and print(f"extract_subscription_dates_list - parsing: {subscription_dates_string}")
 
