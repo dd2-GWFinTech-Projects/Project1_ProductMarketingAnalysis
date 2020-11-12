@@ -254,7 +254,7 @@ class SpecializedDateCleaningFunctions:
 
 class MappingFunctions:
 
-        def __init__(self, debug_level):
+    def __init__(self, debug_level):
         self.constants = Constants()
         self.debug_level = debug_level
 
@@ -267,12 +267,12 @@ class MappingFunctions:
                 n += 1
         return name_mapping
 
-    def write_name_mapping(self):
-        with open(self.constants.MAPPING_FILE_PATH, "w") as file:
-            file.write(json.dumps(name_mapping))
+    def write_customer_name_mapping(self, customer_name_mapping):
+        with open(self.constants.LUT_CUSTOMER_NAME_FILE_PATH, "w") as file:
+            file.write(json.dumps(customer_name_mapping))
     
-    def read_name_mapping(self):
-        with open(self.constants.MAPPING_FILE_PATH, "r") as file:
+    def read_customer_name_mapping(self):
+        with open(self.constants.LUT_CUSTOMER_NAME_FILE_PATH, "r") as file:
             return json.loads(file.read())
 
-    def 
+    # def 
