@@ -19,7 +19,12 @@ import pandas as pd
 import os
 import datetime as dt
 import pytz
+from pytimeparse import parse
+
+
+# Local imports
 from Constants import Constants
+
 
 class CustomerNameCleaningFunctions:
     def __init__(self, debug_level):
@@ -126,8 +131,53 @@ class DateCleaningFunctions:
         except:
             return None
 
-    def extract_duration(self, date_str):
-        parse_date_string()
+
+class DurationParsing:
+    def __init__(self, debug_level):
+        self.constants = Constants()
+        self.debug_level = debug_level
+        self.duration_lookup_table = {
+            "30 DAY":       pd.Timedelta(30, unit="days"),
+            "3 MONTH":      pd.Timedelta(30 * 3, unit="days"),
+            "5 MONTH":      pd.Timedelta(30 * 5, unit="days"),
+            "6 MONTH":      pd.Timedelta(30 * 6, unit="days"),
+            "1 YEAR":       pd.Timedelta(365 * 1, unit="days"),
+            "ANNUAL":       pd.Timedelta(365 * 1, unit="days"),
+            "18 MO":        pd.Timedelta(30 * 18, unit="days"),
+            "18 MONTH":     pd.Timedelta(30 * 18, unit="days"),
+            "2 YEAR":       pd.Timedelta(365 * 2, unit="days"),
+            "3 YEAR":       pd.Timedelta(365 * 3, unit="days")
+            }
+
+    def parse_duration_str_list(self, duration_str_list):
+        return [(lambda x: self.parse_duration_str(x))(duration_str) for duration_str in duration_str_list]
+
+    def parse_duration_str(self, duration_str):
+        
+        # Normalize input string
+        duration_str = str(duration_str).upper().strip().strip("S").replace("-", " ")
+        
+        try:
+            # Try lookup table
+            if duration_str in self.duration_lookup_table:
+                return self.duration_lookup_table[duration_str]
+        except:
+            self.debug_level >= 3 and print(f"parse_duration_str: Failed to parse {duration_str} using lookup table.")
+
+        try:
+            # Try Pandas Timedelta parser
+            return pd.to_timedelta(duration_str)
+        except:
+            self.debug_level >= 3 and print(f"parse_duration_str: Failed to parse {duration_str} using Pandas Timedelta parser.")
+
+        try:
+            # Try pytimeparse parser
+            num_seconds = parse(duration_str)
+            return pd.Timedelta(num_seconds, unit="seconds")
+        except:
+            self.debug_level >= 3 and print(f"parse_duration_str: Failed to parse {duration_str} using pytimeparse parser.")
+        
+        return None
 
 
 class SpecializedDateCleaningFunctions:
@@ -167,10 +217,14 @@ class SpecializedDateCleaningFunctions:
             split1 = subscription_dates_string.find("Subscription")
             split2 = split1 + len("Subscription")
             if split1 < 0:
+                # Failed so look for "Subscripture"
+                split1 = subscription_dates_string.find("Subscripture")
+                split2 = split1 + len("Subscripture")
+            if split1 < 0:
                 # Failed so look for "Subscr"
                 split1 = subscription_dates_string.find("Subscr")
                 split2 = split1 + len("Subscr")
-
+            
             # Split
             subscription_str = subscription_dates_string[0:split2].strip()
             date_range = subscription_dates_string[split2:].strip()

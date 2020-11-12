@@ -1,6 +1,6 @@
 # ToDo
 
-* [ ] Add new datafile
+* [X] Add new datafile
     * [ ] Build lookup tables
     * [ ] Transition LUTs to database?
     * [ ] Combine the redundant data & plots
