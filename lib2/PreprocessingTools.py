@@ -275,4 +275,10 @@ class MappingFunctions:
         with open(self.constants.LUT_CUSTOMER_NAME_FILE_PATH, "r") as file:
             return json.loads(file.read())
 
-    # def 
+    def write_lookup_table(self, lookup_table, file_path):
+        with open(file_path, "w") as file:
+            file.write(json.dumps(lookup_table))
+
+    def read_lookup_table(self, file_path):
+        with open(file_path, "r") as file:
+            return json.loads(file.read())
