@@ -1,7 +1,7 @@
 # ToDo
 
 * [X] Add new datafile
-    * [ ] Build lookup tables
+    * [X] Build lookup tables
     * [ ] (X) Transition LUTs to database?
     * [ ] Combine the redundant data & plots
 
@@ -25,4 +25,15 @@
 * [ ] Try out some barh plots
 * [ ] ...
 
+* [ ] Plot how much the cusomters pay per contract, in response to the per-head or per-day rate.
+
 * [ ] (X) Build buildscript to ensure everyone's precprocessing works.
+
+
+
+
+
+
+
+
+
