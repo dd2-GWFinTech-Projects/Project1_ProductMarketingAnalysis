@@ -66,7 +66,7 @@ class CustomerNameCleaningFunctions:
             anonymized_customer_list.append(customer_name_mapping[customer])
         return anonymized_customer_list
 
-    def set_customers_index(df, customer_list_anonymized, customer_column_name):
+    def set_customers_index(self, df, customer_list_anonymized, customer_column_name):
         df.reset_index(inplace=True)
         df[customer_column_name] = customer_list_anonymized
         df.set_index(customer_column_name, inplace=True)
@@ -125,6 +125,9 @@ class DateCleaningFunctions:
             return pd.Timestamp(date_datetime.isoformat(), tz="America/New_York", tzinfo=date_datetime.tzinfo)
         except:
             return None
+
+    def extract_duration(self, date_str):
+        parse_date_string()
 
 
 class SpecializedDateCleaningFunctions:
