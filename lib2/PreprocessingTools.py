@@ -52,19 +52,6 @@ class CustomerNameCleaningFunctions:
             paying_customers_cleanedup.append(corrected_customer_name)
         return paying_customers_cleanedup
 
-    def build_name_mapping(self, paying_customers_cleanedup):
-        name_mapping = {}
-        n = 1
-        for customer in paying_customers_cleanedup:
-            if not customer in name_mapping:
-                name_mapping[customer] = "University " + str(n)
-                n += 1
-        return name_mapping
-
-    def read_name_mapping(self):
-        with open(self.constants.MAPPING_FILE_PATH, "r") as file:
-            return json.loads(file.read())
-
     def anonymize_customer_list(self, customer_list, customer_name_mapping):
         anonymized_customer_list = []
         for customer in customer_list:
@@ -263,3 +250,29 @@ class SpecializedDateCleaningFunctions:
             subscription_dates_end_list.append(date2)
         
         return [ subscription_dates_start_list, subscription_dates_end_list ]
+
+
+class MappingFunctions:
+
+        def __init__(self, debug_level):
+        self.constants = Constants()
+        self.debug_level = debug_level
+
+    def build_name_mapping(self, paying_customers_cleanedup):
+        name_mapping = {}
+        n = 1
+        for customer in paying_customers_cleanedup:
+            if not customer in name_mapping:
+                name_mapping[customer] = "University " + str(n)
+                n += 1
+        return name_mapping
+
+    def write_name_mapping(self):
+        with open(self.constants.MAPPING_FILE_PATH, "w") as file:
+            file.write(json.dumps(name_mapping))
+    
+    def read_name_mapping(self):
+        with open(self.constants.MAPPING_FILE_PATH, "r") as file:
+            return json.loads(file.read())
+
+    def 

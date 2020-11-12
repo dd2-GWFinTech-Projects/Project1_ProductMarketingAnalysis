@@ -2,7 +2,7 @@
 
 * [X] Add new datafile
     * [ ] Build lookup tables
-    * [ ] Transition LUTs to database?
+    * [ ] (X) Transition LUTs to database?
     * [ ] Combine the redundant data & plots
 
 * [ ] build monte carlo solution
@@ -25,4 +25,4 @@
 * [ ] Try out some barh plots
 * [ ] ...
 
-* [X] Build buildscript to ensure everyone's precprocessing works. No.
+* [ ] (X) Build buildscript to ensure everyone's precprocessing works.

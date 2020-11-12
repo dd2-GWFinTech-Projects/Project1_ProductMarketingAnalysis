@@ -22,7 +22,7 @@ import pytz
 
 class Constants:
     def __init__(self):
-        self.MAPPING_DIR                    = Path("../Resources/Mappings")
+        self.LOOKUP_TABLES_DIR              = Path("../Resources/LookupTables")
         self.DATA_DIR_RAW                   = Path("../Resources/01_Raw")
         self.DATA_DIR_ANONYMIZED            = Path("../Resources/02_Anonymized")
         self.DATA_DIR_PREPROCESSED          = Path("../Resources/03_Preprocessed")
