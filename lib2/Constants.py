@@ -22,25 +22,46 @@ import pytz
 
 class Constants:
     def __init__(self):
-        self.MAPPING_DIR                     = Path("../Resources/Mappings")
-        self.DATA_DIR_RAW                    = Path("../Resources/01_Raw")
-        self.DATA_DIR_ANONYMIZED             = Path("../Resources/02_Anonymized")
-        self.DATA_DIR_PREPROCESSED           = Path("../Resources/03_Preprocessed")
-        self.DATA_DIR_PROCESSED              = Path("../Resources/04_Processed")
 
-        self.MAPPING_FILE_PATH               = os.path.join(self.MAPPING_DIR, Path("CustomerNameMapping.json"))
+        # Directories
+        self.LOOKUP_TABLES_DIR              = Path("../Resources/LookupTables")
+        self.DATA_DIR_RAW                   = Path("../Resources/01_Raw")
+        self.DATA_DIR_ANONYMIZED            = Path("../Resources/02_Anonymized")
+        self.DATA_DIR_PREPROCESSED          = Path("../Resources/03_Preprocessed")
+        self.DATA_DIR_PROCESSED             = Path("../Resources/04_Processed")
 
-        self.RAW_ATLAS_FILE_PATH             = os.path.join(self.DATA_DIR_RAW, Path("ATLAS.csv"))
-        self.RAW_FORECAST_DATA_FILE_PATH     = os.path.join(self.DATA_DIR_RAW, Path("2021 forecast CSV.csv"))
-        self.RAW_REVENUE2020_FILE_PATH       = os.path.join(self.DATA_DIR_RAW, Path("Revenue2020.csv"))
-        self.RAW_REVENUE2020A_FILE_PATH      = os.path.join(self.DATA_DIR_RAW, Path("Revenue2020A.csv"))
+        # Lookup table files
+        self.LUT_CUSTOMER_NAME_FILE_PATH    = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_CustomerName.json"))
+        self.LUT_ADDRESS_STATE_FILE_PATH    = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_Address_State.json"))
+        self.LUT_RECORD_TYPE_FILE_PATH      = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_RecordType.json"))
+        self.LUT_CUSTOMER_TYPE_FILE_PATH    = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_CustomerType.json"))
+        self.LUT_VENDOR_ID_FILE_PATH        = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_VendorID.json"))
+        self.LUT_ADDRESS_FILE_PATH          = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_Address.json"))
+        self.LUT_ADDRESS_LAT_FILE_PATH      = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_Address_Lat.json"))
+        self.LUT_ADDRESS_LON_FILE_PATH      = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_Address_Lon.json"))
 
-        self.ANON_ATLAS_FILE_PATH            = os.path.join(self.DATA_DIR_ANONYMIZED, Path("ATLAS.csv"))
-        self.ANON_FORECAST_DATA_FILE_PATH    = os.path.join(self.DATA_DIR_ANONYMIZED, Path("2021 forecast CSV.csv"))
-        self.ANON_REVENUE2020_FILE_PATH      = os.path.join(self.DATA_DIR_ANONYMIZED, Path("Revenue2020.csv"))
-        self.ANON_REVENUE2020A_FILE_PATH     = os.path.join(self.DATA_DIR_ANONYMIZED, Path("Revenue2020A.csv"))
+        # Raw data files
+        self.RAW_ATLAS_FILE_PATH            = os.path.join(self.DATA_DIR_RAW, Path("ATLAS.csv"))
+        self.RAW_FORECAST_DATA_FILE_PATH    = os.path.join(self.DATA_DIR_RAW, Path("2021 forecast CSV.csv"))
+        self.RAW_REVENUE2020_FILE_PATH      = os.path.join(self.DATA_DIR_RAW, Path("Revenue2020.csv"))
+        self.RAW_REVENUE2020A_FILE_PATH     = os.path.join(self.DATA_DIR_RAW, Path("Revenue2020A.csv"))
+        self.RAW_ATLAS_2_FILE_PATH          = os.path.join(self.DATA_DIR_RAW, Path("ATLAS with Address.csv"))
 
-        self.PREPROCESSED_ATLAS_FILE_PATH            = os.path.join(self.DATA_DIR_PREPROCESSED, Path("ATLAS.pkl"))
-        self.PREPROCESSED_FORECAST_DATA_FILE_PATH    = os.path.join(self.DATA_DIR_PREPROCESSED, Path("2021 forecast CSV.pkl"))
-        self.PREPROCESSED_REVENUE2020_FILE_PATH      = os.path.join(self.DATA_DIR_PREPROCESSED, Path("Revenue2020.pkl"))
-        self.PREPROCESSED_REVENUE2020A_FILE_PATH     = os.path.join(self.DATA_DIR_PREPROCESSED, Path("Revenue2020A.pkl"))
+        # Anonymized raw data files
+        self.ANON_ATLAS_FILE_PATH           = os.path.join(self.DATA_DIR_ANONYMIZED, Path("ATLAS.csv"))
+        self.ANON_FORECAST_DATA_FILE_PATH   = os.path.join(self.DATA_DIR_ANONYMIZED, Path("2021 forecast CSV.csv"))
+        self.ANON_REVENUE2020_FILE_PATH     = os.path.join(self.DATA_DIR_ANONYMIZED, Path("Revenue2020.csv"))
+        self.ANON_REVENUE2020A_FILE_PATH    = os.path.join(self.DATA_DIR_ANONYMIZED, Path("Revenue2020A.csv"))
+        self.ANON_ATLAS_2_FILE_PATH         = os.path.join(self.DATA_DIR_ANONYMIZED, Path("ATLAS with Address.csv"))
+
+        # Preprocessed data files
+        self.PREPROCESSED_ATLAS_FILE_PATH           = os.path.join(self.DATA_DIR_PREPROCESSED, Path("ATLAS.pkl"))
+        self.PREPROCESSED_FORECAST_DATA_FILE_PATH   = os.path.join(self.DATA_DIR_PREPROCESSED, Path("2021 forecast CSV.pkl"))
+        self.PREPROCESSED_REVENUE2020_FILE_PATH     = os.path.join(self.DATA_DIR_PREPROCESSED, Path("Revenue2020.pkl"))
+        self.PREPROCESSED_REVENUE2020A_FILE_PATH    = os.path.join(self.DATA_DIR_PREPROCESSED, Path("Revenue2020A.pkl"))
+        self.PREPROCESSED_ATLAS_2_FILE_PATH         = os.path.join(self.DATA_DIR_PREPROCESSED, Path("ATLAS with Address.pkl"))
+
+        # Preprocessed, combined data
+        self.PREPROCESSED_COMBINED_DATA_FILE_PATH         = os.path.join(self.DATA_DIR_PREPROCESSED, Path("CombinedData.pkl"))
+
+        # Processed data files

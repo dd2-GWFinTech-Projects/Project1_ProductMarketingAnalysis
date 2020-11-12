@@ -1,17 +1,17 @@
 # Data Files
 
-- 2021 forecast CSV: Subscription information, subscription fee, city/state location.
+| File Name | Description |
+| - | - |
+| **ATLAS** | Invoice and subscription information. |
+| **2021 forecast CSV** | Subscription information, subscription fee, city/state location. |
+| **Revenue2020** | Amount paid by each customer per month. |
+| **Revenue2020A** | Invoice information. Payment delays can be calculated by: Pymt Received - Mail Date. |
+| **ATLAS with Address** | ATLAS data over a broader time range, and containing school locations. |
+| **CollegeBoardAllCollegesExport_20201103** | List of all schools that are potential customers. |
 
-- ATLAS: Invoice and subscription information.
+<br />
 
-- Revenue2020: Amount paid by each customer per month.
-
-- Revenue2020A: Invoice information. Payment delays can be calculated by: Pymt Received - Mail Date.
-
-- CollegeBoardAllCollegesExport_20201103: School locations.
-
-
-# TODO
+# Needed Data
 
 - Communications/attempts/responses.
 
