@@ -1,0 +1,37 @@
+# Project Ideas
+
+- Milad's employer marketing analysis
+    - Questions:
+        - "What sales are predicted for each quarter through end of 2021?"
+        - "What market penetration does the company have into (a) each group of schools (ivy league, state schools, community college, high schools, etc.) and (b) regionally?"
+        - "How effective is the marketing in terms of rates of response to marketing communications?"
+        - "Are you targeting the highest-responding customers?"
+    - Analysis
+        - Identify/rank strongest customers based on order history (total $ sales to them) and re-order history (% of times subscription ran out and they re-ordered within 1 month)
+        - Predict future sales (monte carlo) (possible modeling at each quarter)
+        - Geographic grouping of customers
+        - Customer properties relation to various quantities/distribution: Product type, duration, frequency...
+        - Correlations between product types.
+        - Simple sales analysis: Which quarters, years etc. have the highest sales; highest growth.
+        - Correlation (and plots) between sales and external factors (school year, holidays, events, stock market indices, interest rates, student loan issuance, ...).
+        - Correlation between competitor products.
+        - Drop-down menu for college names - show sales and various detailed figures in panel.
+    - Data Needed
+        - Marketing communications/attempts/response rate.
+        - Lists of schools.
+        - School locations.
+- Stock market analysis
+    - Stocks vs options&futures trading volume VS time, trader composition (retail), GDP/stock indices
+    - Stocks vs cryptocurrencies
+    - Returns for all security categories & markets plotted against various event and market indicators
+        - Security categories: Stocks, options, bonds, crypto, futures, commodities, real estate
+        - Security markets: US, Europe, Asia, emerging, etc.
+        - Event indicators: "Events" calendar showing important events that impact the markets/economies (recessions, booms, bubbles, world events, country friendliness score (friendly vs unfriendly) etc.).
+        - Market indicators: GDP, stock market indices, interest rates, etc.
+    - Predict stock price in various timeframes (3-months, 6-months, 1-year, 3-year, etc.) based on fundamental analysis. Compare with real stock market data. Compute success rate, rates of return, etc. Group results by industry, market cap, avg volume etc.
+- Real estate
+    - Real estate data investigation to predict future market demand & supply, or analyze recent events
+    - Real estate vs stock market activity & returns
+    - Returns of REIT's vs direct investment (representative examples). Identify best specific REIT's based on performance.
+- Consumer trends
+    - Tablets vs laptops AND netbooks vs laptops
