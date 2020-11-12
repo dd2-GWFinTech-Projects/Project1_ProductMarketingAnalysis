@@ -66,6 +66,12 @@ class CustomerNameCleaningFunctions:
             anonymized_customer_list.append(customer_name_mapping[customer])
         return anonymized_customer_list
 
+    def set_customers_index(df, customer_list_anonymized, customer_column_name):
+        df.reset_index(inplace=True)
+        df[customer_column_name] = customer_list_anonymized
+        df.set_index(customer_column_name, inplace=True)
+        return df
+
 
 class DateCleaningFunctions:
     def __init__(self, debug_level):
