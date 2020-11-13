@@ -64,7 +64,7 @@ class MCSimulation_Generic:
         std_change = value_list_change.std()  # std_returns
 
         # Initialize empty Dataframe to hold simulated prices
-        portfolio_cumulative_returns = pd.DataFrame()
+        portfolio_cumulative_returns = None
         
         # Run the simulation of projecting stock prices 'nSim' number of times
         for n in range(self.nSim):
@@ -88,7 +88,10 @@ class MCSimulation_Generic:
             sim_df = pd.DataFrame(simvals).pct_change()
     
             # Calculate the normalized, cumulative return series
-            portfolio_cumulative_returns[n] = (1 + sim_df.fillna(0)).cumprod()
+            cumulative_return = (1 + sim_df.fillna(0)).cumprod()
+            if portfolio_cumulative_returns is None:
+                portfolio_cumulative_returns = pd.DataFrame(index=cumulative_return.index)
+            portfolio_cumulative_returns[n] = cumulative_return
         
         # Set attribute to use in plotting
         self.simulated_return = portfolio_cumulative_returns
