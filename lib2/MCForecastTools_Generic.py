@@ -2,11 +2,10 @@
 import numpy as np
 import pandas as pd
 import os
-import alpaca_trade_api as tradeapi
 import datetime as dt
 import pytz
 
-class MCSimulation2:
+class MCSimulation_Generic:
     """
     A Python class for runnning Monte Carlo simulation on portfolio price data. 
     
@@ -20,7 +19,7 @@ class MCSimulation2:
         portfolio investment breakdown
     nSim: int
         number of samples in simulation
-    nTrading: int
+    num_trailing_points: int
         number of trading days to simulate
     simulated_return : pandas.DataFrame
         Simulated data from Monte Carlo
@@ -29,47 +28,24 @@ class MCSimulation2:
         
     """
     
-    def __init__(self, portfolio_data, weights="", num_simulation=1000, num_trading_days=252):
+    def __init__(self, value_list, num_simulation=1000, num_trailing_points=50):
+        # portfolio_data, weights="", num_simulation=1000, num_trading_days=252):
         """
         Constructs all the necessary attributes for the MCSimulation object.
 
         Parameters
         ----------
-        portfolio_data: pandas.DataFrame
-            DataFrame containing stock price information from Alpaca API
-        weights: list(float)
-            A list fractions representing percentage of total investment per stock. DEFAULT: Equal distribution
+        value_list: pandas.DataFrame
+            DataFrame containing values for each time instant.
         num_simulation: int
             Number of simulation samples. DEFAULT: 1000 simulation samples
-        num_trading_days: int
+        num_trailing_points: int
             Number of trading days to simulate. DEFAULT: 252 days (1 year of business days)
         """
         
-        # Check to make sure that all attributes are set
-        if not isinstance(portfolio_data, pd.DataFrame):
-            raise TypeError("portfolio_data must be a Pandas DataFrame")
-            
-        # Set weights if empty, otherwise make sure sum of weights equals one.
-        if weights == "":
-            num_stocks = len(portfolio_data.columns.get_level_values(0).unique())
-            weights = [1.0/num_stocks for s in range(0,num_stocks)]
-        else:
-            if round(sum(weights),2) < .99:
-                raise AttributeError("Sum of portfolio weights must equal one.")
-        
-        # Calculate daily return if not within dataframe
-        # if not "daily_return" in portfolio_data.columns.get_level_values(1).unique():
-        close_df = portfolio_data.xs('close',level=1,axis=1).pct_change()
-        tickers = portfolio_data.columns.get_level_values(0).unique()
-        column_names = [(x,"daily_return") for x in tickers]
-        close_df.columns = pd.MultiIndex.from_tuples(column_names)
-        portfolio_data = portfolio_data.merge(close_df,left_index=True,right_index=True).reindex(columns=tickers,level=0)    
-        
-        # Set class attributes
-        self.portfolio_data = portfolio_data
-        self.weights = weights
+        self.value_list = value_list
         self.nSim = num_simulation
-        self.nTrading = num_trading_days
+        self.num_trailing_points = num_trailing_points
         self.simulated_return = ""
         
     def calc_cumulative_return(self):
@@ -77,15 +53,16 @@ class MCSimulation2:
         Calculates the cumulative return of a stock over time using a Monte Carlo simulation (Brownian motion with drift).
 
         """
-        
+
         # Get closing prices of each stock
-        last_prices = self.portfolio_data.xs('close',level=1,axis=1)[-1:].values.tolist()[0]
+        value_list = self.value_list  # last_prices
         
         # Calculate the mean and standard deviation of daily returns for each stock
-        daily_returns = self.portfolio_data.xs('daily_return',level=1,axis=1)
-        mean_returns = daily_returns.mean().tolist()
-        std_returns = daily_returns.std().tolist()
-        
+        value_list_change = value_list.diff() # daily_returns
+
+        mean_change = value_list_change.mean().tolist()  # mean_returns
+        std_change = value_list_change.std().tolist()  # std_returns
+
         # Initialize empty Dataframe to hold simulated prices
         portfolio_cumulative_returns = pd.DataFrame()
         
@@ -96,22 +73,19 @@ class MCSimulation2:
                 print(f"Running Monte Carlo simulation number {n}.")
         
             # Create a list of lists to contain the simulated values for each stock
-            simvals = [[p] for p in last_prices]
+            simvals = [[p] for p in value_list]
     
             # For each stock in our data:
-            for s in range(len(last_prices)):
+            for s in range(len(value_list)):
 
                 # Simulate the returns for each trading day
-                for i in range(self.nTrading):
+                for i in range(self.num_trailing_points):
         
                     # Calculate the simulated price using the last price within the list
-                    simvals[s].append(simvals[s][-1] * (1 + np.random.normal(mean_returns[s], std_returns[s])))
+                    simvals[s].append(simvals[s][-1] * (1 + np.random.normal(mean_change[s], std_change[s])))
     
             # Calculate the daily returns of simulated prices
             sim_df = pd.DataFrame(simvals).T.pct_change()
-    
-            # Use the `dot` function with the weights to multiply weights with each column's simulated daily returns
-            sim_df = sim_df.dot(self.weights)
     
             # Calculate the normalized, cumulative return series
             portfolio_cumulative_returns[n] = (1 + sim_df.fillna(0)).cumprod()
@@ -135,7 +109,7 @@ class MCSimulation2:
             self.calc_cumulative_return()
             
         # Use Pandas plot function to plot the return data
-        plot_title = f"{self.nSim} Simulations of Cumulative Portfolio Return Trajectories Over the Next {self.nTrading} Trading Days."
+        plot_title = f"{self.nSim} Simulations of Cumulative Portfolio Return Trajectories Over the Next {self.num_trailing_points} Trading Days."
         return self.simulated_return.plot(legend=None,title=plot_title)
     
     def plot_distribution(self):
