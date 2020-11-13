@@ -7,7 +7,7 @@
 
 * [ ] build monte carlo solution
 
-* [ ] Map!!!
+* [X] Map!!!
 
 * [ ] market penetration:
     * [ ]  that recursive box plot thing
@@ -30,9 +30,19 @@
 * [ ] (X) Build buildscript to ensure everyone's precprocessing works.
 
 
+# ToDo: Ibrahima & Others
 
+* [ ] Presentation
 
+* [ ] Add labels to the plots
 
+* [ ] Top 10 customers & parallel plot
+
+* [ ] Market penetration
+
+* [ ] Drop-downs
+
+* [ ] Dashboard
 
 
 
