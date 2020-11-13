@@ -28,8 +28,13 @@ class MCSimulation_Generic:
         
     """
     
-    def __init__(self, value_list, num_simulation=1000, num_trailing_points=50):
-        # portfolio_data, weights="", num_simulation=1000, num_trading_days=252):
+    def __init__(self,
+        value_title,
+        value_list,
+        num_simulation=1000, num_trailing_points=50,
+        scale_results=True,
+        allow_negative_returns=True
+        ):
         """
         Constructs all the necessary attributes for the MCSimulation object.
 
@@ -42,11 +47,20 @@ class MCSimulation_Generic:
         num_trailing_points: int
             Number of trading days to simulate. DEFAULT: 252 days (1 year of business days)
         """
-        
+
+        self.value_title = value_title
         self.value_list = value_list
         self.nSim = num_simulation
         self.num_trailing_points = num_trailing_points
         self.simulated_return = ""
+
+        # Grab initial value to use for scaling the results.
+        if scale_results:
+            self.initial_value = value_list[0]
+        else:
+            self.initial_value = 1.0
+        
+        self.allow_negative_returns = allow_negative_returns
         
     def calc_cumulative_return(self):
         """
@@ -82,7 +96,10 @@ class MCSimulation_Generic:
 
                 # print(f"simvals type {type(simvals)}")
 
-                simvals.append(simvals[-1] * (1 + np.random.normal(mean_change, std_change)))
+                d = np.random.normal(mean_change, std_change)
+                if not self.allow_negative_returns:
+                    d = np.abs(d)
+                simvals.append(simvals[-1] * (1 + d))
     
             # Calculate the daily returns of simulated prices
             sim_df = pd.DataFrame(simvals).pct_change()
@@ -112,9 +129,10 @@ class MCSimulation_Generic:
             self.calc_cumulative_return()
             
         # Use Pandas plot function to plot the return data
-        plot_title = f"{self.nSim} Simulations of Cumulative Value Trajectories Over the Next {self.num_trailing_points} Time Steps."
-        return self.simulated_return.hvplot.line(legend=False, title=plot_title, height=500, responsive=True)
-    
+        plot_title = f"{self.nSim} Simulations of Cumulative {self.value_title} Trajectories Over the Next {self.num_trailing_points} Time Steps."
+        # return (self.simulated_return * self.initial_value).hvplot.line(legend=False, title=plot_title, height=500, responsive=True)
+        return (self.simulated_return * self.initial_value).plot(kind="line", legend=False, figsize=(20, 8), title=plot_title)
+        
     def plot_distribution(self):
         """
         Visualizes the distribution of cumulative returns simulated using calc_cumulative_return method.
@@ -122,14 +140,15 @@ class MCSimulation_Generic:
         """
         
         # Check to make sure that simulation has run previously. 
-        if not isinstance(self.simulated_return,pd.DataFrame):
+        if not isinstance(self.simulated_return, pd.DataFrame):
             self.calc_cumulative_return()
         
         # Use the `plot` function to create a probability distribution histogram of simulated ending prices
         # with markings for a 95% confidence interval
-        plot_title = f"Distribution of Final Cumuluative Value Across All {self.nSim} Simulations"
+        plot_title = f"Distribution of Final Cumuluative {self.value_title} Across All {self.nSim} Simulations"
         # plt = self.simulated_return.iloc[-1, :].hvplot.hist(bins=10, density=True, title=plot_title, height=500, responsive=True)
-        plt = self.simulated_return.iloc[-1, :].plot(kind='hist', bins=10, density=True, title=plot_title, height=500, width=800)
+        # plt = self.simulated_return.iloc[-1, :].plot(kind='hist', bins=10, density=True, title=plot_title, height=500, width=800)
+        plt = (self.simulated_return * self.initial_value).iloc[-1, :].plot(kind='hist', density=True, title=plot_title, height=500, width=800)
         plt.axvline(self.confidence_interval.iloc[0], color='r')
         plt.axvline(self.confidence_interval.iloc[1], color='r')
         return plt
@@ -141,10 +160,10 @@ class MCSimulation_Generic:
         """
         
         # Check to make sure that simulation has run previously. 
-        if not isinstance(self.simulated_return,pd.DataFrame):
+        if not isinstance(self.simulated_return, pd.DataFrame):
             self.calc_cumulative_return()
             
-        metrics = self.simulated_return.iloc[-1].describe()
+        metrics = (self.simulated_return * self.initial_value).iloc[-1].describe()
         ci_series = self.confidence_interval
         ci_series.index = ["95% CI Lower","95% CI Upper"]
         return metrics.append(ci_series)
