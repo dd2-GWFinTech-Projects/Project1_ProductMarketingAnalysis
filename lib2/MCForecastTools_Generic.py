@@ -73,16 +73,19 @@ class MCSimulation_Generic:
                 print(f"Running Monte Carlo simulation number {n}.")
         
             # Create a list of lists to contain the simulated values for each stock
-            simvals = value_list
+            simvals = value_list.to_list()
 
             # Simulate the returns for each trading day
             for i in range(self.num_trailing_points):
     
                 # Calculate the simulated price using the last price within the list
+
+                # print(f"simvals type {type(simvals)}")
+
                 simvals.append(simvals[-1] * (1 + np.random.normal(mean_change, std_change)))
     
             # Calculate the daily returns of simulated prices
-            sim_df = pd.DataFrame(simvals).T.pct_change()
+            sim_df = pd.DataFrame(simvals).pct_change()
     
             # Calculate the normalized, cumulative return series
             portfolio_cumulative_returns[n] = (1 + sim_df.fillna(0)).cumprod()
