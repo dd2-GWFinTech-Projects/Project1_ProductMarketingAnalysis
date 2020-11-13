@@ -258,8 +258,7 @@ class MappingFunctions:
         self.constants = Constants()
         self.debug_level = debug_level
 
-    def build_name_mapping(self, paying_customers_cleanedup):
-        name_mapping = {}
+    def build_name_mapping(self, paying_customers_cleanedup, name_mapping):
         n = 1
         for customer in paying_customers_cleanedup:
             if not customer in name_mapping:
