@@ -39,6 +39,7 @@ class Constants:
         self.LUT_ADDRESS_FILE_PATH          = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_Address.json"))
         self.LUT_ADDRESS_LAT_FILE_PATH      = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_Address_Lat.json"))
         self.LUT_ADDRESS_LON_FILE_PATH      = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_Address_Lon.json"))
+        self.LUT_POTENTIAL_CUSTOMER_NAME_FILE_PATH    = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_PotentialCustomerNames.json"))
 
         # Raw data files
         self.RAW_ATLAS_FILE_PATH            = os.path.join(self.DATA_DIR_RAW, Path("ATLAS.csv"))
@@ -46,6 +47,7 @@ class Constants:
         self.RAW_REVENUE2020_FILE_PATH      = os.path.join(self.DATA_DIR_RAW, Path("Revenue2020.csv"))
         self.RAW_REVENUE2020A_FILE_PATH     = os.path.join(self.DATA_DIR_RAW, Path("Revenue2020A.csv"))
         self.RAW_ATLAS_2_FILE_PATH          = os.path.join(self.DATA_DIR_RAW, Path("ATLAS with Address.csv"))
+        self.RAW_POTENTIAL_CUSTOMERS_FILE_PATH          = os.path.join(self.DATA_DIR_RAW, Path("PotentialCustomerList.csv"))
 
         # Anonymized raw data files
         self.ANON_ATLAS_FILE_PATH           = os.path.join(self.DATA_DIR_ANONYMIZED, Path("ATLAS.csv"))

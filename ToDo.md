@@ -5,7 +5,7 @@
     * [ ] (X) Transition LUTs to database?
     * [ ] Combine the redundant data & plots
 
-* [ ] build monte carlo solution
+* [ ] Build monte carlo solution
 
 * [X] Map!!!
 
