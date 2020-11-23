@@ -24,8 +24,11 @@
 -- Education category
 -- # students
 
-[] De-anonymize
+[X] De-anonymize
 
+[] Ingest Milad's plot ideas from the images in MiladsPlottingIdeas
+
+[] Review the presentation video and extract all needed feedback
 
 
 
