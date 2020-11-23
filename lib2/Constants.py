@@ -46,7 +46,6 @@ class Constants:
         self.RAW_FORECAST_DATA_FILE_PATH    = os.path.join(self.DATA_DIR_RAW, Path("2021 forecast CSV.csv"))
         self.RAW_REVENUE2020_FILE_PATH      = os.path.join(self.DATA_DIR_RAW, Path("Revenue2020.csv"))
         self.RAW_REVENUE2020A_FILE_PATH     = os.path.join(self.DATA_DIR_RAW, Path("Revenue2020A.csv"))
-        self.RAW_ATLAS_2_FILE_PATH          = os.path.join(self.DATA_DIR_RAW, Path("ATLAS with Address.csv"))
         self.RAW_POTENTIAL_CUSTOMERS_FILE_PATH          = os.path.join(self.DATA_DIR_RAW, Path("PotentialCustomerList.csv"))
 
         # Anonymized raw data files
@@ -54,14 +53,12 @@ class Constants:
         self.ANON_FORECAST_DATA_FILE_PATH   = os.path.join(self.DATA_DIR_ANONYMIZED, Path("2021 forecast CSV.csv"))
         self.ANON_REVENUE2020_FILE_PATH     = os.path.join(self.DATA_DIR_ANONYMIZED, Path("Revenue2020.csv"))
         self.ANON_REVENUE2020A_FILE_PATH    = os.path.join(self.DATA_DIR_ANONYMIZED, Path("Revenue2020A.csv"))
-        self.ANON_ATLAS_2_FILE_PATH         = os.path.join(self.DATA_DIR_ANONYMIZED, Path("ATLAS with Address.csv"))
 
         # Preprocessed data files
         self.PREPROCESSED_ATLAS_FILE_PATH           = os.path.join(self.DATA_DIR_PREPROCESSED, Path("ATLAS.pkl"))
         self.PREPROCESSED_FORECAST_DATA_FILE_PATH   = os.path.join(self.DATA_DIR_PREPROCESSED, Path("2021 forecast CSV.pkl"))
         self.PREPROCESSED_REVENUE2020_FILE_PATH     = os.path.join(self.DATA_DIR_PREPROCESSED, Path("Revenue2020.pkl"))
         self.PREPROCESSED_REVENUE2020A_FILE_PATH    = os.path.join(self.DATA_DIR_PREPROCESSED, Path("Revenue2020A.pkl"))
-        self.PREPROCESSED_ATLAS_2_FILE_PATH         = os.path.join(self.DATA_DIR_PREPROCESSED, Path("ATLAS with Address.pkl"))
 
         # Preprocessed, combined data
         self.PREPROCESSED_COMBINED_DATA_FILE_PATH         = os.path.join(self.DATA_DIR_PREPROCESSED, Path("CombinedData.pkl"))
