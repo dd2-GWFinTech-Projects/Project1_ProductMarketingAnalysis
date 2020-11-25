@@ -89,6 +89,9 @@ class MCSimulation_Generic:
             # Create a list of lists to contain the simulated values for each stock
             simvals = value_list.to_list()
 
+            # TODO Ensure x axis is ordered.
+            # TODO Ensure x axis is evenly spaced.
+
             # Simulate the returns for each trading day
             for i in range(self.num_trailing_points):
     
