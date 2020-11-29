@@ -39,7 +39,9 @@ class Constants:
         self.LUT_ADDRESS_FILE_PATH          = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_Address.json"))
         self.LUT_ADDRESS_LAT_FILE_PATH      = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_Address_Lat.json"))
         self.LUT_ADDRESS_LON_FILE_PATH      = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_Address_Lon.json"))
-        self.LUT_POTENTIAL_CUSTOMER_NAME_FILE_PATH    = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_PotentialCustomerNames.json"))
+        self.LUT_POTENTIAL_CUSTOMER_NAME_FILE_PATH          = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_PotentialCustomerNames.json"))
+        self.LIST_CUSTOMER_NAME_LIST_FILE_PATH               = os.path.join(self.LOOKUP_TABLES_DIR, Path("LIST_CustomerNames.json"))
+        self.LIST_POTENTIAL_CUSTOMER_NAME_LIST_FILE_PATH     = os.path.join(self.LOOKUP_TABLES_DIR, Path("LIST_PotentialCustomerNames.json"))
 
         # Raw data files
         self.RAW_ATLAS_FILE_PATH            = os.path.join(self.DATA_DIR_RAW, Path("ATLAS.csv"))

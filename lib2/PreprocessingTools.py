@@ -45,10 +45,10 @@ class CustomerNameCleaningFunctions:
         paying_customers_cleanedup = []
         for customer in paying_customers_raw:
             corrected_customer_name = str(customer)
-            #corrected_customer_name = str(customer).upper()
+            corrected_customer_name = str(customer).upper()
             corrected_customer_name = self.remove_strings_from_customer_names(corrected_customer_name)
             corrected_customer_name = self.remove_numbers_from_customer_names(corrected_customer_name)
-            #corrected_customer_name = corrected_customer_name.title()
+            corrected_customer_name = corrected_customer_name.title()
             paying_customers_cleanedup.append(corrected_customer_name)
         return paying_customers_cleanedup
 
@@ -279,5 +279,13 @@ class MappingFunctions:
             file.write(json.dumps(lookup_table))
 
     def read_lookup_table(self, file_path):
+        with open(file_path, "r") as file:
+            return json.loads(file.read())
+
+    def write_list(self, list_data, file_path):
+        with open(file_path, "w") as file:
+            file.write(json.dumps(list_data))
+
+    def read_list(self, file_path):
         with open(file_path, "r") as file:
             return json.loads(file.read())
