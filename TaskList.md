@@ -41,7 +41,7 @@
 * [ ] What does growth look like for subscriptions for a comparable company?
 * [ ] Projection: Re-do projection and limit to 2021.
 * [ ] Top opportunities: Identify top opportunities schools based on customer metrics (especially the # of students).
-* [ ] Extract sequences for subscription updates.
+* [X] ~~*Extract sequences for subscription updates.*~~ [2020-11-29]
 * [ ] Relate customer metrics to purchasing behavior (Education category; nbr of students)
 * [ ] Fix the Monte Carlo. Supplement with simple estimate.
 
