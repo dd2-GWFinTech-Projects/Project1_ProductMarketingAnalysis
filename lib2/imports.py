@@ -43,7 +43,6 @@ from ProcessingTools import DateProcessingTools
 class Tools:
     def __init__(self, debug_level):
         # Construct the tools
-        self.constants = Constants()
         self.tool_customer = CustomerNameCleaningFunctions(debug_level)
         self.tool_data_processing = DateProcessingTools(debug_level)
         self.tool_date = DateCleaningFunctions(debug_level)
@@ -58,8 +57,8 @@ class Tools:
 
 def init_preprocessing(debug_level):
     pn.extension()
-    return Tools(debug_level)
+    return (Constants(), Tools(debug_level))
 
 def init_processing(debug_level):
     pn.extension()
-    return Tools(debug_level)
+    return (Constants(), Tools(debug_level))
