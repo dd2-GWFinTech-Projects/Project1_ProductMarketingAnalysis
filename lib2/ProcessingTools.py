@@ -70,6 +70,6 @@ class DateProcessingTools:
             The DataFrame with the Year/Month/Quarter columns appended.
         """
         columns = self.extract_year_month_quarter(data_frame[column_name])
-        periods_df = pd.DataFrame({"Year":columns[0],"Monthly": columns[1], "Quarterly": columns[2]})
+        periods_df = pd.DataFrame({ column_name + "_Year":columns[0], column_name + "_Month": columns[1], column_name + "_Quarter": columns[2]})
         return pd.concat([data_frame.reset_index(), periods_df], axis='columns', join="inner")
 
