@@ -63,6 +63,8 @@ class Constants:
         self.PREPROCESSED_REVENUE2020A_FILE_PATH    = os.path.join(self.DATA_DIR_PREPROCESSED, Path("Revenue2020A.pkl"))
 
         # Preprocessed, combined data
-        self.PREPROCESSED_COMBINED_DATA_FILE_PATH         = os.path.join(self.DATA_DIR_PREPROCESSED, Path("CombinedData.pkl"))
+        # self.PREPROCESSED_COMBINED_DATA_FILE_PATH         = os.path.join(self.DATA_DIR_PREPROCESSED, Path("CombinedData.pkl"))
+        self.PREPROCESSED_INVOICE_CUSTOMER_FILE_PATH        = os.path.join(self.DATA_DIR_PREPROCESSED, Path("InvoicesByCustomer.pkl"))
+        self.PREPROCESSED_INVOICE_SERVICEDATE_FILE_PATH     = os.path.join(self.DATA_DIR_PREPROCESSED, Path("InvoicesByServiceDate.pkl"))
 
         # Processed data files
