@@ -9,6 +9,7 @@
 
 # System imports
 from dotenv import load_dotenv
+from matplotlib.ticker import (MultipleLocator, FormatStrFormatter, AutoMinorLocator)
 from panel import widgets
 from panel.interact import interact
 from panel.interact import interact, interactive, fixed, interact_manual
@@ -25,7 +26,6 @@ import pandas as pd
 import panel as pn
 import plotly.express as px
 import sys
-
 
 # Local imports
 sys.path.append("../lib2")
