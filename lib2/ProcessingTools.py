@@ -19,7 +19,9 @@ import pandas as pd
 import os
 import datetime as dt
 import pytz
+import calendar
 from Constants import Constants
+import math
 
 class DateProcessingTools:
 
@@ -53,6 +55,21 @@ class DateProcessingTools:
         
         return [year_column, month_column, quarter_column]
     
+    def parse_month_number_list(self, month_number_list):
+        month_name_list = []
+        # [(lambda x: self.parse_month_number)(x) for x in columns[1]],
+        for month_number in month_number_list:
+            month_name = self.parse_month_number(month_number)
+            month_name_list.append(month_name)
+        return month_name_list
+
+    def parse_month_number(self, month_number):
+        # print(f"Month number {month_number}")
+        if not math.isnan(month_number):
+            return calendar.month_name[int(month_number)]
+        else:
+            return ""
+    
     def extract_and_append_year_month_quarter(self, data_frame, column_name):
         """
         Extract to categorize data by Year, Month, and each Quarter, and append as columns.
@@ -73,6 +90,7 @@ class DateProcessingTools:
         periods_df = pd.DataFrame({
             column_name + "_Year": columns[0],
             column_name + "_Month": columns[1],
+            column_name + "_MonthName": self.parse_month_number_list(columns[1]),
             column_name + "_Quarter": columns[2] })
         return pd.concat([data_frame.reset_index(), periods_df], axis='columns', join="inner").set_index(data_frame.index.name)
 
