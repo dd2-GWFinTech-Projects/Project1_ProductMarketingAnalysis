@@ -71,3 +71,6 @@ class Constants:
         self.PREPROCESSED_REVENUE2020A_CLEANED_FILE_PATH       = os.path.join(self.DATA_DIR_PREPROCESSED, Path("Revenue2020AData.pkl"))
         
         # Processed data files
+
+        # Helpers
+        self.month_names = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
