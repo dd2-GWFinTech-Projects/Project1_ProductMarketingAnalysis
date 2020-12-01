@@ -44,6 +44,7 @@
 * [X] ~~*Extract sequences for subscription updates.*~~ [2020-11-29]
 * [ ] Relate customer metrics to purchasing behavior (Education category; nbr of students)
 * [ ] Fix the Monte Carlo. Supplement with simple estimate.
+* [ ] What can be done to incrase those with very low subscriptions to more? (Jacinta)
 
 ### Plots
 
@@ -67,6 +68,7 @@
 * [ ] What customers stopped, and last date of service (or last invoice).
 * [ ] New customers plot.
 * [ ] How many customers renewed (renewal rate)? Over time, and tabulated.
+* [ ] Response time from marketing inital contact to when college recieves first payment (Jonathan)
 
 ### Report
 
