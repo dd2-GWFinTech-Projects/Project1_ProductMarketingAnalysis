@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import panel as pn
 import plotly.express as px
 
-pn.extension()
+# pn.extension()
 
 class PlotBuildingToools:
 

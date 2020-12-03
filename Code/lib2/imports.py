@@ -18,6 +18,7 @@ from string import digits
 import calendar
 import csv
 import dateparser
+import holoviews as hv
 import hvplot.pandas
 import json
 import matplotlib.pyplot as plt
@@ -40,6 +41,10 @@ from PreprocessingTools import MappingFunctions
 from PreprocessingTools import SpecializedDateCleaningFunctions
 from ProcessingTools import DateProcessingTools
 
+# Load extensions
+# pn.extension()
+pn.extension("plotly")
+hv.extension('bokeh', 'matplotlib')
 
 class Tools:
     def __init__(self, debug_level):
@@ -57,9 +62,9 @@ class Tools:
 # Initialization Functions
 
 def init_preprocessing(debug_level):
-    pn.extension()
+    # pn.extension()
     return (Constants(), Tools(debug_level))
 
 def init_processing(debug_level):
-    pn.extension()
+    # pn.extension()
     return (Constants(), Tools(debug_level))
