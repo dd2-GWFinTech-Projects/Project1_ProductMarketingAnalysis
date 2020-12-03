@@ -1,5 +1,4 @@
-
-conda activate pyvizenv
+#!/bin/bash
 
 # Install date parsing library 'dateparser'
 pip install dateparser
@@ -9,7 +8,3 @@ pip install pytimeparse
 
 # Install toolchain to run Jupyter notebook from command line
 sudo pip install -U mistune
-## Run the Jupyter notebook
-jupyter nbconvert --ExecutePreprocessor.timeout=600 --to python nb.ipynb
-## Generate HTML output
-jupyter-nbconvert --execute ""
