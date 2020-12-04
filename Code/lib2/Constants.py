@@ -72,5 +72,9 @@ class Constants:
         
         # Processed data files
 
+        # Figure sizes
+        self.FIGURE_WIDTH_MEDIUM = 30
+        self.FIGURE_HEIGHT_MEDIUM = 20
+
         # Helpers
         self.month_names = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
