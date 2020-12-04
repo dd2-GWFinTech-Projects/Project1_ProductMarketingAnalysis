@@ -65,7 +65,7 @@ Brigham Young University – Hawaii ,150,6/16/2020,NB061620,"$3,000.00 ",1 Year,
 Brock University,350,7/23/2020,NB072320A,"$1,222.00 ",3 Months,4700-0-00-00000-00-0000,3 Months Subscription 9/1/2020 to 12/8/2020,"1812 Sir Isaac Brock Way, St. Catharines, Ontario, Canada L2S3A1",Canada,43.118799,-79.238508
 Brock University,116,9/8/2020,NB090820AA,$290.00 ,3 Months,4700-0-00-00000-00-0000,3 Months Subscription 9/1/2020 to 12/8/2020,"1812 Sir Isaac Brock Way, St. Catharines, Ontario, Canada L2S3A1",Canada,43.118799,-79.238508
 Brown University ,20,10/22/2020,NB102020,$425.00 ,3 Months,4700-0-00-00000-00-0000,3 Months Subscription 11/1/2020 to 1/31/2021,"10 Prospect St., Box A, Providence, RI  02912",RI,41.82574,-71.405199
-Brown University ,10,11/20/2020,NB112020,$100.00,3 Months,4700-0-00-00000-00-0000,3 Mo Subscription 11/01/2020 to 1/31/2021,"10 Prospect St., Box A, Providence, RI  02912",RI,,
+Brown University ,10,11/20/2020,NB112020,$100.00,3 Months,4700-0-00-00000-00-0000,3 Mo Subscription 11/01/2020 to 1/31/2021,"10 Prospect St., Box A, Providence, RI  02912",RI,41.82574,-71.405199
 Bureau of Indian Affairs,,10/27/2015,AJ506,"$28,000.00 ",1 Year,4700-4-11-00100-00-1502,1 Year Subscription 09/18/15-12/31/16,"1849 C Street, N.W Washington, D.C. 20240",DC,38.894453,-77.042603
 Bureau of Indian Affairs,,12/10/2015,AJ507,"$16,200.00 ",1 Year,4700-4-11-00100-00-1502,1 Year Subscription 09/18/15-12/31/16,"1849 C Street, N.W Washington, D.C. 20240",DC,38.894453,-77.042603
 Bureau of Indian Affairs,,10/9/2020,NB100920A,"$21,000.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 10/1/2020 to 9/30/2021,"1849 C Street, N.W Washington, D.C. 20240",DC,38.894453,-77.042603
@@ -236,9 +236,9 @@ Illinois College ,50,1/27/2020,255,$500.00 ,3 Years,4700-0-00-00000-00-0000,3 Ye
 Illinois National Board Resource Center,250,5/12/2017,27,"$10,500.00 ",3 Years,4700-0-00-00000-00-0000,3 Years Subscription 5/1/17 to 5/1/20,"1101 W College Ave, Jacksonville, IL 62650",IL,39.73221,-90.246947
 Illinois National Board Resource Center,100,3/12/2020,NB031220,"$6,000.00 ",3 Years,4700-0-00-00000-00-0000,3 Years Subscription 5/1/2020 to 05/01/2023,"1101 W College Ave, Jacksonville, IL 62650",IL,39.73221,-90.246947
 Illinois State University Board of Trustees,250,5/26/2016,AJ526,"$3,500.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 7/1/16 to 7/30/17,"2020 Illinois State University, Normal, IL USA",IL,41.5028,-87.684293
-Indiana University Libraries,500,8/29/2018,148,"$7,500.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 8/28/18 to 8/31/19,,,,
-Indiana University Libraries,500,8/23/2019,211,"$2,500.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 8/31/19 to 8/31/20,,,,
-Indiana University Libraries ,500,10/16/2020,NB101620B,"$6,500.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 8/31/2020 to 8/31/2021,,,,
+Indiana University Libraries,500,8/29/2018,148,"$7,500.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 8/28/18 to 8/31/19,,IN,39.468109,-87.407427
+Indiana University Libraries,500,8/23/2019,211,"$2,500.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 8/31/19 to 8/31/20,,IN,39.468109,-87.407427
+Indiana University Libraries ,500,10/16/2020,NB101620B,"$6,500.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 8/31/2020 to 8/31/2021,,IN,39.468109,-87.407427
 Ithaca College,200,4/17/2020,NB041720,$875.00 ,3 Months,4700-0-00-00000-00-0000,3 Months Subscription 4/10/2020 to 7/10/2020,"953 Danby Rd., Ithaca, NY 14850",NY,42.42216,-76.500039
 Ithaca College,200,9/13/2020,NB091320,$875.00 ,3 Months,4700-0-00-00000-00-0000,3 Months Subscription 9/15/2020 to 11/30/2020,"953 Danby Rd., Ithaca, NY 14850",NY,42.42216,-76.500039
 James Madison University College of Education ,1000,3/20/2020,NB032020,"$2,875.00 ",3 Months,4700-0-00-00000-00-0000,3 Months Subscription 3/10/2020 to 6/30/2020,"395 S High Street, Harrisburg, VA  22801",VA,38.4448,-78.878649
@@ -670,7 +670,7 @@ Walla Walla Public Schools,250,4/13/2017,21,"$3,000.00 ",1 Year,4700-0-00-00000-
 Walla Walla Public Schools,40,1/13/2020,249,"$2,300.00 ",3 Years,4700-0-00-00000-00-0000,3 Years Subscription 7/31/2020 to 7/31/2023,"364 S Park Street, Walla Walla,WA 99362",WA,46.065081,-118.329587
 Washington County Schools,25,4/11/2018,114,"$5,775.00 ",3 Years,4700-0-00-00000-00-0000,3 Years Subscription 7/18/18 to 6/21/19,"10435 Downsville Pike Hagerstown, MD 21740",MD,39.598072,-77.764449
 Washington State University ,100,9/24/2020,NB092420C,"$2,500.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 9/22/2020 to 9/30/2021,"PO Box 642132, Pullman, WA  99614-2132",WA,46.728879,-117.179512
-West Liberty University,350,12/3/2020,NB120320C,"$3,500.00 ",1 Year,4700-0-00-00000-00-0000,1 yr Subscription 1/16/2021 to 1/31/2022,"208 University Dr. CUB 147, West Liberty, WV  26074",WV,,
+West Liberty University,350,12/3/2020,NB120320C,"$3,500.00 ",1 Year,4700-0-00-00000-00-0000,1 yr Subscription 1/16/2021 to 1/31/2022,"208 University Dr. CUB 147, West Liberty, WV  26074",WV,40.053501,-80.603799
 Western Carolina University ,600,3/20/2020,NB032020E,"$7,500.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 3/20/2020 to 3/31/2021,"1 University Dr, Cullowhee, NC  28779",NC,35.309247,-83.183142
 Western Governors University,5000,9/15/2016,AJ548,"$50,000.00 ",3 Years,4700-0-00-00000-00-0000,3 Years Subscription 6/13/16 to 6/12/2019,"4001 S 700 E #300, Salt Lake City, UT 84107",UT,40.684882,-111.869961
 Western Governors University,50,7/8/2019,205,"$20,000.00 ",1 Year,4700-0-00-00000-00-0000,1 Year Subscription 6/12/19 to 6/12/20,"4001 S 700 E #300, Salt Lake City, UT 84107",UT,40.684882,-111.869961

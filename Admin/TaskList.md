@@ -154,3 +154,27 @@
 * [ ] New customers plot.
 * [ ] How many customers renewed (renewal rate)? Over time, and tabulated.
 * [ ] Response time from marketing inital contact to when college recieves first payment (Jonathan)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Additional
+
+Number of schools per state vs number of schools existing in each state
+
+Analyze customer retention strategies
+
+
+
+

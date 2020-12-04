@@ -54,7 +54,7 @@ class PlotBuildingToools:
     def generate_plot__hvplot_bar(self,
         data,                  # Data
         title, xlabel, ylabel,    # Labels
-        stacked=False, rot=0, width=None, height=None    # Display options
+        stacked=False, rot=0, width=None, height=None, yformatter="%f"    # Display options
         ):
 
         # Defaults
@@ -65,11 +65,11 @@ class PlotBuildingToools:
             plt_ = data.hvplot.bar(
                 title=title, xlabel=xlabel, ylabel=ylabel,
                 stacked=stacked, width=width, height=height, rot=rot
-                )
+                ).opts(yformatter=yformatter)
         else:
             plt_ = data.hvplot.bar(
                 title=title, xlabel=xlabel, ylabel=ylabel,
                 stacked=stacked, rot=rot
-                )
+                ).opts(yformatter=yformatter)
 
         return plt_
