@@ -32,15 +32,12 @@ import sys
 
 # Local imports
 sys.path.append("../lib2")
-from Constants import Constants
-from MCForecastTools_Generic import MCSimulation_Generic
-from PlotBuildingToools import PlotBuildingToools
-from PreprocessingTools import CustomerNameCleaningFunctions
-from PreprocessingTools import DateCleaningFunctions
-from PreprocessingTools import DurationParsing
-from PreprocessingTools import MappingFunctions
-from PreprocessingTools import SpecializedDateCleaningFunctions
-from ProcessingTools import DateProcessingTools
+from Constants import *
+from MCForecastTools_Generic import *
+from PlotBuildingToools import *
+from PreprocessingTools import *
+from ProcessingTools import *
+from UpgradeSequenceTools import *
 
 # Load extensions
 # pn.extension()
@@ -58,6 +55,9 @@ class Tools:
         self.tool_mapping = MappingFunctions(debug_level)
         self.tool_plot_building = PlotBuildingToools(debug_level)
         self.tool_special_date = SpecializedDateCleaningFunctions(debug_level)
+        self.upgrade_sequence_tool = UpgradeSequenceTool(debug_level)
+        self.upgrade_sequence_filter_tool = UpgradeSequenceFilterTool(debug_level)
+        self.upgrade_sequence_report_tool = UpgradeSequenceReportTool(debug_level)
 
 
 # Initialization Functions

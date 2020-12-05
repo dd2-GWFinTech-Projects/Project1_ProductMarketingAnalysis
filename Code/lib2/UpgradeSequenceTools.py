@@ -10,13 +10,15 @@ class UpgradeType(enum.Enum):
 
 class UpgradeSequenceTool:
     
+
     def __init__(self, debug_level):
         self.debug_level = debug_level
     
-    # Define a function to extract the conversion upgrade sequence
-    def get_upgrade_sequence(df):
+
+    def extract_upgrade_sequence_to_dict(df):
         customer_subscriptions_ordered_by_date = df.loc[:, ["ServiceStart", "ServiceEnd", "Subscription", "SubscriptionDuration_Timedelta", "SubscriptionDuration_Years"]].sort_values("ServiceStart")
         return (df.index[0], customer_subscriptions_ordered_by_date)
+
 
     def extract_dict_values_to_dataframe(data_dict):
         df = pd.DataFrame({})
@@ -24,6 +26,7 @@ class UpgradeSequenceTool:
             df = df.append(value[1])
         return df
         
+
     def compute_subscription_coverage_df(df):
         
         subscription_coverage_years_outer = (df["ServiceEnd"][-1] - df["ServiceStart"][0]).days / constants.DAYS_PER_YEAR
@@ -35,6 +38,7 @@ class UpgradeSequenceTool:
             subscription_coverage_list.append(subscription_coverage_years_covered / subscription_coverage_years_outer)
         
         return subscription_coverage_list
+
 
     def compute_upgrade_type_df(df):
         
@@ -90,15 +94,22 @@ class UpgradeSequenceFilterTool:
                 newDict[key] = value
         return newDict
 
+
+    # --------------------------------------------------------------------------
     # Time-based filters
+    # --------------------------------------------------------------------------
+
+
     def filter_active_customers(key, value):
         last_service_end_date = value[1]["ServiceEnd"][-1]
         duration_days_until_service_end = (last_service_end_date - today).days
         return duration_days_until_service_end >= 0
 
+
     def filter_new_customers_2020(key, value):
         first_service_start_date = value[1]["ServiceStart"][0]
         return first_service_start_date.year == current_year
+
 
     def filter_new_customers_march2020(key, value):
         TODO
@@ -106,7 +117,11 @@ class UpgradeSequenceFilterTool:
         return first_service_start_date.year == current_year
 
 
+    # --------------------------------------------------------------------------
     # Upgrade type filters
+    # --------------------------------------------------------------------------
+
+
     def filter_customers_with_upgrades(key, value):
         upgrade_type = value[1]["UpgradeType"]
         upgrade_type_set = set(upgrade_type.to_list())
@@ -116,13 +131,18 @@ class UpgradeSequenceFilterTool:
         else:
             return UpgradeType.Upgrade in upgrade_type_set
 
+
     def filter_customers_with_downgrades(key, value):
         upgrade_type = value[1]["UpgradeType"]
         upgrade_type_set = set(upgrade_type.to_list())
         return UpgradeType.Downgrade in upgrade_type_set
 
 
+    # --------------------------------------------------------------------------
     # Coverage filters
+    # --------------------------------------------------------------------------
+
+
     def filter_high_coverage_customers(key, value):
         subscription_coverage = value[1]["SubscriptionCoverage"][-1]
         return subscription_coverage >= high_coverage_threshold
@@ -136,17 +156,19 @@ class UpgradeSequenceFilterTool:
         return subscription_coverage <= low_coverage_threshold
 
 
-
-
 class UpgradeSequenceReportTool:
-    
+
+
     def __init__(self, debug_level):
         self.debug_level = debug_level
         
         
     def generate_basic_customer_report_data()
+    
         active_customers_dict = filter_dict(upgrade_sequence_dict, filter_active_customers)
 
+        all_customers = invoice_data_by_customer.index
+        repeat_customers = invoice_data_by_customer.index.duplicated()
 
         # Compute and validate total number of customers
         total_number_of_customers_1 = len(set(invoice_data_by_customer.index))
@@ -163,6 +185,7 @@ class UpgradeSequenceReportTool:
 
         print(f"There are {total_number_of_customers_1} total customers according to the invoice_data_by_customer DataFrame, and {total_number_of_customers_2} for upgrade_sequence_dict.")
 
+        print(f"There are {repeat_customers.sum()} universities in this dataset who purchased 2 or more subscriptions.")
 
 
 
@@ -207,9 +230,4 @@ class UpgradeSequenceReportTool:
         print(f"(2) Subscription coverage refers to the fraction of time during which the customer has had an active subscription, divided by the total period of time in which the customer has been a customer.")
         print(f"(3) The thresholds used for high, medium, and low subscription coverage are as follows: High (>={high_coverage_threshold}), Medium ({low_coverage_threshold} to {high_coverage_threshold}), Low (<={low_coverage_threshold})")
         print(f"")
-
-
-
-
-
 
