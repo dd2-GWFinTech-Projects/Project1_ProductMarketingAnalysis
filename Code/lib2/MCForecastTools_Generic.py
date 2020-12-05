@@ -5,6 +5,9 @@ import os
 import datetime as dt
 import pytz
 
+# def compute_sales_atinstantintime(nbr_loyal_customers, nbr_new_customers, nbr_renew_customers, nbr_dropouts):
+# def compute_sales_atinstantintime(nbr_customers_size_parameter, loyal_customers_rate, new_customers_rate, renew_customers_rate, dropouts_rate):
+
 class MCSimulation_Generic:
     """
     A Python class for runnning Monte Carlo simulation on portfolio price data. 
@@ -99,10 +102,18 @@ class MCSimulation_Generic:
 
                 # print(f"simvals type {type(simvals)}")
 
+                # TODO Upgrade to handle multiple ind variables
+
+                # TODO Upgrade to compute predicted sales numbers for the selected ind vars;
+                #   def compute_sales_atinstantintime(nbr_loyal_customers, nbr_new_customers, nbr_renew_customers, nbr_dropouts)
+                #   def compute_sales_atinstantintime(nbr_customers_size_parameter, loyal_customers_rate, new_customers_rate, renew_customers_rate, dropouts_rate)
+
+                # TODO Switch to enable best-case and worst-case instead of normal distr
                 d = np.random.normal(mean_change, std_change)
                 if not self.allow_negative_returns:
                     d = np.abs(d)
                 simvals.append(simvals[-1] * (1 + d))
+
     
             # Calculate the daily returns of simulated prices
             sim_df = pd.DataFrame(simvals).pct_change()

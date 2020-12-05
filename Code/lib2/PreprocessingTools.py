@@ -123,8 +123,8 @@ class DurationParsing:
     def __init__(self, debug_level):
         self.constants = Constants()
         self.debug_level = debug_level
-        self.duration_lookup_table = {
-            "30 DAY":       pd.Timedelta(30, unit="days"),
+        self.duration_lookup_table_timedelta = {
+            "30 DAY":       pd.Timedelta(1, unit="days"),
             "3 MONTH":      pd.Timedelta(30 * 3, unit="days"),
             "5 MONTH":      pd.Timedelta(30 * 5, unit="days"),
             "6 MONTH":      pd.Timedelta(30 * 6, unit="days"),
@@ -135,19 +135,47 @@ class DurationParsing:
             "2 YEAR":       pd.Timedelta(365 * 2, unit="days"),
             "3 YEAR":       pd.Timedelta(365 * 3, unit="days")
             }
+        self.duration_lookup_table_years = {
+            "30 DAY":       1.0 / 12.0,
+            "3 MONTH":      3.0 / 12.0,
+            "5 MONTH":      5.0 / 12.0,
+            "6 MONTH":      0.5,
+            "1 YEAR":       1.0,
+            "ANNUAL":       1.0,
+            "18 MO":        1.5,
+            "18 MONTH":     1.5,
+            "2 YEAR":       2.0,
+            "3 YEAR":       3.0
+            }
 
-    def parse_duration_str_list(self, duration_str_list):
-        return [(lambda x: self.parse_duration_str(x))(duration_str) for duration_str in duration_str_list]
+    def parse_duration_str_list_to_years(self, duration_str_list):
+        return [(lambda x: self.parse_duration_str_to_years(x))(duration_str) for duration_str in duration_str_list]
 
-    def parse_duration_str(self, duration_str):
+    def parse_duration_str_to_years(self, duration_str):
         
         # Normalize input string
         duration_str = str(duration_str).upper().strip().strip("S").replace("-", " ")
         
         try:
             # Try lookup table
-            if duration_str in self.duration_lookup_table:
-                return self.duration_lookup_table[duration_str]
+            if duration_str in self.duration_lookup_table_years:
+                return self.duration_lookup_table_years[duration_str]
+        except:
+            self.debug_level >= 3 and print(f"parse_duration_str: Failed to parse {duration_str} using lookup table.")
+            return None
+
+    def parse_duration_str_list_to_timedelta(self, duration_str_list):
+        return [(lambda x: self.parse_duration_str_to_timedelta(x))(duration_str) for duration_str in duration_str_list]
+
+    def parse_duration_str_to_timedelta(self, duration_str):
+        
+        # Normalize input string
+        duration_str = str(duration_str).upper().strip().strip("S").replace("-", " ")
+        
+        try:
+            # Try lookup table
+            if duration_str in self.duration_lookup_table_timedelta:
+                return self.duration_lookup_table_timedelta[duration_str]
         except:
             self.debug_level >= 3 and print(f"parse_duration_str: Failed to parse {duration_str} using lookup table.")
 
