@@ -18,6 +18,7 @@ from string import digits
 import calendar
 import csv
 import dateparser
+import enum
 import holoviews as hv
 import hvplot.pandas
 import json
