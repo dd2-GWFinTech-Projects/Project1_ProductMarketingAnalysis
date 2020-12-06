@@ -7,7 +7,7 @@ import plotly.express as px
 
 # pn.extension()
 
-class PlotBuildingToools:
+class PlotBuildingTools:
 
     def __init__(self,
         debug_level

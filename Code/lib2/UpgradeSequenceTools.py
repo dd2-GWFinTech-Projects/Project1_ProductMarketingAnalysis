@@ -75,6 +75,16 @@ class UpgradeSequenceTool:
 
 class UpgradeSequenceFilterTool:
     
+    TODO
+    # - Customers only "drop off" if they stopped service prior to 2020.
+    # - Current vs active (2020 vs now())
+
+
+
+
+
+
+
     def __init__(self, debug_level):
         self.debug_level = debug_level
         self.today = pd.Timestamp.now(tz="America/New_York")
@@ -155,6 +165,36 @@ class UpgradeSequenceFilterTool:
         subscription_coverage = value[1]["SubscriptionCoverage"][-1]
         return subscription_coverage <= low_coverage_threshold
 
+
+    # --------------------------------------------------------------------------
+    # Layer ?? filters
+    # --------------------------------------------------------------------------
+
+
+    def filter_customers_with_contract_dates_past_end_of_year(, year):
+
+
+    # --------------------------------------------------------------------------
+    # Composite filters
+    # --------------------------------------------------------------------------
+
+
+    def filter_loyal_customers():
+        # Current (not dropped prior to 2020)
+        # Have >= 1 renewal or upgrade
+        # High coverage
+
+    def filter_lost_customers():
+        # are not current
+        # did not renew ? 
+
+    # TODO Refactor to drive based on "retention rate", "renewal rate" or something.
+    # TODO Refactor for (a) macro numbers driven by renewal rates, and (b) individual sequence simulation.
+    ## Sequence simulation
+    ### Probabilities associated with each next action. Set the mean and std for these probabilities.
+
+    # TODO plot calendar coverage (of subscription duration) of all subscriptions.
+    # TODO plot the start date for each subscription, per month; and invoice date for each subscription, per month.
 
 class UpgradeSequenceReportTool:
 
