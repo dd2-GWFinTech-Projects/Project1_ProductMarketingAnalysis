@@ -9,51 +9,24 @@ import pytz
 # Data classes
 # ------------------------------------------------------------------------------
 
+
 class CustomerBehaviorSequence:
-    def __init__(self, debug_level):
-        self.debug_level = debug_level
+    class ActionTypes(enum.Enum):
+        StartService,
+        UpgradeService,
+        DowngradeService,
+        DropService
+    def __init__(self, next_action):
+        self.next_action = next_action
+        self.next_action_time = next_action_time
 
-class MacroCustomerBehaviorCounts:
-    def __init__(self):
-        self.nbr_loyal_customers
-        self.nbr_new_customers
-        self.nbr_renew_customers
-        self.nbr_dropouts
-
-class MacroCustomerBehaviorCounts:
-    def __init__(self):
-        self.nbr_loyal_customers
-        self.nbr_new_customers
-        self.nbr_renew_customers
-        self.nbr_dropouts
 
 # ------------------------------------------------------------------------------
 # Tools classes
 # ------------------------------------------------------------------------------
 
-class ForwardPredictor:
-
-    def simulate_customer_behavior_sequence(self, duration_in_future_years, )
-
-    def simulate_annual_numbers(self, year, ):
-        # Use average sales per year for each customer???
-        return 
-
-
-
-class InstantaneousVariation:
-
-    def predict_using_distribution(self, macro_customer_behavior_counts_nominal, macro_customer_behavior_counts_std):
-        d
-
-
-
-    def compute_annual_sales(self, year, nbr_loyal_customers, nbr_new_customers, nbr_renew_customers, nbr_dropouts):
-
-    # def compute_sales_atinstantintime(nbr_loyal_customers, nbr_new_customers, nbr_renew_customers, nbr_dropouts):
-    # def compute_sales_atinstantintime(nbr_customers_size_parameter, loyal_customers_rate, new_customers_rate, renew_customers_rate, dropouts_rate):
-
-
+# class MicroForwardPredictor:
+#     def simulate_customer_behavior_sequence(self, duration_in_future_years, )
 
 
 

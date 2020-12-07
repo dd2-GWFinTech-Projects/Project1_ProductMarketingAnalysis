@@ -148,7 +148,7 @@ class UpgradeSequenceFilterTool:
     # TODO instead of filtering, classify each purchase sequence.
     # TODO after classification, filtering can be applied using a generic function that accepts set of classifications and returns the logical matches. care must be taken to ensure no overlap.
     class CustomerBehaviorObservations(enum.Enum):
-        Active = 0,     # Subscription ends within current year.
+        Active = 0,     # Subscription ends within 1 month of end of year.
         Current = 1,    # Subscription ends past end of current year.
         HasUpgrades,
         HasDowngrades,
@@ -162,7 +162,7 @@ class UpgradeSequenceFilterTool:
         Continued_Loyal = 1,    # ((Active or Current) and (not NewThisYear)) and HighCoverage and HasMultiplePurchases
         Continued_AtRisk,       # ((Active or Current) and (not NewThisYear)) and (LowCoverage or HasDowngrades)
         Continued_Nominal,      # ((Active or Current) and (not NewThisYear))
-        Dropped                 # not (Active or Current)
+        Dropped,                # not (Active or Current)
 
 
     def filter_active_customers(self, key, value):
