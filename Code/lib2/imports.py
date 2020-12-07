@@ -42,6 +42,32 @@ from ProcessingTools import DateProcessingTools
 # from UpgradeSequenceTools import UpgradeSequenceTool, UpgradeSequenceFilterTool, UpgradeSequenceReportTool
 
 
+
+
+# Specialized imports
+from UpgradeSequenceDataStructures import UpgradeType
+from UpgradeSequenceDataStructures import CustomerBehaviorObservations
+from UpgradeSequenceDataStructures import CustomerBehaviorClassifications
+
+from MCForecastTools_MacroCustomerSales_DataStructures import MacroCustomerBehaviorCounts
+from MCForecastTools_MacroCustomerSales_DataStructures import MacroCustomerAverageAnnualSales
+
+from MCForecastTools_MacroCustomerSales import MacroCustomerSales_HistoricalAnalysis
+from MCForecastTools_MacroCustomerSales import MacroCustomerSales_ForwardPredictor
+from MCForecastTools_MacroCustomerSales import MacroCustomerSales_InstantaneousVariation
+from MCForecastTools_MacroCustomerSales import MacroCustomerSales_MCSimulation
+
+
+
+
+
+
+
+
+
+
+
+
 # Load extensions
 # pn.extension()
 pn.extension("plotly")
@@ -62,6 +88,9 @@ class Tools:
         # self.upgrade_sequence_tool = UpgradeSequenceTool(debug_level)
         # self.upgrade_sequence_filter_tool = UpgradeSequenceFilterTool(debug_level)
         # self.upgrade_sequence_report_tool = UpgradeSequenceReportTool(debug_level)
+        self.tool_historical = MacroCustomerSales_HistoricalAnalysis()
+        self.tool_fwd = MacroCustomerSales_ForwardPredictor()
+        self.tool_inst = MacroCustomerSales_InstantaneousVariation()
 
 
 # Initialization Functions
