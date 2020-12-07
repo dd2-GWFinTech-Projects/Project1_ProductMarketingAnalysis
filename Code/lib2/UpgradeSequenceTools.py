@@ -1,16 +1,7 @@
-
-
-# TODO Compute distributions based on historical std
-
-
-class UpgradeType(enum.Enum):
-    Unknown         = 0
-    Started         = 1
-    Upgrade         = 2
-    Renewal         = 3
-    Downgrade       = 4
-    Stopped         = 5
-
+from UpgradeSequenceDataStructures import UpgradeType
+from UpgradeSequenceDataStructures import CustomerBehaviorObservations
+from UpgradeSequenceDataStructures import CustomerBehaviorClassifications
+from UpgradeSequenceDataStructures import CustomerBehaviorClassificationsStrMap
 
 class UpgradeSequenceTool:
     
@@ -110,15 +101,6 @@ class UpgradeSequenceTool:
 
 
 class UpgradeSequenceFilterTool:
-    
-    TODO
-    # - Customers only "drop off" if they stopped service prior to 2020.
-    # - Current vs active (2020 vs now())
-
-
-
-
-
 
 
     def __init__(self, debug_level):
@@ -147,30 +129,6 @@ class UpgradeSequenceFilterTool:
 
     # TODO instead of filtering, classify each purchase sequence.
     # TODO after classification, filtering can be applied using a generic function that accepts set of classifications and returns the logical matches. care must be taken to ensure no overlap.
-    class CustomerBehaviorObservations(enum.Enum):
-        Active = 0,     # Subscription ends within 1 month of end of year.
-        Current = 1,    # Subscription ends past end of current year.
-        HasUpgrades,
-        HasDowngrades,
-        HasMultiplePurchases,
-        HighCoverage,
-        MediumCoverage,
-        LowCoverage,
-        NewThisYear
-    class CustomerBehaviorClassifications(enum.Enum):
-        New = 0,                # (Active or Current) and NewThisYear
-        Continued_Loyal = 1,    # ((Active or Current) and (not NewThisYear)) and HighCoverage and HasMultiplePurchases
-        Continued_AtRisk,       # ((Active or Current) and (not NewThisYear)) and (LowCoverage or HasDowngrades)
-        Continued_Nominal,      # ((Active or Current) and (not NewThisYear))
-        Dropped,                # not (Active or Current)
-    customer_behavior_classifications_str_map = {
-        New: "New",
-        Continued_Loyal: "Continued_Loyal",
-        Continued_AtRisk: "Continued_AtRisk",
-        Continued_Nominal: "Continued_Nominal",
-        Dropped: "Dropped"
-    }
-
 
     def filter_active_customers(self, key, value):
         last_service_end_date = value[1]["ServiceEnd"][-1]
@@ -257,6 +215,7 @@ class UpgradeSequenceFilterTool:
 
     # TODO plot calendar coverage (of subscription duration) of all subscriptions.
     # TODO plot the start date for each subscription, per month; and invoice date for each subscription, per month.
+
 
 class UpgradeSequenceReportTool:
 

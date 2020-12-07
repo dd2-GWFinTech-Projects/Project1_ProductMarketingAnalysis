@@ -4,40 +4,11 @@ import pandas as pd
 import os
 import datetime as dt
 import pytz
-from UpgradeSequenceTools import CustomerBehaviorObservations, CustomerBehaviorClassifications
-
-# ------------------------------------------------------------------------------
-# Data classes
-# ------------------------------------------------------------------------------
-
-class MacroCustomerBehaviorCounts:
-    def __init__(self,
-            nbr_new_customers,
-            nbr_continued_loyal_customers,
-            nbr_continued_at_risk_customers,
-            nbr_continued_nominal_customers,
-            nbr_dropped_customers,
-            year):
-        self.nbr_new_customers = nbr_new_customers
-        self.nbr_continued_loyal_customers = nbr_continued_loyal_customers
-        self.nbr_continued_at_risk_customers = nbr_continued_at_risk_customers
-        self.nbr_continued_nominal_customers = nbr_continued_nominal_customers
-        self.nbr_dropped_customers = nbr_dropped_customers
-        self.year = year
-
-# Average sales within each customer classification (per year, and per customer)
-class MacroCustomerAverageAnnualSales:
-    def __init__(self,
-            avg_annual_sales_new_customers,
-            avg_annual_sales_continued_loyal_customers,
-            avg_annual_sales_continued_at_risk_customers,
-            avg_annual_sales_continued_nominal_customers,
-            avg_annual_sales_dropped_customers):
-        self.avg_annual_sales_new_customers = avg_annual_sales_new_customers
-        self.avg_annual_sales_continued_loyal_customers = avg_annual_sales_continued_loyal_customers
-        self.avg_annual_sales_continued_at_risk_customers = avg_annual_sales_continued_at_risk_customers
-        self.avg_annual_sales_continued_nominal_customers = avg_annual_sales_continued_nominal_customers
-        self.avg_annual_sales_dropped_customers = avg_annual_sales_dropped_customers
+from MCForecastTools_MacroCustomerSales_DataStructures import MacroCustomerBehaviorCounts
+from MCForecastTools_MacroCustomerSales_DataStructures import MacroCustomerAverageAnnualSales
+from UpgradeSequenceDataStructures import UpgradeType
+from UpgradeSequenceDataStructures import CustomerBehaviorObservations
+from UpgradeSequenceDataStructures import CustomerBehaviorClassifications
 
 
 # ------------------------------------------------------------------------------
@@ -114,29 +85,7 @@ class InstantaneousVariation:
 # Simulation framework
 # ------------------------------------------------------------------------------
 
-class MCSimulation_Generic:
-    """
-    A Python class for runnning Monte Carlo simulation on portfolio price data. 
-    
-    ...
-    
-    Attributes
-    ----------
-    portfolio_data : pandas.DataFrame
-        portfolio dataframe
-    weights: list(float)
-        portfolio investment breakdown
-    nSim: int
-        number of samples in simulation
-    num_trailing_points: int
-        number of trading days to simulate
-    simulated_return : pandas.DataFrame
-        Simulated data from Monte Carlo
-    confidence_interval : pandas.Series
-        the 95% confidence intervals for simulated final cumulative returns
-        
-    """
-    
+class MCSimulation_MacroCustomerSales:
     def __init__(self,
         value_title,
         value_list,
@@ -144,19 +93,6 @@ class MCSimulation_Generic:
         scale_results=True,
         allow_negative_returns=True
         ):
-        """
-        Constructs all the necessary attributes for the MCSimulation object.
-
-        Parameters
-        ----------
-        value_list: pandas.DataFrame
-            DataFrame containing values for each time instant.
-        num_simulation: int
-            Number of simulation samples. DEFAULT: 1000 simulation samples
-        num_trailing_points: int
-            Number of trading days to simulate. DEFAULT: 252 days (1 year of business days)
-        """
-
         self.value_title = value_title
         self.value_list = value_list
         self.nSim = num_simulation
@@ -170,6 +106,8 @@ class MCSimulation_Generic:
             self.initial_value = 1.0
         
         self.allow_negative_returns = allow_negative_returns
+
+
         
     def calc_cumulative_return(self):
         """
