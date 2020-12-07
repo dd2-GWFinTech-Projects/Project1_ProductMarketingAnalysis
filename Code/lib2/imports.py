@@ -39,7 +39,7 @@ from MCForecastTools_Generic import MCSimulation_Generic
 from PlotBuildingTools import PlotBuildingTools
 from PreprocessingTools import CustomerNameCleaningFunctions, DateCleaningFunctions, DurationParsing, SpecializedDateCleaningFunctions, MappingFunctions
 from ProcessingTools import DateProcessingTools
-# from UpgradeSequenceTools import *
+from UpgradeSequenceTools import UpgradeType, UpgradeSequenceTool, UpgradeSequenceFilterTool, UpgradeSequenceReportTool
 
 
 # Load extensions
@@ -59,9 +59,9 @@ class Tools:
         self.tool_mapping = MappingFunctions(debug_level)
         self.tool_plot_building = PlotBuildingTools(debug_level)
         self.tool_special_date = SpecializedDateCleaningFunctions(debug_level)
-        # self.upgrade_sequence_tool = UpgradeSequenceTool(debug_level)
-        # self.upgrade_sequence_filter_tool = UpgradeSequenceFilterTool(debug_level)
-        # self.upgrade_sequence_report_tool = UpgradeSequenceReportTool(debug_level)
+        self.upgrade_sequence_tool = UpgradeSequenceTool(debug_level)
+        self.upgrade_sequence_filter_tool = UpgradeSequenceFilterTool(debug_level)
+        self.upgrade_sequence_report_tool = UpgradeSequenceReportTool(debug_level)
 
 
 # Initialization Functions

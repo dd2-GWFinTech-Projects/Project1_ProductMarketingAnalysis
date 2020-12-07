@@ -1,4 +1,8 @@
 
+
+# TODO Compute distributions based on historical std
+
+
 class UpgradeType(enum.Enum):
     Unknown         = 0
     Started         = 1
@@ -15,19 +19,51 @@ class UpgradeSequenceTool:
         self.debug_level = debug_level
     
 
-    def extract_upgrade_sequence_to_dict(df):
-        customer_subscriptions_ordered_by_date = df.loc[:, ["ServiceStart", "ServiceEnd", "Subscription", "SubscriptionDuration_Timedelta", "SubscriptionDuration_Years"]].sort_values("ServiceStart")
-        return (df.index[0], customer_subscriptions_ordered_by_date)
+    # --------------------------------------------------------------------------
+    # Upgrade sequence conversion
+    # --------------------------------------------------------------------------
 
 
-    def extract_dict_values_to_dataframe(data_dict):
+    def build_upgrade_sequence_dict(self, invoice_data_by_customer):
+        upgrade_sequence_dict = self.extract_upgrade_sequence_to_dict(invoice_data_by_customer)
+        return self.add_columns(upgrade_sequence_dict)
+
+
+    def extract_dict_values_to_dataframe(self, data_dict):
         df = pd.DataFrame({})
         for value in data_dict.values():
             df = df.append(value[1])
         return df
+
+
+    # --------------------------------------------------------------------------
+    # Upgrade sequence conversion helpers
+    # --------------------------------------------------------------------------
+
+
+    def extract_upgrade_sequence_to_dict(self, invoice_data_by_customer):
+        return invoice_data_by_customer.sort_values("ServiceStart").groupby("Customers").apply(self.extract_upgrade_sequence_to_dict_single_customer).to_dict()
+
+    def extract_upgrade_sequence_to_dict_single_customer(self, df):
+        customer_subscriptions_ordered_by_date = df.loc[:, ["ServiceStart", "ServiceEnd", "Subscription", "SubscriptionDuration_Timedelta", "SubscriptionDuration_Years"]].sort_values("ServiceStart")
+        return (df.index[0], customer_subscriptions_ordered_by_date)
+
+    def add_upgrade_sequence_columns(self, upgrade_sequence_dict):
+        for customer, upgrade_sequence in upgrade_sequence_dict.items():
+            upgrade_sequence_df = upgrade_sequence[1]
+            upgrade_sequence_df["SubscriptionCoverage"] = self.compute_subscription_coverage_df(upgrade_sequence_df)
+            upgrade_sequence_df["UpgradeType"] = self.compute_upgrade_type_df(upgrade_sequence_df)
+        return upgrade_sequence_dict
+
+
+
+    # --------------------------------------------------------------------------
+    # 
+    # --------------------------------------------------------------------------
+
         
 
-    def compute_subscription_coverage_df(df):
+    def compute_subscription_coverage_df(self, df):
         
         subscription_coverage_years_outer = (df["ServiceEnd"][-1] - df["ServiceStart"][0]).days / constants.DAYS_PER_YEAR
         
@@ -40,7 +76,7 @@ class UpgradeSequenceTool:
         return subscription_coverage_list
 
 
-    def compute_upgrade_type_df(df):
+    def compute_upgrade_type_df(self, df):
         
         upgrade_type_list = []
         prev_subscription_duration_years = None
@@ -94,7 +130,7 @@ class UpgradeSequenceFilterTool:
 
     
     # Source: https://blog.finxter.com/how-to-filter-a-dictionary-in-python/#:~:text=%20The%20Most%20Pythonic%20Way%29%20%201%20Method,iterable%29%20function%20takes%20a%20function%20as...%20More%20
-    def filter_dict(d, f):
+    def filter_dict(self, d, f):
         ''' Filters dictionary d by function f. '''
         newDict = dict()
         # Iterate over all (k,v) pairs in names
@@ -109,19 +145,35 @@ class UpgradeSequenceFilterTool:
     # Time-based filters
     # --------------------------------------------------------------------------
 
+    # TODO instead of filtering, classify each purchase sequence.
+    # TODO after classification, filtering can be applied using a generic function that accepts set of classifications and returns the logical matches. care must be taken to ensure no overlap.
+    class Classifications(enum.Enum):
+        Active = 0,
+        Current = 1,
+        HasUpgrades,
+        HasDowngrades,
+        HasMultiplePurchases,
+        HighCoverage,
+        MediumCoverage,
+        LowCoverage,
+    class Filters(enum.Enum):
+        New = 0,
+        Loyal = 1,
+        Dropped
 
-    def filter_active_customers(key, value):
+        
+    def filter_active_customers(self, key, value):
         last_service_end_date = value[1]["ServiceEnd"][-1]
         duration_days_until_service_end = (last_service_end_date - today).days
         return duration_days_until_service_end >= 0
 
 
-    def filter_new_customers_2020(key, value):
+    def filter_new_customers_2020(self, key, value):
         first_service_start_date = value[1]["ServiceStart"][0]
         return first_service_start_date.year == current_year
 
 
-    def filter_new_customers_march2020(key, value):
+    def filter_new_customers_march2020(self, key, value):
         TODO
         first_service_start_date = value[1]["ServiceStart"][0]
         return first_service_start_date.year == current_year
@@ -132,7 +184,7 @@ class UpgradeSequenceFilterTool:
     # --------------------------------------------------------------------------
 
 
-    def filter_customers_with_upgrades(key, value):
+    def filter_customers_with_upgrades(self, key, value):
         upgrade_type = value[1]["UpgradeType"]
         upgrade_type_set = set(upgrade_type.to_list())
 
@@ -142,7 +194,7 @@ class UpgradeSequenceFilterTool:
             return UpgradeType.Upgrade in upgrade_type_set
 
 
-    def filter_customers_with_downgrades(key, value):
+    def filter_customers_with_downgrades(self, key, value):
         upgrade_type = value[1]["UpgradeType"]
         upgrade_type_set = set(upgrade_type.to_list())
         return UpgradeType.Downgrade in upgrade_type_set
@@ -153,15 +205,15 @@ class UpgradeSequenceFilterTool:
     # --------------------------------------------------------------------------
 
 
-    def filter_high_coverage_customers(key, value):
+    def filter_high_coverage_customers(self, key, value):
         subscription_coverage = value[1]["SubscriptionCoverage"][-1]
         return subscription_coverage >= high_coverage_threshold
 
-    def filter_medium_coverage_customers(key, value):
+    def filter_medium_coverage_customers(self, key, value):
         subscription_coverage = value[1]["SubscriptionCoverage"][-1]
         return (subscription_coverage < high_coverage_threshold) and (subscription_coverage > low_coverage_threshold)
 
-    def filter_low_coverage_customers(key, value):
+    def filter_low_coverage_customers(self, key, value):
         subscription_coverage = value[1]["SubscriptionCoverage"][-1]
         return subscription_coverage <= low_coverage_threshold
 
@@ -171,7 +223,7 @@ class UpgradeSequenceFilterTool:
     # --------------------------------------------------------------------------
 
 
-    def filter_customers_with_contract_dates_past_end_of_year(, year):
+    def filter_customers_with_contract_dates_past_end_of_year(self, , year):
 
 
     # --------------------------------------------------------------------------
@@ -179,12 +231,12 @@ class UpgradeSequenceFilterTool:
     # --------------------------------------------------------------------------
 
 
-    def filter_loyal_customers():
+    def filter_loyal_customers(self, ):
         # Current (not dropped prior to 2020)
         # Have >= 1 renewal or upgrade
         # High coverage
 
-    def filter_lost_customers():
+    def filter_lost_customers(self, ):
         # are not current
         # did not renew ? 
 
@@ -203,7 +255,7 @@ class UpgradeSequenceReportTool:
         self.debug_level = debug_level
         
         
-    def generate_basic_customer_report_data()
+    def generate_basic_customer_report_data(self, )
     
         active_customers_dict = filter_dict(upgrade_sequence_dict, filter_active_customers)
 
@@ -217,7 +269,7 @@ class UpgradeSequenceReportTool:
         len(invoice_data_by_customer.index)
 
 
-    def generate_basic_customer_report()
+    def generate_basic_customer_report(self, )
         print(f"Customer Purchase History Report")
         print(f"--------------------------------")
         print(f"")
@@ -230,7 +282,7 @@ class UpgradeSequenceReportTool:
 
 
 
-    def generate_customer_purchase_history_report_data(customers_dict):
+    def generate_customer_purchase_history_report_data(self, customers_dict):
 
         new_customers_2020_dict = filter_dict(customers_dict, filter_new_customers_2020)
         new_customers_march2020_dict = filter_dict(customers_dict, filter_new_customers_march2020)
@@ -256,7 +308,7 @@ class UpgradeSequenceReportTool:
 
 
 
-    def generate_customer_purchase_history_report_data():
+    def generate_customer_purchase_history_report_data(self, ):
 
         print(f"Customer Purchase History Report")
         print(f"--------------------------------")
