@@ -1,3 +1,4 @@
+import enum
 
 class UpgradeType(enum.Enum):
     Unknown         = 0

@@ -16,7 +16,7 @@ from UpgradeSequenceDataStructures import CustomerBehaviorClassifications
 # ------------------------------------------------------------------------------
 
 
-class MCSimulation_HistoricalAnalysis:
+class MacroCustomerSales_HistoricalAnalysis:
     
     def __init__(self, debug_level=0):
         self.debug_level = debug_level
@@ -52,9 +52,9 @@ class MCSimulation_HistoricalAnalysis:
 # Simulation tools
 # ------------------------------------------------------------------------------
 
-class MCSimulation_MacroForwardPredictor:
+class MacroCustomerSales_ForwardPredictor:
 
-    def __init__(self, debug_level):
+    def __init__(self, debug_level=0):
         self.debug_level = debug_level
 
     def simulate_next_annual_numbers(self, macro_customer_behavior_counts_list):
@@ -71,9 +71,9 @@ class MCSimulation_MacroForwardPredictor:
         return macro_customer_behavior_counts_list[-1]
 
 
-class MCSimulation_InstantaneousVariation:
+class MacroCustomerSales_InstantaneousVariation:
 
-    def __init__(self, debug_level):
+    def __init__(self, debug_level=0):
         self.debug_level = debug_level
 
     def predict_using_distribution(self, macro_customer_behavior_counts_nominal, macro_customer_behavior_counts_std):
@@ -113,13 +113,14 @@ class MCSimulation_InstantaneousVariation:
 # Simulation framework
 # ------------------------------------------------------------------------------
 
-class MCSimulation_MacroCustomerSales:
+class MacroCustomerSales_MCSimulation:
     def __init__(self,
         value_title,
         value_list,
         num_simulation=1000, num_trailing_points=50,
         scale_results=True,
-        allow_negative_returns=True
+        allow_negative_returns=True,
+        debug_level=0
         ):
         self.value_title = value_title
         self.value_list = value_list
