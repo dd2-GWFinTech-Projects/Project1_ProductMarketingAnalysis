@@ -4,11 +4,12 @@ import pandas as pd
 import os
 import datetime as dt
 import pytz
-from MCForecastTools_MacroCustomerSales_DataStructures import MacroCustomerBehaviorCounts
-from MCForecastTools_MacroCustomerSales_DataStructures import MacroCustomerAverageAnnualSales
+
 from UpgradeSequenceDataStructures import UpgradeType
 from UpgradeSequenceDataStructures import CustomerBehaviorObservations
 from UpgradeSequenceDataStructures import CustomerBehaviorClassifications
+
+from MCForecastTools_MacroCustomerSales_DataStructures import MacroCustomerBehaviorNumbers
 
 
 # ------------------------------------------------------------------------------
@@ -17,35 +18,14 @@ from UpgradeSequenceDataStructures import CustomerBehaviorClassifications
 
 
 class MacroCustomerSales_HistoricalAnalysis:
-    
+
+
     def __init__(self, debug_level=0):
         self.debug_level = debug_level
-    
+
+
     def compute_rolling_std(self, macro_customer_behavior_values_nominal_list, window):
-
-        new_customers_value_list = macro_customer_behavior_values_nominal_list[CustomerBehaviorClassifications.New]
-        continued_loyal_customers_value_list = macro_customer_behavior_values_nominal_list[CustomerBehaviorClassifications.Continued_Loyal]
-        continued_at_risk_customers_value_list = macro_customer_behavior_values_nominal_list[CustomerBehaviorClassifications.Continued_AtRisk]
-        continued_nominal_customers_value_list = macro_customer_behavior_values_nominal_list[CustomerBehaviorClassifications.Continued_Nominal]
-        dropped_customers_value_list = macro_customer_behavior_values_nominal_list[CustomerBehaviorClassifications.Dropped]
-        year_list = macro_customer_behavior_values_nominal_list["year"]
-
-        # df = pd.DataFrame({'A': [0, 100, 110, 115, 120], 'B': [0, 100, 110, 115, 120]}).T
-        # df.rolling(window=3, axis=1).std()
-
-        df = pd.DataFrame(macro_customer_behavior_values_nominal_list).T
-        return df.rolling(window, axis=1)
-
-
-
-        # msft_df.rolling(window=7).std().plot()
-        new_customers_value_list_std = new_customers_value_list.rolling(window).std()
-
-
-
-
-        macro_customer_behavior_values_std_list = 
-        return macro_customer_behavior_values_std_list
+        return macro_customer_behavior_values_nominal_list.rolling(window).std()
 
 
 # ------------------------------------------------------------------------------
