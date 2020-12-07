@@ -163,6 +163,13 @@ class UpgradeSequenceFilterTool:
         Continued_AtRisk,       # ((Active or Current) and (not NewThisYear)) and (LowCoverage or HasDowngrades)
         Continued_Nominal,      # ((Active or Current) and (not NewThisYear))
         Dropped,                # not (Active or Current)
+    customer_behavior_classifications_str_map = {
+        New: "New",
+        Continued_Loyal: "Continued_Loyal",
+        Continued_AtRisk: "Continued_AtRisk",
+        Continued_Nominal: "Continued_Nominal",
+        Dropped: "Dropped"
+    }
 
 
     def filter_active_customers(self, key, value):

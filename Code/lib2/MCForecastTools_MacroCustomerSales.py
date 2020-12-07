@@ -4,7 +4,7 @@ import pandas as pd
 import os
 import datetime as dt
 import pytz
-
+from UpgradeSequenceTools import CustomerBehaviorObservations, CustomerBehaviorClassifications
 
 # ------------------------------------------------------------------------------
 # Data classes
@@ -39,8 +39,18 @@ class MacroCustomerAverageAnnualSales:
         self.avg_annual_sales_continued_nominal_customers = avg_annual_sales_continued_nominal_customers
         self.avg_annual_sales_dropped_customers = avg_annual_sales_dropped_customers
 
+
 # ------------------------------------------------------------------------------
-# Tools classes
+# Historical analysis tools
+# ------------------------------------------------------------------------------
+
+def compute_rolling_std(macro_customer_behavior_counts_nominal_list):
+    macro_customer_behavior_counts_std_list = []
+    return macro_customer_behavior_counts_std_list
+
+
+# ------------------------------------------------------------------------------
+# Simulation tools
 # ------------------------------------------------------------------------------
 
 class MacroForwardPredictor:
