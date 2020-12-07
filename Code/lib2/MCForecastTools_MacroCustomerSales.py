@@ -15,16 +15,22 @@ from UpgradeSequenceDataStructures import CustomerBehaviorClassifications
 # Historical analysis tools
 # ------------------------------------------------------------------------------
 
-def compute_rolling_std(macro_customer_behavior_counts_nominal_list):
-    macro_customer_behavior_counts_std_list = []
-    return macro_customer_behavior_counts_std_list
+
+class MCSimulation_HistoricalAnalysis:
+    
+    def __init__(self, debug_level):
+        self.debug_level = debug_level
+    
+    def compute_rolling_std(self, macro_customer_behavior_counts_nominal_list):
+        macro_customer_behavior_counts_std_list = []
+        return macro_customer_behavior_counts_std_list
 
 
 # ------------------------------------------------------------------------------
 # Simulation tools
 # ------------------------------------------------------------------------------
 
-class MacroForwardPredictor:
+class MCSimulation_MacroForwardPredictor:
 
     def __init__(self, debug_level):
         self.debug_level = debug_level
@@ -43,7 +49,7 @@ class MacroForwardPredictor:
         return macro_customer_behavior_counts_list[-1]
 
 
-class InstantaneousVariation:
+class MCSimulation_InstantaneousVariation:
 
     def __init__(self, debug_level):
         self.debug_level = debug_level
