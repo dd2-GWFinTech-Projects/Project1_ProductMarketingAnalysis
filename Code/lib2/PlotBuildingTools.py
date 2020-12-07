@@ -73,3 +73,24 @@ class PlotBuildingTools:
                 ).opts(yformatter=yformatter)
 
         return plt_
+        
+    def generate_plot__hvplot_line(self,
+        data,                  # Data
+        title, xlabel, ylabel,    # Labels
+        rot=0, width=None, height=None, yformatter="%f"    # Display options
+        ):
+
+
+        # Build plot
+        if (width is not None) and (height is not None):
+            plt_ = data.hvplot.line(
+                title=title, xlabel=xlabel, ylabel=ylabel,
+                width=width, height=height, rot=rot
+                ).opts(yformatter=yformatter)
+        else:
+            plt_ = data.hvplot.line(
+                title=title, xlabel=xlabel, ylabel=ylabel,
+                rot=rot
+                ).opts(yformatter=yformatter)
+
+        return plt_
