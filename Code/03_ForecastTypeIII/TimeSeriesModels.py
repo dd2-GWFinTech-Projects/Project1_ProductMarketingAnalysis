@@ -2,6 +2,10 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 from statsmodels.tsa.arima_model import ARMA
 import enum
+import pandas as pd
+import numpy as np
+from PlotBuildingTools import PlotBuildingTools
+from IPython.display import display
 
 
 class ModelType(enum.Enum):
@@ -122,7 +126,7 @@ class PolynomialRegressionDictModel(TimeSeriesDictModel):
         self.model_dict = {}
         for dict_lookup in self.dict_lookup_list:
             y = self.values_dict[dict_lookup]
-            model = numpy.poly1d(numpy.polyfit(self.x, y, self.polynomial_degree))
+            model = np.poly1d(np.polyfit(self.x, y, self.polynomial_degree))
             self.model_dict[dict_lookup] = model
         return True
 
@@ -193,8 +197,8 @@ class ARMARegressionDictModel(TimeSeriesDictModel):
         results = {}
         for dict_lookup in self.dict_lookup_list:
             model = self.model_dict[dict_lookup]
-            r2[dict_lookup] = model.summary()
-        return r2
+            results[dict_lookup] = model.summary()
+        return results
 
     def print_accuracy_metrics(self):
         print("ARMARegressionDictModel - Accuracy Metrics Report")
@@ -213,24 +217,30 @@ class TimeSeriesModelPredictionPreviewUtilities:
     def __init__(self, debug_level=0):
         self.debug_level = debug_level
         self.time_series_model_utilities = TimeSeriesModelUtilities()
-    
+        self.plot_building_tool = PlotBuildingTools(debug_level)
 
+    def generate_prediction_preview(self, model_type, 
+                x, dict_lookup_list,
+                values_dict_df, change_values_dict_df,
+                opts_dict,
+                prediction_x_values):
 
-
-    def generate_prediction_preview(self, model_type, values_dict_df, change_values_dict_df, dict_lookup_list):
-        
         # Convert data types
         values_dict = self.time_series_model_utilities.convert_df_to_dict(values_dict_df, dict_lookup_list)
         change_values_dict = self.time_series_model_utilities.convert_df_to_dict(change_values_dict_df, dict_lookup_list)
         dict_lookup_list_prediction_names = [(lambda x: "Predicted_" + str(x))(x) for x in dict_lookup_list]
         
         # Build, train, predict
-        model__values_dict = self.build_model(model_type, values_dict, change_values_dict)
+        model__values_dict = self.build_model(model_type, 
+                x, dict_lookup_list,
+                values_dict, change_values_dict,
+                opts_dict,
+                prediction_x_values)
         model__values_dict.train()
-        model_predictions__values_dict = model__values_dict.predict(prediction_year_list)
+        model_predictions__values_dict = model__values_dict.predict(prediction_x_values)
         
         # Tabulate
-        model_predictions__values_dict__df = pd.DataFrame(model_predictions__values_dict, index=prediction_year_list)
+        model_predictions__values_dict__df = pd.DataFrame(model_predictions__values_dict, index=x)
         model_predictions__values_dict__df.columns = dict_lookup_list_prediction_names
         display(model_predictions__values_dict__df)
         
@@ -241,31 +251,35 @@ class TimeSeriesModelPredictionPreviewUtilities:
         # Plot
         merged_predictions_df__values_dict = pd.concat([values_dict_df, model_predictions__values_dict__df], axis="columns", join="outer")
         display(merged_predictions_df__values_dict)
-        return tools.tool_plot_building.generate_plot__hvplot_line(merged_predictions_df__values_dict,
+        return self.plot_building_tool.generate_plot__hvplot_line(merged_predictions_df__values_dict,
             title="Macro Customer Behavior Counts", xlabel="Year Index", ylabel="Nbr. Customers",
             width=2000, height=800)
 
-    def build_model(self, model_type, values_dict, change_values_dict):
+    def build_model(self, model_type, 
+                x, dict_lookup_list,
+                values_dict, change_values_dict,
+                opts_dict,
+                prediction_x_values):
         if model_type == ModelType.LinearRegressionDictModel:
             return LinearRegressionDictModel(
-                debug_level=debug_level,
-                x=year_list, dict_lookup_list=dict_lookup_list,
+                debug_level=self.debug_level,
+                x=x, dict_lookup_list=dict_lookup_list,
                 values_dict=values_dict,
                 change_values_dict=change_values_dict,
-                use_multi_stage=False)
+                use_multi_stage=opts_dict["use_multi_stage"])
         elif model_type == ModelType.PolynomialRegressionDictModel:
             return PolynomialRegressionDictModel(
-                debug_level=debug_level,
-                x=year_list, dict_lookup_list=dict_lookup_list,
+                debug_level=self.debug_level,
+                x=x, dict_lookup_list=dict_lookup_list,
                 values_dict=values_dict,
                 change_values_dict=change_values_dict,
-                polynomial_degree=3)
+                polynomial_degree=opts_dict["degree"])
         elif model_type == ModelType.ARMARegressionDictModel:
             return ARMARegressionDictModel(
-                debug_level=debug_level,
-                x=year_list, dict_lookup_list=dict_lookup_list,
+                debug_level=self.debug_level,
+                x=x, dict_lookup_list=dict_lookup_list,
                 values_dict=values_dict,
                 change_values_dict=change_values_dict,
-                order=(1,1))
+                order=opts_dict["order"])
         else:
             return None
