@@ -101,8 +101,11 @@ class MCSimulation:
             # For each stock in our data:
             for s in range(len(last_prices)):
 
+
                 # Simulate the returns for each trading day
                 for i in range(self.nTrading):
+                    # TODO
+                    print((s, i))
         
                     # Calculate the simulated price using the last price within the list
                     simvals[s].append(simvals[s][-1] * (1 + np.random.normal(mean_returns[s], std_returns[s])))

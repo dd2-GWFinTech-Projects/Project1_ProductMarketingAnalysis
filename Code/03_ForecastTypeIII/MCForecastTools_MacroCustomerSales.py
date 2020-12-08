@@ -151,6 +151,14 @@ class MacroCustomerSales_MCSimulation:
             # Simulate the returns for each trading day
             for i in range(self.num_trailing_points):
     
+    
+                # TODO
+                print((s, i))
+                if (i == 2):
+                    break;
+                if (i == 3):
+                    break;
+
                 # Calculate the simulated price using the last price within the list
 
                 # print(f"simvals type {type(simvals)}")
