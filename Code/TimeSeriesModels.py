@@ -284,14 +284,30 @@ class TimeSeriesModelUtilities:
             series_lookup_map[series_key] = []
         return series_lookup_map
 
-    def split_series_map(self, map, index):
+    def split_series_map(self, map, index, debug=False):
 
         series_key_list = list(map.keys())
+
+
+
+
+        # if debug:
+        #     print(f"split_series_map - map {map}")
+        #     print(f"split_series_map - index {index}")
+
+        #     print(f"split_series_map - series_length {len(map[series_key_list[0]])}")
+        #     print(f"split_series_map - map1 {map[series_key_list[0]][0:index]}")
+        #     print(f"split_series_map - map2 {map[series_key_list[0]][index:len(map[series_key_list[0]])]}")
+
+
+
+
+
         
         map1 = self.init_series_map(series_key_list)
         map2 = self.init_series_map(series_key_list)
         
-        series_length = len(map1[series_key_list[0]])
+        series_length = len(map[series_key_list[0]])
 
         for series_key in series_key_list:
             map1[series_key] = map[series_key][0:index]

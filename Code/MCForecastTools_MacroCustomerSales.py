@@ -144,9 +144,10 @@ class ForwardPredictor:
 
         # Prefer to model using known values; however if unavailable (past end of historical data), use simulated values instead.
         modeling_y_values = historical_y_values
+        # print(f"predict_next - slicing new simulated values and splicing into historical values? {num_historical_y_values < num_historical_x_values}")
+        # print(f"predict_next - i {self.i}")
         if num_historical_y_values < num_historical_x_values:
             # print(f"predict_next - needing to slice - modeling_y_values {modeling_y_values}")
-            # print(f"predict_next - needing to slice - num_historical_y_values {num_historical_y_values}")
             # print(f"predict_next - needing to slice - num_historical_x_values {num_historical_x_values}")
 
             # Get slice of needed y values from simulated_y_values
@@ -154,7 +155,7 @@ class ForwardPredictor:
             # print(f"predict_next - needing to slice - simulated_y_values {simulated_y_values}")
             # print(f"predict_next - needing to slice - num_historical_y_values {num_historical_y_values}")
             # print(f"predict_next - needing to slice - additional_y_values_slice {additional_y_values_slice}")
-            additional_y_values_slice, second_slice = self.time_series_model_utilities.split_series_map(additional_y_values_slice, (num_historical_x_values - num_historical_y_values) )
+            additional_y_values_slice, second_slice = self.time_series_model_utilities.split_series_map(additional_y_values_slice, (num_historical_x_values - num_historical_y_values), debug=True)
             # print(f"predict_next - needing to slice - additional_y_values_slice {additional_y_values_slice}")
             # print(f"predict_next - needing to slice - (num_historical_x_values - num_historical_y_values) {(num_historical_x_values - num_historical_y_values)}")
             # print(f"predict_next - needing to slice - additional_y_values_slice {additional_y_values_slice}")
@@ -171,6 +172,8 @@ class ForwardPredictor:
             #     modeling_y_values
 
         # Build predictor
+        # print(f"predict_next - building the model - historical_x_values {historical_x_values}")
+        # print(f"predict_next - building the model - modeling_y_values {modeling_y_values}")
         model = self.time_series_model_utilities.build_model(
             model_type = self.model_type,
             x = historical_x_values,
@@ -305,8 +308,8 @@ class MCSimulation_MacroCustomerSales:
                 # print(f"simulation.run() - run_series_map {run_series_map}")
                 # print(f"simulation.run() - predicted_y_values {predicted_y_values}")
                 run_series_map = self.time_series_model_utilities.join_series_maps(run_series_map, predicted_y_values)
-                print(f"run() - known values_dict {self.forward_value_predictor.values_dict}")
-                print(f"run() - run_series_map {run_series_map}")
+                # print(f"run() - known values_dict {self.forward_value_predictor.values_dict}")
+                print(f"run() - run_series_map {run_series_map[CustomerBehaviorClassifications.New]}")
                 std_series_map = self.time_series_model_utilities.join_series_maps(std_series_map, predicted_std_values)
 
                 # Fuzz the prediction (apply randomness)
