@@ -85,8 +85,8 @@ class MacroCustomerSales_HistoricalAnalysis:
 #         )
 
 
-    def compute_annual_sales(self, macro_customer_behavior_counts, macro_customer_average_annual_sales):
-        macro_customer_behavior_counts.nbr_new_customers * macro_customer_average_annual_sales.avg_annual_sales_new_customers
+    # def compute_annual_sales(self, macro_customer_behavior_counts, macro_customer_average_annual_sales):
+    #     macro_customer_behavior_counts.nbr_new_customers * macro_customer_average_annual_sales.avg_annual_sales_new_customers
 
 
 
@@ -102,7 +102,9 @@ class ForwardPredictor:
     def __init__(self, debug_level,
             all_x_values, series_key_list,
             values_dict,
-            model_type, opts_dict):
+            model_type, opts_dict,
+            min_index  # Cannot run any forward prediction with 0 points; each predictive model has its own minimum number of required points.
+            ):
 
         self.debug_level = debug_level
         self.all_x_values = all_x_values
@@ -110,15 +112,17 @@ class ForwardPredictor:
         self.values_dict = values_dict
         self.model_type = model_type
         self.opts_dict = opts_dict
+        self.min_index = min_index
 
         self.num_x_values = len(all_x_values)
         self.time_series_model_utilities = TimeSeriesModelUtilities()
         self.reset()
     
     def reset(self):
-        self.i = 0
+        self.i = self.min_index
 
     def has_next(self):
+        # print(f"ForwardPredictor - i {self.i} num_x_values {self.num_x_values}  self.i < self.num_x_values  {self.i < self.num_x_values}")
         return self.i < self.num_x_values
 
     # Predict one forward iteration and return the value foreach series, inside a dictionary of single-item-lists
@@ -132,15 +136,16 @@ class ForwardPredictor:
         for series_key in self.series_key_list:
 
             # Slice y data for the time series model
-            historical_y_values = self.time_series_model_utilities.split_series_map(self.values_dict, self.i)
+            historical_y_values, future_y_values = self.time_series_model_utilities.split_series_map(self.values_dict, self.i)
 
             # Build predictor
             model = self.time_series_model_utilities.build_model(
-                self.model_type, 
-                historical_x_values,
-                self.series_key_list,
-                historical_y_values, historical_y_values,
-                self.opts_dict)
+                model_type = self.model_type,
+                x = historical_x_values,
+                series_key_list = self.series_key_list,
+                values_dict = historical_y_values,
+                change_values_dict = historical_y_values,
+                opts_dict = self.opts_dict)
 
             # Train
             model.train()
@@ -157,9 +162,9 @@ class ForwardPredictor:
         return prediction_map
 
 
-class Fuzzer:
+class PredictionFuzzer:
 
-    def __init__(self, debug_level):
+    def __init__(self, debug_level=0):
         self.debug_level = debug_level
     
     def fuzz(self, series_map, std_series_map):
@@ -179,7 +184,7 @@ class Fuzzer:
         return series_map
 
 
-class MacroCustomerSales_MCSimulation:
+class MCSimulation_MacroCustomerSales:
 
     def __init__(self,
                 debug_level, series_key_list,
@@ -212,7 +217,7 @@ class MacroCustomerSales_MCSimulation:
         self.simulation_values = []
 
         # Iterate over simulations
-        for n in self.num_simulation:
+        for n in range(0, self.num_simulation):
 
             if n % 10 == 0:
                 print(f"Running Monte Carlo simulation number {n}.")
@@ -228,6 +233,8 @@ class MacroCustomerSales_MCSimulation:
                 predicted_std_values = self.forward_std_predictor.predict_next()
 
                 # Append time step
+                print(f"simulation.run() - run_series_map {run_series_map}")
+                print(f"simulation.run() - predicted_y_values {predicted_y_values}")
                 run_series_map = self.time_series_model_utilities.join_series_maps(run_series_map, predicted_y_values)
                 std_series_map = self.time_series_model_utilities.join_series_maps(std_series_map, predicted_std_values)
 
@@ -318,7 +325,7 @@ class MacroCustomerSales_MCSimulation:
         
         return self.plt_map
     
-    def summarize_cumulative_return(self):
+    def summarize_ending_simulation_results(self):
 
         self.metrics_map = {}
         last_values_df = self.time_series_model_utilities.convert_series_map_to_df(self.last_values_map)
