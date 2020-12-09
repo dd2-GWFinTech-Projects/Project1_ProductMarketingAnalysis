@@ -309,7 +309,7 @@ class MCSimulation_MacroCustomerSales:
                 # print(f"simulation.run() - predicted_y_values {predicted_y_values}")
                 run_series_map = self.time_series_model_utilities.join_series_maps(run_series_map, predicted_y_values)
                 # print(f"run() - known values_dict {self.forward_value_predictor.values_dict}")
-                print(f"run() - run_series_map {run_series_map[CustomerBehaviorClassifications.New]}")
+                # print(f"run() - run_series_map {run_series_map[CustomerBehaviorClassifications.New]}")
                 std_series_map = self.time_series_model_utilities.join_series_maps(std_series_map, predicted_std_values)
 
                 # Fuzz the prediction (apply randomness)
@@ -318,7 +318,7 @@ class MCSimulation_MacroCustomerSales:
             # Append simulation run results
             self.simulation_values.append(run_series_map)
 
-        return self.simulation_values
+        return True  #self.simulation_values
 
     # --------------------------------------------------------------------------
     # Post-Processing

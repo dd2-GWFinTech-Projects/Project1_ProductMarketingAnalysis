@@ -288,9 +288,6 @@ class TimeSeriesModelUtilities:
 
         series_key_list = list(map.keys())
 
-
-
-
         # if debug:
         #     print(f"split_series_map - map {map}")
         #     print(f"split_series_map - index {index}")
@@ -299,11 +296,6 @@ class TimeSeriesModelUtilities:
         #     print(f"split_series_map - map1 {map[series_key_list[0]][0:index]}")
         #     print(f"split_series_map - map2 {map[series_key_list[0]][index:len(map[series_key_list[0]])]}")
 
-
-
-
-
-        
         map1 = self.init_series_map(series_key_list)
         map2 = self.init_series_map(series_key_list)
         
