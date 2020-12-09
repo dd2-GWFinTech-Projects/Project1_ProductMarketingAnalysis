@@ -205,14 +205,12 @@ class TimeSeriesModelUtilities:
     def __init__(self, debug_level=0):
         self.debug_level = debug_level
 
-    # def convert_df_to_dict(self, data_df, dict_lookup_list):
     def convert_df_to_series_map(self, data_df, dict_lookup_list):
         data_dict = {}
         for dict_lookup in dict_lookup_list:
             data_dict[dict_lookup] = data_df[dict_lookup].values
         return data_dict
 
-    # def init_dict_lookup_map(self, dict_lookup_list):
     def init_series_map(self, dict_lookup_list):
         dict_lookup_map = { }
         for dict_lookup in dict_lookup_list:
@@ -220,10 +218,30 @@ class TimeSeriesModelUtilities:
         return dict_lookup_map
 
     def split_series_map(self, map, index):
+
+        dict_lookup_list = list(map.keys())
         
+        map1 = self.init_series_map(dict_lookup_list)
+        map2 = self.init_series_map(dict_lookup_list)
+        
+        series_length = len(map1[dict_lookup_list[0]])
+
+        for dict_lookup in dict_lookup_list:
+            map1[dict_lookup] = map[dict_lookup][0:index]
+            map2[dict_lookup] = map[dict_lookup][index:series_length]
+
+        return (map1, map2)
+
     def join_series_maps(self, map1, map2):
 
+        dict_lookup_list = list(map1.keys())
 
+        map = self.init_series_map(dict_lookup_list)
+        
+        for dict_lookup in dict_lookup_list:
+            map[dict_lookup] = map1[dict_lookup] + map2[dict_lookup]
+
+        return map
 
     def build_model(self, model_type,
                 x, dict_lookup_list,
