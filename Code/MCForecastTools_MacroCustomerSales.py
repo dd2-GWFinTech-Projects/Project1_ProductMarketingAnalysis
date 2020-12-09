@@ -9,6 +9,8 @@ from UpgradeSequenceDataStructures import UpgradeType
 from UpgradeSequenceDataStructures import CustomerBehaviorObservations
 from UpgradeSequenceDataStructures import CustomerBehaviorClassifications
 
+from TimeSeriesModels import TimeSeriesModelUtilities
+
 from MCForecastTools_MacroCustomerSales_DataStructures import MacroCustomerBehaviorNumbers
 
 
@@ -51,7 +53,7 @@ class MacroCustomerSales_ForwardPredictor:
         return macro_customer_behavior_counts_list[-1]
 
 
-class MacroCustomerSales_InstantaneousVariation:
+class MacroCustomerSales_PredictionFuzzer:
 
     def __init__(self, debug_level=0):
         self.debug_level = debug_level
@@ -93,12 +95,48 @@ class MacroCustomerSales_InstantaneousVariation:
 # Simulation framework
 # ------------------------------------------------------------------------------
 
+
+class ForwardPredictor:
+    def __init__(self, debug_level,
+            all_x_values, dict_lookup_list,
+            values_dict, change_values_dict,
+            model_type, opts_dict
+            ):
+        self.i = -1
+    
+    def has_next(self):
+        return i < num_....
+
+    def predict_next(self):
+        historical_x_values = self.all_x_values[0:i]
+        prediction_x_values = self.all_x_values[i:num_x_values]
+
+        # Build predictor
+        model = self.build_model(model_type, 
+                x, dict_lookup_list,
+                values_dict, change_values_dict,
+                opts_dict)
+
+        # Train
+        model.train()
+
+        # Predict
+        model_predictions__values_dict = model.predict(prediction_x_values)
+
+    
+
+
+
 class MacroCustomerSales_MCSimulation:
     def __init__(self,
                 debug_level,
-                all_x_values, dict_lookup_list,
-                values_dict, change_values_dict,
-                model_type, opts_dict,
+
+                forward_predictor,  # MacroCustomerSales_ForwardPredictor
+
+                # all_x_values, dict_lookup_list,
+                # values_dict, change_values_dict,
+                # model_type, opts_dict,
+                
                 num_simulation):
 
         self.debug_level = debug_level
@@ -110,39 +148,36 @@ class MacroCustomerSales_MCSimulation:
         self.opts_dict = opts_dict
         self.num_simulation = num_simulation
 
+        self.init_simulation_values()
+        self.time_series_model_utilities = TimeSeriesModelUtilities()
+
+    def init_simulation_values(self):
+
         # Initialize output structure
         self.simulation_values = { }
         for dict_lookup in dict_lookup_list:
             self.simulation_values[dict_lookup] = []
 
-
-        # value_title,
-        # value_list,
-        # =1000, num_trailing_points=50,
-        # scale_results=True,
-        # allow_negative_returns=True,
-        # debug_level=0
-        # ):
-        # self.value_title = value_title
-        # self.value_list = value_list
-        # self.nSim = num_simulation
-        # self.num_trailing_points = num_trailing_points
-        # self.simulated_return = ""
-
-
-
-        
     def run(self):
+
+        self.init_simulation_values()
 
         for n in self.num_simulation:
 
             for i in len(self.all_x_values):
-                historical_x_values = self.all_x_values[0:i]
-                prediction_x_values = self.all_x_values[i:num_x_values]
 
-                # Build predictor
-                model = .build
-                # 
+
+                
+
+
+                a = append_prediction(a, b)
+
+
+
+                # Fuzz the prediction (aApply randomness)
+
+
+
 
         # loop simulations
             # loop -> build up prediction_year_list/prediction_x_values

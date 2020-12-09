@@ -211,50 +211,6 @@ class TimeSeriesModelUtilities:
             data_dict[dict_lookup] = data_df[dict_lookup].values
         return data_dict
 
-
-class TimeSeriesModelPredictionPreviewUtilities:
-
-    def __init__(self, debug_level=0):
-        self.debug_level = debug_level
-        self.time_series_model_utilities = TimeSeriesModelUtilities()
-        self.plot_building_tool = PlotBuildingTools(debug_level)
-
-    def generate_prediction_preview(self, model_type,
-                x, dict_lookup_list,
-                values_dict_df, change_values_dict_df,
-                opts_dict,
-                prediction_x_values):
-
-        # Convert data types
-        values_dict = self.time_series_model_utilities.convert_df_to_dict(values_dict_df, dict_lookup_list)
-        change_values_dict = self.time_series_model_utilities.convert_df_to_dict(change_values_dict_df, dict_lookup_list)
-        dict_lookup_list_prediction_names = [(lambda x: "Predicted_" + str(x))(x) for x in dict_lookup_list]
-
-        # Build, train, predict
-        model__values_dict = self.build_model(model_type, 
-                x, dict_lookup_list,
-                values_dict, change_values_dict,
-                opts_dict)
-
-        model__values_dict.train()
-        model_predictions__values_dict = model__values_dict.predict(prediction_x_values)
-        
-        # Tabulate
-        model_predictions__values_dict__df = pd.DataFrame(model_predictions__values_dict, index=prediction_x_values)
-        model_predictions__values_dict__df.columns = dict_lookup_list_prediction_names
-        display(model_predictions__values_dict__df)
-        
-        # Display accuracy metrics
-        display(model__values_dict.get_accuracy_metrics())
-        display(model__values_dict.print_accuracy_metrics())
-        
-        # Plot
-        merged_predictions_df__values_dict = pd.concat([values_dict_df, model_predictions__values_dict__df], axis="columns", join="outer")
-        display(merged_predictions_df__values_dict)
-        return self.plot_building_tool.generate_plot__hvplot_line(merged_predictions_df__values_dict,
-            title="Macro Customer Behavior Counts", xlabel="Year Index", ylabel="Nbr. Customers",
-            width=2000, height=800)
-
     def build_model(self, model_type,
                 x, dict_lookup_list,
                 values_dict, change_values_dict,
@@ -290,3 +246,47 @@ class TimeSeriesModelPredictionPreviewUtilities:
         else:
 
             return None
+
+
+class TimeSeriesModelPredictionPreviewUtilities:
+
+    def __init__(self, debug_level=0):
+        self.debug_level = debug_level
+        self.time_series_model_utilities = TimeSeriesModelUtilities()
+        self.plot_building_tool = PlotBuildingTools(debug_level)
+
+    def generate_prediction_preview(self, model_type,
+                x, dict_lookup_list,
+                values_dict_df, change_values_dict_df,
+                opts_dict,
+                prediction_x_values):
+
+        # Convert data types
+        values_dict = self.time_series_model_utilities.convert_df_to_dict(values_dict_df, dict_lookup_list)
+        change_values_dict = self.time_series_model_utilities.convert_df_to_dict(change_values_dict_df, dict_lookup_list)
+        dict_lookup_list_prediction_names = [(lambda x: "Predicted_" + str(x))(x) for x in dict_lookup_list]
+
+        # Build, train, predict
+        model__values_dict = time_series_model_utilities.build_model(model_type, 
+                x, dict_lookup_list,
+                values_dict, change_values_dict,
+                opts_dict)
+
+        model__values_dict.train()
+        model_predictions__values_dict = model__values_dict.predict(prediction_x_values)
+        
+        # Tabulate
+        model_predictions__values_dict__df = pd.DataFrame(model_predictions__values_dict, index=prediction_x_values)
+        model_predictions__values_dict__df.columns = dict_lookup_list_prediction_names
+        display(model_predictions__values_dict__df)
+        
+        # Display accuracy metrics
+        display(model__values_dict.get_accuracy_metrics())
+        display(model__values_dict.print_accuracy_metrics())
+        
+        # Plot
+        merged_predictions_df__values_dict = pd.concat([values_dict_df, model_predictions__values_dict__df], axis="columns", join="outer")
+        display(merged_predictions_df__values_dict)
+        return self.plot_building_tool.generate_plot__hvplot_line(merged_predictions_df__values_dict,
+            title="Macro Customer Behavior Counts", xlabel="Year Index", ylabel="Nbr. Customers",
+            width=2000, height=800)
