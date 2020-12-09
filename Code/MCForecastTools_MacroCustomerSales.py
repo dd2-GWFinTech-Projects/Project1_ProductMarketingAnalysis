@@ -115,7 +115,7 @@ class ForwardPredictor:
         self.reset()
     
     def reset(self):
-        self.i = -1
+        self.i = 0
 
     def has_next(self):
         return self.i < self.num_x_values
@@ -131,6 +131,9 @@ class ForwardPredictor:
 
         for dict_lookup in self.dict_lookup_list:
 
+            self.time_series_model_utilities.split_series_map(self.values_dict, self.i)
+
+            
             historical_y_values = self.values_dict[dict_lookup]
 
             # Build predictor
@@ -146,6 +149,9 @@ class ForwardPredictor:
             model_predictions__values_dict = model.predict(prediction_x_values)
         
         return prediction_map
+
+
+
 
 
 class MacroCustomerSales_MCSimulation:
