@@ -123,31 +123,36 @@ class ForwardPredictor:
     # Predict one forward iteration and return the value foreach series, inside a dictionary of single-item-lists
     def predict_next(self):
 
-        # Slice data to hand to hand to the time series model
-        historical_x_values = self.all_x_values[0:self.i]
-        prediction_x_values = self.all_x_values[self.i:self.num_x_values]
+        # Slice x data for the time series model
+        historical_x_values = self.all_x_values[ 0 : self.i ]
+        prediction_x_values = self.all_x_values[ self.i : self.num_x_values ]
 
         prediction_map = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
-
         for dict_lookup in self.dict_lookup_list:
 
-            self.time_series_model_utilities.split_series_map(self.values_dict, self.i)
-
-            
-            historical_y_values = self.values_dict[dict_lookup]
+            # Slice y data for the time series model
+            historical_y_values = self.time_series_model_utilities.split_series_map(self.values_dict, self.i)
 
             # Build predictor
-            model = self.build_model(model_type, 
-                    x, dict_lookup_list,
-                    values_dict, change_values_dict,
-                    opts_dict)
+            model = self.time_series_model_utilities.build_model(
+                self.model_type, 
+                historical_x_values,
+                self.dict_lookup_list,
+                historical_y_values, historical_y_values,
+                self.opts_dict)
 
             # Train
             model.train()
 
             # Predict
-            model_predictions__values_dict = model.predict(prediction_x_values)
+            prediction_y_values = model.predict(prediction_x_values)
+
+            # Store in the series map
+            prediction_map[dict_lookup] = prediction_y_values
         
+        # Advance index
+        self.i += 1
+
         return prediction_map
 
 
