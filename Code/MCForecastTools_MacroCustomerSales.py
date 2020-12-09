@@ -101,14 +101,13 @@ class MacroCustomerSales_PredictionFuzzer:
 class ForwardPredictor:
     def __init__(self, debug_level,
             all_x_values, dict_lookup_list,
-            values_dict, change_values_dict,
+            values_dict,
             model_type, opts_dict):
 
         self.debug_level = debug_level
         self.all_x_values = all_x_values
         self.dict_lookup_list = dict_lookup_list
         self.values_dict = values_dict
-        self.change_values_dict = change_values_dict
         self.model_type = model_type
         self.opts_dict = opts_dict
 
@@ -180,9 +179,8 @@ class Fuzzer:
         return series_map
 
 
-
-
 class MacroCustomerSales_MCSimulation:
+
     def __init__(self,
                 debug_level, dict_lookup_list,
                 forward_value_predictor,
@@ -233,48 +231,22 @@ class MacroCustomerSales_MCSimulation:
 
         return self.simulation_values
 
+    def compute_statistics(self):
 
+        last_values_map = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
+        for run_series_map in self.simulation_values:
+            last_values_map = 
 
-    def compute_statistics():
         # Calculate 95% confidence intervals for final cumulative returns
         # self.confidence_interval = portfolio_cumulative_returns.iloc[-1, :].quantile(q=[0.025, 0.975])
         return None
 
 
+        # TODO Upgrade to compute predicted sales numbers for the selected ind vars;
+        #   def compute_sales_atinstantintime(nbr_loyal_customers, nbr_new_customers, nbr_renew_customers, nbr_dropouts)
+        #   def compute_sales_atinstantintime(nbr_customers_size_parameter, loyal_customers_rate, new_customers_rate, renew_customers_rate, dropouts_rate)
 
-
-        for n in range(self.nSim):
-        
-            if n % 10 == 0:
-                print(f"Running Monte Carlo simulation number {n}.")
-        
-            # Create a list of lists to contain the simulated values for each stock
-            simvals = value_list.to_list()
-
-            # TODO Ensure x axis is ordered.
-            # TODO Ensure x axis is evenly spaced.
-
-            # Simulate the returns for each trading day
-            for i in range(self.num_trailing_points):
-    
-    
-                # TODO
-                print((s, i))
-                if (i == 2):
-                    break;
-                if (i == 3):
-                    break;
-
-                # Calculate the simulated price using the last price within the list
-
-                # print(f"simvals type {type(simvals)}")
-
-
-                # TODO Upgrade to compute predicted sales numbers for the selected ind vars;
-                #   def compute_sales_atinstantintime(nbr_loyal_customers, nbr_new_customers, nbr_renew_customers, nbr_dropouts)
-                #   def compute_sales_atinstantintime(nbr_customers_size_parameter, loyal_customers_rate, new_customers_rate, renew_customers_rate, dropouts_rate)
-
-                # TODO Switch to enable best-case and worst-case instead of normal distr
+        # TODO Switch to enable best-case and worst-case instead of normal distr
 
 
         
