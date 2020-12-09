@@ -127,29 +127,63 @@ class ForwardPredictor:
 
 
    # Predict one forward iteration and return the value foreach series, inside a dictionary of single-item-lists
-    def predict_next(self):
+    def predict_next(self, simulated_y_values):
 
         # Slice x data for the time series model
         historical_x_values = self.all_x_values[ 0 : self.i ]
         prediction_x_values = self.all_x_values[ self.i : self.num_x_values ]
+
+        num_historical_x_values = len(historical_x_values)
+        num_prediction_x_values = len(prediction_x_values)
     
         # Slice y data for the time series model
         historical_y_values, future_y_values = self.time_series_model_utilities.split_series_map(self.values_dict, self.i)
+        
+        num_historical_y_values = len(historical_y_values[self.series_key_list[0]])
+        num_future_y_values = len(future_y_values[self.series_key_list[0]])
+
+        # Prefer to model using known values; however if unavailable (past end of historical data), use simulated values instead.
+        modeling_y_values = historical_y_values
+        if num_historical_y_values < num_historical_x_values:
+            # print(f"predict_next - needing to slice - modeling_y_values {modeling_y_values}")
+            # print(f"predict_next - needing to slice - num_historical_y_values {num_historical_y_values}")
+            # print(f"predict_next - needing to slice - num_historical_x_values {num_historical_x_values}")
+
+            # Get slice of needed y values from simulated_y_values
+            first_slice, additional_y_values_slice = self.time_series_model_utilities.split_series_map(simulated_y_values, num_historical_y_values)
+            # print(f"predict_next - needing to slice - simulated_y_values {simulated_y_values}")
+            # print(f"predict_next - needing to slice - num_historical_y_values {num_historical_y_values}")
+            # print(f"predict_next - needing to slice - additional_y_values_slice {additional_y_values_slice}")
+            additional_y_values_slice, second_slice = self.time_series_model_utilities.split_series_map(additional_y_values_slice, (num_historical_x_values - num_historical_y_values) )
+            # print(f"predict_next - needing to slice - additional_y_values_slice {additional_y_values_slice}")
+            # print(f"predict_next - needing to slice - (num_historical_x_values - num_historical_y_values) {(num_historical_x_values - num_historical_y_values)}")
+            # print(f"predict_next - needing to slice - additional_y_values_slice {additional_y_values_slice}")
+
+            # Append to modeling_y_values
+            modeling_y_values = self.time_series_model_utilities.join_series_maps(modeling_y_values, additional_y_values_slice)
+            # print(f"predict_next - needing to slice - additional_y_values_slice {additional_y_values_slice}")
+            # print(f"predict_next - needing to slice - modeling_y_values {modeling_y_values}")
+
+
+
+            # for i in range(num_historical_x_values, self.i):
+            #     # Append
+            #     modeling_y_values
 
         # Build predictor
         model = self.time_series_model_utilities.build_model(
             model_type = self.model_type,
             x = historical_x_values,
             series_key_list = self.series_key_list,
-            values_dict = historical_y_values,
-            change_values_dict = historical_y_values,
+            values_dict = modeling_y_values,
+            change_values_dict = modeling_y_values,
             opts_dict = self.opts_dict)
 
         # Train
         model.train()
 
         # Predict
-        prediction_map = model.predict(prediction_x_values)
+        prediction_map = model.predict(prediction_x_values[0])
 
         # Advance index
         self.i += 1
@@ -256,21 +290,23 @@ class MCSimulation_MacroCustomerSales:
             if n % 10 == 0:
                 print(f"Running Monte Carlo simulation number {n}.")
 
-            # Initialize empty simulation run map
-            run_series_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
-            std_series_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
+            # Initialize simulation run map, pre-popluated with historical data from index 0 to min_index.
+            run_series_map, foo = self.time_series_model_utilities.split_series_map(self.forward_value_predictor.values_dict, self.forward_value_predictor.min_index)
+            std_series_map, foo = self.time_series_model_utilities.split_series_map(self.forward_std_predictor.values_dict, self.forward_value_predictor.min_index)
 
             # Iterate through time series, building one future prediction at a time
             while self.forward_value_predictor.has_next():
                 
                 # Predict the next time step
-                predicted_y_values = self.forward_value_predictor.predict_next()
-                predicted_std_values = self.forward_std_predictor.predict_next()
+                predicted_y_values = self.forward_value_predictor.predict_next(simulated_y_values = run_series_map)
+                predicted_std_values = self.forward_std_predictor.predict_next(simulated_y_values = std_series_map)
 
                 # Append time step
                 # print(f"simulation.run() - run_series_map {run_series_map}")
                 # print(f"simulation.run() - predicted_y_values {predicted_y_values}")
                 run_series_map = self.time_series_model_utilities.join_series_maps(run_series_map, predicted_y_values)
+                print(f"run() - known values_dict {self.forward_value_predictor.values_dict}")
+                print(f"run() - run_series_map {run_series_map}")
                 std_series_map = self.time_series_model_utilities.join_series_maps(std_series_map, predicted_std_values)
 
                 # Fuzz the prediction (apply randomness)
