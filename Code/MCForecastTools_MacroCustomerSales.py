@@ -125,41 +125,75 @@ class ForwardPredictor:
         # print(f"ForwardPredictor - i {self.i} num_x_values {self.num_x_values}  self.i < self.num_x_values  {self.i < self.num_x_values}")
         return self.i < self.num_x_values
 
-    # Predict one forward iteration and return the value foreach series, inside a dictionary of single-item-lists
+
+   # Predict one forward iteration and return the value foreach series, inside a dictionary of single-item-lists
     def predict_next(self):
 
         # Slice x data for the time series model
         historical_x_values = self.all_x_values[ 0 : self.i ]
         prediction_x_values = self.all_x_values[ self.i : self.num_x_values ]
+    
+        # Slice y data for the time series model
+        historical_y_values, future_y_values = self.time_series_model_utilities.split_series_map(self.values_dict, self.i)
 
-        prediction_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
-        for series_key in self.series_key_list:
+        # Build predictor
+        model = self.time_series_model_utilities.build_model(
+            model_type = self.model_type,
+            x = historical_x_values,
+            series_key_list = self.series_key_list,
+            values_dict = historical_y_values,
+            change_values_dict = historical_y_values,
+            opts_dict = self.opts_dict)
 
-            # Slice y data for the time series model
-            historical_y_values, future_y_values = self.time_series_model_utilities.split_series_map(self.values_dict, self.i)
+        # Train
+        model.train()
 
-            # Build predictor
-            model = self.time_series_model_utilities.build_model(
-                model_type = self.model_type,
-                x = historical_x_values,
-                series_key_list = self.series_key_list,
-                values_dict = historical_y_values,
-                change_values_dict = historical_y_values,
-                opts_dict = self.opts_dict)
+        # Predict
+        prediction_map = model.predict(prediction_x_values)
 
-            # Train
-            model.train()
-
-            # Predict
-            prediction_y_values = model.predict(prediction_x_values)
-
-            # Store in the series map
-            prediction_map[series_key] = prediction_y_values
-        
         # Advance index
         self.i += 1
 
         return prediction_map
+    
+    
+    
+    
+    # # Predict one forward iteration and return the value foreach series, inside a dictionary of single-item-lists
+    # def predict_next(self):
+
+    #     # Slice x data for the time series model
+    #     historical_x_values = self.all_x_values[ 0 : self.i ]
+    #     prediction_x_values = self.all_x_values[ self.i : self.num_x_values ]
+
+    #     prediction_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
+    #     for series_key in self.series_key_list:
+
+    #         # Slice y data for the time series model
+    #         historical_y_values, future_y_values = self.time_series_model_utilities.split_series_map(self.values_dict, self.i)
+
+    #         # Build predictor
+    #         model = self.time_series_model_utilities.build_model(
+    #             model_type = self.model_type,
+    #             x = historical_x_values,
+    #             series_key_list = self.series_key_list,
+    #             values_dict = historical_y_values,
+    #             change_values_dict = historical_y_values,
+    #             opts_dict = self.opts_dict)
+
+    #         # Train
+    #         model.train()
+
+    #         # Predict
+    #         prediction_y_values = model.predict(prediction_x_values)
+
+    #         # Store in the series map
+    #         prediction_map[series_key] = prediction_y_values
+        
+    #     # Advance index
+    #     self.i += 1
+
+    #     return prediction_map
 
 
 class PredictionFuzzer:
@@ -224,6 +258,7 @@ class MCSimulation_MacroCustomerSales:
 
             # Initialize empty simulation run map
             run_series_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
+            std_series_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
 
             # Iterate through time series, building one future prediction at a time
             while self.forward_value_predictor.has_next():
@@ -233,8 +268,8 @@ class MCSimulation_MacroCustomerSales:
                 predicted_std_values = self.forward_std_predictor.predict_next()
 
                 # Append time step
-                print(f"simulation.run() - run_series_map {run_series_map}")
-                print(f"simulation.run() - predicted_y_values {predicted_y_values}")
+                # print(f"simulation.run() - run_series_map {run_series_map}")
+                # print(f"simulation.run() - predicted_y_values {predicted_y_values}")
                 run_series_map = self.time_series_model_utilities.join_series_maps(run_series_map, predicted_y_values)
                 std_series_map = self.time_series_model_utilities.join_series_maps(std_series_map, predicted_std_values)
 

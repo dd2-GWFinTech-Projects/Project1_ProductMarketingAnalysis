@@ -55,6 +55,8 @@ class LinearRegressionDictModel(TimeSeriesDictModel):
                 # print(f"LinearRegressionDictModel - self.values_dict {self.values_dict}")
                 # print(f"LinearRegressionDictModel - series_key {series_key}")
                 y = self.values_dict[series_key]
+                # print(f"LinearRegressionDictModel - X {X}")
+                # print(f"LinearRegressionDictModel - y {y}")
                 model.fit(X, y)
                 self.model_dict[series_key] = model
             return True
@@ -70,7 +72,7 @@ class LinearRegressionDictModel(TimeSeriesDictModel):
                 # print(f"LinearRegressionDictModel.predict() - self.prediction_x_values {self.prediction_x_values}")
                 # print(f"LinearRegressionDictModel.predict() - model.predict(self.prediction_x_values) {model.predict(self.prediction_x_values)}")
                 self.prediction_y_values[series_key] = model.predict(self.prediction_x_values)
-        print(f"LinearRegressionDictModel.predict() - self.prediction_y_values {self.prediction_y_values}")
+        # print(f"LinearRegressionDictModel.predict() - self.prediction_y_values {self.prediction_y_values}")
         return self.prediction_y_values
 
     def get_accuracy_metrics(self):
@@ -304,10 +306,10 @@ class TimeSeriesModelUtilities:
         map = self.init_series_map(series_key_list)
         
         for series_key in series_key_list:
-            print(f"join_series_maps - series_key {series_key}")
-            print(f"join_series_maps - map1 {map1}")
-            print(f"join_series_maps - map2 {map2}")
-            map[series_key] = map1[series_key] + map2[series_key]
+            # print(f"join_series_maps - series_key {series_key}")
+            # print(f"join_series_maps - map1 {map1}")
+            # print(f"join_series_maps - map2 {map2}")
+            map[series_key] = np.concatenate(( map1[series_key], map2[series_key] ))
 
         return map
 
@@ -321,6 +323,9 @@ class TimeSeriesModelUtilities:
                 opts_dict):
 
         if model_type == ModelType.LinearRegressionDictModel:
+
+            print(f"build_model - x {x}")
+            print(f"build_model - values_dict {values_dict}")
 
             return LinearRegressionDictModel(
                 debug_level=self.debug_level,
