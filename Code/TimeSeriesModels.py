@@ -31,7 +31,7 @@ class TimeSeriesDictModel:
     def train(self):
         return None
     
-    def predict(self):
+    def predict(self, prediction_x_values):
         return None
 
 

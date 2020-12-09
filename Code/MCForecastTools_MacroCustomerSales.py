@@ -96,18 +96,25 @@ class MacroCustomerSales_InstantaneousVariation:
 class MacroCustomerSales_MCSimulation:
     def __init__(self,
                 debug_level,
-                x, dict_lookup_list,
+                all_x_values, dict_lookup_list,
                 values_dict, change_values_dict,
-                predictor,
-                num_simulation
-    ):
+                model_type, opts_dict,
+                num_simulation):
 
         self.debug_level = debug_level
-        self.x = x
+        self.all_x_values = all_x_values
         self.dict_lookup_list = dict_lookup_list
         self.values_dict = values_dict
         self.change_values_dict = change_values_dict
+        self.model_type = model_type
+        self.opts_dict = opts_dict
         self.num_simulation = num_simulation
+
+        # Initialize output structure
+        self.simulation_values = { }
+        for dict_lookup in dict_lookup_list:
+            self.simulation_values[dict_lookup] = []
+
 
         # value_title,
         # value_list,
@@ -127,16 +134,22 @@ class MacroCustomerSales_MCSimulation:
         
     def run(self):
 
-        simulation_values = { }
-        for dict_lookup in dict_lookup_list:
-            simulation_values[dict_lookup]
-        dict_lookup_list foreach [] = []  build map
+        for n in self.num_simulation:
 
+            for i in len(self.all_x_values):
+                historical_x_values = self.all_x_values[0:i]
+                prediction_x_values = self.all_x_values[i:num_x_values]
 
-        loop -> build up prediction_year_list
-            project value   
-            add random distribution
-            append
+                # Build predictor
+                model = .build
+                # 
+
+        # loop simulations
+            # loop -> build up prediction_year_list/prediction_x_values
+            #     project value   
+            #     add random distribution
+            #     append
+            # append to simulations
 
 
 

@@ -24,11 +24,11 @@ class Constants:
     def __init__(self):
 
         # Directories
-        self.LOOKUP_TABLES_DIR              = Path("../../Resources/LookupTables")
-        self.DATA_DIR_RAW                   = Path("../../Resources/01_Raw")
-        self.DATA_DIR_ANONYMIZED            = Path("../../Resources/02_Anonymized")
-        self.DATA_DIR_PREPROCESSED          = Path("../../Resources/03_Preprocessed")
-        self.DATA_DIR_PROCESSED             = Path("../../Resources/04_Processed")
+        self.LOOKUP_TABLES_DIR              = Path("../Resources/LookupTables")
+        self.DATA_DIR_RAW                   = Path("../Resources/01_Raw")
+        self.DATA_DIR_ANONYMIZED            = Path("../Resources/02_Anonymized")
+        self.DATA_DIR_PREPROCESSED          = Path("../Resources/03_Preprocessed")
+        self.DATA_DIR_PROCESSED             = Path("../Resources/04_Processed")
 
         # Lookup table files
         self.LUT_CUSTOMER_NAME_FILE_PATH    = os.path.join(self.LOOKUP_TABLES_DIR, Path("LUT_CustomerName.json"))
