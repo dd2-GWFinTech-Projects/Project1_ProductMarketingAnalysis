@@ -160,9 +160,24 @@ class ForwardPredictor:
 
 class Fuzzer:
 
-    def fuzz(self):
-        d = np.random.normal(mean_change, std_change)
-        simvals.append(simvals[-1] * (1 + d))
+    def __init__(self, debug_level):
+        self.debug_level = debug_level
+    
+    def fuzz(self, series_map, std_series_map):
+
+        series_key_list = list(series_map.keys())
+        for series_key in series_key_list:
+            
+            last_value = series_map[series_key][-1]
+            std_value = std_series_map[series_key][-1]
+
+            # Generate fuzzed value
+            fuzzed_value = np.random.normal(last_value, std_value)
+
+            # Update last value with fuzzed value
+            series_map[series_key][-1] = fuzzed_value
+
+        return series_map
 
 
 
@@ -186,13 +201,7 @@ class MacroCustomerSales_MCSimulation:
     def run(self):
 
         # Initialize output structure
-        # empty_simulation_map = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
-        # self.simulation_values = [empty_simulation_map] * self.num_simulation
-
         self.simulation_values = []
-
-        # predictor = ForwardPredictor()
-        
 
         # Iterate over simulations
         for n in self.num_simulation:
@@ -201,22 +210,22 @@ class MacroCustomerSales_MCSimulation:
                 print(f"Running Monte Carlo simulation number {n}.")
 
             # Initialize empty simulation run map
-            run_values = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
+            run_series_map = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
 
             # Iterate through time series, building one future prediction at a time
-            while predictor.has_next():
+            while self.forward_predictor.has_next():
                 
                 # Predict the next time step
-                predicted_y_values = predictor.predict_next()
+                predicted_y_values = self.forward_predictor.predict_next()
 
                 # Append time step
-                run_values = self.time_series_model_utilities.join_series_maps(run_values, predicted_y_values)
+                run_series_map = self.time_series_model_utilities.join_series_maps(run_series_map, predicted_y_values)
 
                 # Fuzz the prediction (apply randomness)
-                run_values = self.fuzzer.fuzz(run_values)
+                run_series_map = self.prediction_fuzzer.fuzz(run_series_map, std_series_map)
 
             # Append simulation run results
-            self.simulation_values.append(run_values)
+            self.simulation_values.append(run_series_map)
 
         return self.simulation_values
 
