@@ -160,9 +160,9 @@ class ForwardPredictor:
 
 class Fuzzer:
 
-    def ():
-    d = np.random.normal(mean_change, std_change)
-    simvals.append(simvals[-1] * (1 + d))
+    def fuzz(self):
+        d = np.random.normal(mean_change, std_change)
+        simvals.append(simvals[-1] * (1 + d))
 
 
 
@@ -191,7 +191,8 @@ class MacroCustomerSales_MCSimulation:
 
         self.simulation_values = []
 
-        predictor = ForwardPredictor()
+        # predictor = ForwardPredictor()
+        
 
         # Iterate over simulations
         for n in self.num_simulation:
@@ -212,7 +213,7 @@ class MacroCustomerSales_MCSimulation:
                 run_values = self.time_series_model_utilities.join_series_maps(run_values, predicted_y_values)
 
                 # Fuzz the prediction (apply randomness)
-                run_values = .fuzz(run_values)
+                run_values = self.fuzzer.fuzz(run_values)
 
             # Append simulation run results
             self.simulation_values.append(run_values)
