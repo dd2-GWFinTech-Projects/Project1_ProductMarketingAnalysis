@@ -205,11 +205,25 @@ class TimeSeriesModelUtilities:
     def __init__(self, debug_level=0):
         self.debug_level = debug_level
 
-    def convert_df_to_dict(self, data_df, dict_lookup_list):
+    # def convert_df_to_dict(self, data_df, dict_lookup_list):
+    def convert_df_to_series_map(self, data_df, dict_lookup_list):
         data_dict = {}
         for dict_lookup in dict_lookup_list:
             data_dict[dict_lookup] = data_df[dict_lookup].values
         return data_dict
+
+    # def init_dict_lookup_map(self, dict_lookup_list):
+    def init_series_map(self, dict_lookup_list):
+        dict_lookup_map = { }
+        for dict_lookup in dict_lookup_list:
+            dict_lookup_map[dict_lookup] = []
+        return dict_lookup_map
+
+    def split_series_map(self, map, index):
+        
+    def join_series_maps(self, map1, map2):
+
+
 
     def build_model(self, model_type,
                 x, dict_lookup_list,
@@ -262,12 +276,12 @@ class TimeSeriesModelPredictionPreviewUtilities:
                 prediction_x_values):
 
         # Convert data types
-        values_dict = self.time_series_model_utilities.convert_df_to_dict(values_dict_df, dict_lookup_list)
-        change_values_dict = self.time_series_model_utilities.convert_df_to_dict(change_values_dict_df, dict_lookup_list)
+        values_dict = self.time_series_model_utilities.convert_df_to_series_map(values_dict_df, dict_lookup_list)
+        change_values_dict = self.time_series_model_utilities.convert_df_to_series_map(change_values_dict_df, dict_lookup_list)
         dict_lookup_list_prediction_names = [(lambda x: "Predicted_" + str(x))(x) for x in dict_lookup_list]
 
         # Build, train, predict
-        model__values_dict = time_series_model_utilities.build_model(model_type, 
+        model__values_dict = self.time_series_model_utilities.build_model(model_type, 
                 x, dict_lookup_list,
                 values_dict, change_values_dict,
                 opts_dict)

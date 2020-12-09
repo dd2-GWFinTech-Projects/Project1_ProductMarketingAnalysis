@@ -100,44 +100,7 @@ class ForwardPredictor:
     def __init__(self, debug_level,
             all_x_values, dict_lookup_list,
             values_dict, change_values_dict,
-            model_type, opts_dict
-            ):
-        self.i = -1
-    
-    def has_next(self):
-        return i < num_....
-
-    def predict_next(self):
-        historical_x_values = self.all_x_values[0:i]
-        prediction_x_values = self.all_x_values[i:num_x_values]
-
-        # Build predictor
-        model = self.build_model(model_type, 
-                x, dict_lookup_list,
-                values_dict, change_values_dict,
-                opts_dict)
-
-        # Train
-        model.train()
-
-        # Predict
-        model_predictions__values_dict = model.predict(prediction_x_values)
-
-    
-
-
-
-class MacroCustomerSales_MCSimulation:
-    def __init__(self,
-                debug_level,
-
-                forward_predictor,  # MacroCustomerSales_ForwardPredictor
-
-                # all_x_values, dict_lookup_list,
-                # values_dict, change_values_dict,
-                # model_type, opts_dict,
-                
-                num_simulation):
+            model_type, opts_dict):
 
         self.debug_level = debug_level
         self.all_x_values = all_x_values
@@ -146,25 +109,75 @@ class MacroCustomerSales_MCSimulation:
         self.change_values_dict = change_values_dict
         self.model_type = model_type
         self.opts_dict = opts_dict
+
+        self.num_x_values = len(all_x_values)
+        self.time_series_model_utilities = TimeSeriesModelUtilities()
+        self.reset()
+    
+    def reset(self):
+        self.i = -1
+
+    def has_next(self):
+        return self.i < self.num_x_values
+
+    # Predict one forward iteration and return the value foreach series, inside a dictionary of single-item-lists
+    def predict_next(self):
+
+        # Slice data to hand to hand to the time series model
+        historical_x_values = self.all_x_values[0:self.i]
+        prediction_x_values = self.all_x_values[self.i:self.num_x_values]
+
+        prediction_map = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
+
+        for dict_lookup in self.dict_lookup_list:
+
+            historical_y_values = self.values_dict[dict_lookup]
+
+            # Build predictor
+            model = self.build_model(model_type, 
+                    x, dict_lookup_list,
+                    values_dict, change_values_dict,
+                    opts_dict)
+
+            # Train
+            model.train()
+
+            # Predict
+            model_predictions__values_dict = model.predict(prediction_x_values)
+        
+        return prediction_map
+
+
+class MacroCustomerSales_MCSimulation:
+    def __init__(self,
+                debug_level, dict_lookup_list,
+                forward_predictor,
+                prediction_fuzzer,
+                num_simulation):
+
+        self.debug_level = debug_level
+        self.forward_predictor = forward_predictor
+        self.prediction_fuzzer = prediction_fuzzer
         self.num_simulation = num_simulation
 
-        self.init_simulation_values()
         self.time_series_model_utilities = TimeSeriesModelUtilities()
+        self.init_simulation_values(dict_lookup_list)
 
-    def init_simulation_values(self):
+    def init_simulation_values(self, dict_lookup_list):
 
         # Initialize output structure
-        self.simulation_values = { }
-        for dict_lookup in dict_lookup_list:
-            self.simulation_values[dict_lookup] = []
+        self.simulation_values = self.time_series_model_utilities.init_series_map(dict_lookup_list)
 
     def run(self):
 
         self.init_simulation_values()
 
+
+
+
         for n in self.num_simulation:
 
-            for i in len(self.all_x_values):
+            while has_next:
 
 
                 
