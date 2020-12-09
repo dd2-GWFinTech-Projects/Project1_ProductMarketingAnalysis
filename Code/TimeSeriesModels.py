@@ -18,15 +18,15 @@ class ModelType(enum.Enum):
 class TimeSeriesDictModel:
     
     def __init__(self, debug_level,
-                x, dict_lookup_list,  # x=[list of x values], dict_lookup_list=[list of lookup values]
+                x, series_key_list,  # x=[list of x values], series_key_list=[list of lookup values]
                 values_dict, change_values_dict):  # { : [] }
         self.debug_level = debug_level
         self.x = x
-        self.dict_lookup_list = dict_lookup_list
+        self.series_key_list = series_key_list
         self.values_dict = values_dict
         self.change_values_dict = change_values_dict
         self.num_input_data_points = len(x)
-        self.num_dict_lookup_items = len(dict_lookup_list)
+        self.num_series_key_items = len(series_key_list)
 
     def train(self):
         return None
@@ -38,10 +38,10 @@ class TimeSeriesDictModel:
 class LinearRegressionDictModel(TimeSeriesDictModel):
 
     def __init__(self, debug_level,
-                x, dict_lookup_list,
+                x, series_key_list,
                 values_dict, change_values_dict,
                 use_multi_stage=False):
-        TimeSeriesDictModel.__init__(self, debug_level, x, dict_lookup_list, values_dict, change_values_dict)
+        TimeSeriesDictModel.__init__(self, debug_level, x, series_key_list, values_dict, change_values_dict)
         self.use_multi_stage = use_multi_stage
 
     def train(self):
@@ -50,22 +50,22 @@ class LinearRegressionDictModel(TimeSeriesDictModel):
         else:
             X = np.array(self.x).reshape(-1, 1)
             self.model_dict = {}
-            for dict_lookup in self.dict_lookup_list:
+            for series_key in self.series_key_list:
                 model = LinearRegression()
-                y = self.values_dict[dict_lookup]
+                y = self.values_dict[series_key]
                 model.fit(X, y)
-                self.model_dict[dict_lookup] = model
+                self.model_dict[series_key] = model
             return True
     
     def predict(self, prediction_x_values):
         self.prediction_x_values = np.array(prediction_x_values).reshape(-1, 1)
         self.prediction_y_values = {}
-        for dict_lookup in self.dict_lookup_list:
+        for series_key in self.series_key_list:
             if self.use_multi_stage:
                 return None  # TODO
             else:
-                model = self.model_dict[dict_lookup]
-                self.prediction_y_values[dict_lookup] = model.predict(self.prediction_x_values)
+                model = self.model_dict[series_key]
+                self.prediction_y_values[series_key] = model.predict(self.prediction_x_values)
         return self.prediction_y_values
 
     def get_accuracy_metrics(self):
@@ -73,10 +73,10 @@ class LinearRegressionDictModel(TimeSeriesDictModel):
             return None  # TODO
         else:
             r2 = {}
-            for dict_lookup in self.dict_lookup_list:
-                model = self.model_dict[dict_lookup]
-                y = self.prediction_y_values[dict_lookup]
-                r2[dict_lookup] = model.score(self.prediction_x_values, y, sample_weight=None)
+            for series_key in self.series_key_list:
+                model = self.model_dict[series_key]
+                y = self.prediction_y_values[series_key]
+                r2[series_key] = model.score(self.prediction_x_values, y, sample_weight=None)
             return r2
     
     def print_accuracy_metrics(self):
@@ -87,9 +87,9 @@ class LinearRegressionDictModel(TimeSeriesDictModel):
             print("---------------------------------------------------")
             print("")
             accuracy_metrics = self.get_accuracy_metrics()
-            for dict_lookup in self.dict_lookup_list:
-                model = self.model_dict[dict_lookup]
-                print(f"  Series: {dict_lookup}")
+            for series_key in self.series_key_list:
+                model = self.model_dict[series_key]
+                print(f"  Series: {series_key}")
                 print("")
                 print("    Coefficients:")
                 print(model.coef_)
@@ -98,41 +98,41 @@ class LinearRegressionDictModel(TimeSeriesDictModel):
                 print(model.intercept_)
                 print("")
                 print("    R2:")
-                print(accuracy_metrics[dict_lookup])
+                print(accuracy_metrics[series_key])
 
 
 class PolynomialRegressionDictModel(TimeSeriesDictModel):
 
     def __init__(self, debug_level,
-                x, dict_lookup_list,
+                x, series_key_list,
                 values_dict, change_values_dict,
                 polynomial_degree=3):
-        TimeSeriesDictModel.__init__(self, debug_level, x, dict_lookup_list, values_dict, change_values_dict)
+        TimeSeriesDictModel.__init__(self, debug_level, x, series_key_list, values_dict, change_values_dict)
         self.polynomial_degree = polynomial_degree
 
     def train(self):
         self.model_dict = {}
-        for dict_lookup in self.dict_lookup_list:
-            y = self.values_dict[dict_lookup]
+        for series_key in self.series_key_list:
+            y = self.values_dict[series_key]
             model = np.poly1d(np.polyfit(self.x, y, self.polynomial_degree))
-            self.model_dict[dict_lookup] = model
+            self.model_dict[series_key] = model
         return True
 
     def predict(self, prediction_x_values):
         self.prediction_x_values = prediction_x_values
         self.prediction_y_values = {}
-        for dict_lookup in self.dict_lookup_list:
-            model = self.model_dict[dict_lookup]
-            self.prediction_y_values[dict_lookup] = model(self.prediction_x_values)
+        for series_key in self.series_key_list:
+            model = self.model_dict[series_key]
+            self.prediction_y_values[series_key] = model(self.prediction_x_values)
         return self.prediction_y_values
 
     def get_accuracy_metrics(self):
         r2 = {}
-        for dict_lookup in self.dict_lookup_list:
-            model = self.model_dict[dict_lookup]
-            y_actual = self.values_dict[dict_lookup]
-            y_predicted = self.prediction_y_values[dict_lookup][0:len(y_actual)]
-            r2[dict_lookup] = r2_score(y_actual, y_predicted)
+        for series_key in self.series_key_list:
+            model = self.model_dict[series_key]
+            y_actual = self.values_dict[series_key]
+            y_predicted = self.prediction_y_values[series_key][0:len(y_actual)]
+            r2[series_key] = r2_score(y_actual, y_predicted)
         return r2
 
     def print_accuracy_metrics(self):
@@ -140,9 +140,9 @@ class PolynomialRegressionDictModel(TimeSeriesDictModel):
         print("-------------------------------------------------------")
         print("")
         accuracy_metrics = self.get_accuracy_metrics()
-        for dict_lookup in self.dict_lookup_list:
-            model = self.model_dict[dict_lookup]
-            print(f"  Series: {dict_lookup}")
+        for series_key in self.series_key_list:
+            model = self.model_dict[series_key]
+            print(f"  Series: {series_key}")
             print("")
             print("    Coefficients:")
             print(model.coefficients)
@@ -151,41 +151,41 @@ class PolynomialRegressionDictModel(TimeSeriesDictModel):
             print(model.roots)
             print("")
             print("    R2:")
-            print(accuracy_metrics[dict_lookup])
+            print(accuracy_metrics[series_key])
 
 
 class ARMARegressionDictModel(TimeSeriesDictModel):
 
     def __init__(self, debug_level,
-                x, dict_lookup_list,
+                x, series_key_list,
                 values_dict, change_values_dict,
                 order=(1,1)):
-        TimeSeriesDictModel.__init__(self, debug_level, x, dict_lookup_list, values_dict, change_values_dict)
+        TimeSeriesDictModel.__init__(self, debug_level, x, series_key_list, values_dict, change_values_dict)
         self.order = order
 
     def train(self):
         self.model_dict = {}
-        for dict_lookup in self.dict_lookup_list:
-            y = self.values_dict[dict_lookup]
+        for series_key in self.series_key_list:
+            y = self.values_dict[series_key]
             arma_model = ARMA(y, order=self.order)
             model = arma_model.fit()
-            self.model_dict[dict_lookup] = model
+            self.model_dict[series_key] = model
         return True
 
     def predict(self, prediction_x_values):
         self.prediction_x_values = prediction_x_values
         forecast_steps = len(self.prediction_x_values) - len(self.x)
         self.prediction_y_values = {}
-        for dict_lookup in self.dict_lookup_list:
-            model = self.model_dict[dict_lookup]
-            self.prediction_y_values[dict_lookup] = model.forecast(steps=forecast_steps)[0]
+        for series_key in self.series_key_list:
+            model = self.model_dict[series_key]
+            self.prediction_y_values[series_key] = model.forecast(steps=forecast_steps)[0]
         return self.prediction_y_values
 
     def get_accuracy_metrics(self):
         results = {}
-        for dict_lookup in self.dict_lookup_list:
-            model = self.model_dict[dict_lookup]
-            results[dict_lookup] = model.summary()
+        for series_key in self.series_key_list:
+            model = self.model_dict[series_key]
+            results[series_key] = model.summary()
         return results
 
     def print_accuracy_metrics(self):
@@ -193,11 +193,11 @@ class ARMARegressionDictModel(TimeSeriesDictModel):
         print("-------------------------------------------------------")
         print("")
         accuracy_metrics = self.get_accuracy_metrics()
-        for dict_lookup in self.dict_lookup_list:
-            print(f"  Series: {dict_lookup}")
+        for series_key in self.series_key_list:
+            print(f"  Series: {series_key}")
             print("")
             print("    Series Model Summary:")
-            print(accuracy_metrics[dict_lookup])
+            print(accuracy_metrics[series_key])
 
 
 class TimeSeriesModelUtilities:
@@ -205,46 +205,46 @@ class TimeSeriesModelUtilities:
     def __init__(self, debug_level=0):
         self.debug_level = debug_level
 
-    def convert_df_to_series_map(self, data_df, dict_lookup_list):
+    def convert_df_to_series_map(self, data_df, series_key_list):
         data_dict = {}
-        for dict_lookup in dict_lookup_list:
-            data_dict[dict_lookup] = data_df[dict_lookup].values
+        for series_key in series_key_list:
+            data_dict[series_key] = data_df[series_key].values
         return data_dict
 
-    def init_series_map(self, dict_lookup_list):
-        dict_lookup_map = { }
-        for dict_lookup in dict_lookup_list:
-            dict_lookup_map[dict_lookup] = []
-        return dict_lookup_map
+    def init_series_map(self, series_key_list):
+        series_lookup_map = { }
+        for series_key in series_key_list:
+            series_lookup_map[series_key] = []
+        return series_lookup_map
 
     def split_series_map(self, map, index):
 
-        dict_lookup_list = list(map.keys())
+        series_key_list = list(map.keys())
         
-        map1 = self.init_series_map(dict_lookup_list)
-        map2 = self.init_series_map(dict_lookup_list)
+        map1 = self.init_series_map(series_key_list)
+        map2 = self.init_series_map(series_key_list)
         
-        series_length = len(map1[dict_lookup_list[0]])
+        series_length = len(map1[series_key_list[0]])
 
-        for dict_lookup in dict_lookup_list:
-            map1[dict_lookup] = map[dict_lookup][0:index]
-            map2[dict_lookup] = map[dict_lookup][index:series_length]
+        for series_key in series_key_list:
+            map1[series_key] = map[series_key][0:index]
+            map2[series_key] = map[series_key][index:series_length]
 
         return (map1, map2)
 
     def join_series_maps(self, map1, map2):
 
-        dict_lookup_list = list(map1.keys())
+        series_key_list = list(map1.keys())
 
-        map = self.init_series_map(dict_lookup_list)
+        map = self.init_series_map(series_key_list)
         
-        for dict_lookup in dict_lookup_list:
-            map[dict_lookup] = map1[dict_lookup] + map2[dict_lookup]
+        for series_key in series_key_list:
+            map[series_key] = map1[series_key] + map2[series_key]
 
         return map
 
     def build_model(self, model_type,
-                x, dict_lookup_list,
+                x, series_key_list,
                 values_dict, change_values_dict,
                 opts_dict):
 
@@ -252,7 +252,7 @@ class TimeSeriesModelUtilities:
 
             return LinearRegressionDictModel(
                 debug_level=self.debug_level,
-                x=x, dict_lookup_list=dict_lookup_list,
+                x=x, series_key_list=series_key_list,
                 values_dict=values_dict,
                 change_values_dict=change_values_dict,
                 use_multi_stage=opts_dict["use_multi_stage"])
@@ -261,7 +261,7 @@ class TimeSeriesModelUtilities:
 
             return PolynomialRegressionDictModel(
                 debug_level=self.debug_level,
-                x=x, dict_lookup_list=dict_lookup_list,
+                x=x, series_key_list=series_key_list,
                 values_dict=values_dict,
                 change_values_dict=change_values_dict,
                 polynomial_degree=opts_dict["degree"])
@@ -270,7 +270,7 @@ class TimeSeriesModelUtilities:
             print(opts_dict["order"])
             return ARMARegressionDictModel(
                 debug_level=self.debug_level,
-                x=x, dict_lookup_list=dict_lookup_list,
+                x=x, series_key_list=series_key_list,
                 values_dict=values_dict,
                 change_values_dict=change_values_dict,
                 order=opts_dict["order"])
@@ -288,19 +288,19 @@ class TimeSeriesModelPredictionPreviewUtilities:
         self.plot_building_tool = PlotBuildingTools(debug_level)
 
     def generate_prediction_preview(self, model_type,
-                x, dict_lookup_list,
+                x, series_key_list,
                 values_dict_df, change_values_dict_df,
                 opts_dict,
                 prediction_x_values):
 
         # Convert data types
-        values_dict = self.time_series_model_utilities.convert_df_to_series_map(values_dict_df, dict_lookup_list)
-        change_values_dict = self.time_series_model_utilities.convert_df_to_series_map(change_values_dict_df, dict_lookup_list)
-        dict_lookup_list_prediction_names = [(lambda x: "Predicted_" + str(x))(x) for x in dict_lookup_list]
+        values_dict = self.time_series_model_utilities.convert_df_to_series_map(values_dict_df, series_key_list)
+        change_values_dict = self.time_series_model_utilities.convert_df_to_series_map(change_values_dict_df, series_key_list)
+        series_key_list_prediction_names = [(lambda x: "Predicted_" + str(x))(x) for x in series_key_list]
 
         # Build, train, predict
         model__values_dict = self.time_series_model_utilities.build_model(model_type, 
-                x, dict_lookup_list,
+                x, series_key_list,
                 values_dict, change_values_dict,
                 opts_dict)
 
@@ -309,7 +309,7 @@ class TimeSeriesModelPredictionPreviewUtilities:
         
         # Tabulate
         model_predictions__values_dict__df = pd.DataFrame(model_predictions__values_dict, index=prediction_x_values)
-        model_predictions__values_dict__df.columns = dict_lookup_list_prediction_names
+        model_predictions__values_dict__df.columns = series_key_list_prediction_names
         display(model_predictions__values_dict__df)
         
         # Display accuracy metrics

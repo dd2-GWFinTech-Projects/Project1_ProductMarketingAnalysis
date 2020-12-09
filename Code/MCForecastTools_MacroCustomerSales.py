@@ -100,13 +100,13 @@ class MacroCustomerSales_PredictionFuzzer:
 
 class ForwardPredictor:
     def __init__(self, debug_level,
-            all_x_values, dict_lookup_list,
+            all_x_values, series_key_list,
             values_dict,
             model_type, opts_dict):
 
         self.debug_level = debug_level
         self.all_x_values = all_x_values
-        self.dict_lookup_list = dict_lookup_list
+        self.series_key_list = series_key_list
         self.values_dict = values_dict
         self.model_type = model_type
         self.opts_dict = opts_dict
@@ -128,8 +128,8 @@ class ForwardPredictor:
         historical_x_values = self.all_x_values[ 0 : self.i ]
         prediction_x_values = self.all_x_values[ self.i : self.num_x_values ]
 
-        prediction_map = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
-        for dict_lookup in self.dict_lookup_list:
+        prediction_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
+        for series_key in self.series_key_list:
 
             # Slice y data for the time series model
             historical_y_values = self.time_series_model_utilities.split_series_map(self.values_dict, self.i)
@@ -138,7 +138,7 @@ class ForwardPredictor:
             model = self.time_series_model_utilities.build_model(
                 self.model_type, 
                 historical_x_values,
-                self.dict_lookup_list,
+                self.series_key_list,
                 historical_y_values, historical_y_values,
                 self.opts_dict)
 
@@ -149,7 +149,7 @@ class ForwardPredictor:
             prediction_y_values = model.predict(prediction_x_values)
 
             # Store in the series map
-            prediction_map[dict_lookup] = prediction_y_values
+            prediction_map[series_key] = prediction_y_values
         
         # Advance index
         self.i += 1
@@ -182,14 +182,14 @@ class Fuzzer:
 class MacroCustomerSales_MCSimulation:
 
     def __init__(self,
-                debug_level, dict_lookup_list,
+                debug_level, series_key_list,
                 forward_value_predictor,
                 forward_std_predictor,
                 prediction_fuzzer,
                 num_simulation):
 
         self.debug_level = debug_level
-        self.dict_lookup_list = dict_lookup_list
+        self.series_key_list = series_key_list
         self.forward_value_predictor = forward_value_predictor
         self.forward_std_predictor = forward_std_predictor
         self.prediction_fuzzer = prediction_fuzzer
@@ -210,7 +210,7 @@ class MacroCustomerSales_MCSimulation:
                 print(f"Running Monte Carlo simulation number {n}.")
 
             # Initialize empty simulation run map
-            run_series_map = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
+            run_series_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
 
             # Iterate through time series, building one future prediction at a time
             while self.forward_value_predictor.has_next():
@@ -233,11 +233,19 @@ class MacroCustomerSales_MCSimulation:
 
     def compute_statistics(self):
 
-        last_values_map = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
-        for run_series_map in self.simulation_values:
-            last_values_map = 
+        # Extract last values from each run and collect into a last values series map
+        last_values_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
+        last_item_split_index = len(self.simulation_values[0][self.series_key_list]) - 1
 
-        # Calculate 95% confidence intervals for final cumulative returns
+        for run_series_map in self.simulation_values:
+            run_first_values, run_last_values = self.time_series_model_utilities.split_series_map(run_series_map, last_item_split_index)
+            last_values_map = self.time_series_model_utilities.join_series_maps(last_values_map, run_last_values)
+
+        # Calculate 95% confidence intervals for final estimated values
+        for series_key in self.series_key_list:
+            last_values_map
+
+
         # self.confidence_interval = portfolio_cumulative_returns.iloc[-1, :].quantile(q=[0.025, 0.975])
         return None
 
