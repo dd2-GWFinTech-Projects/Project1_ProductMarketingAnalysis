@@ -185,13 +185,15 @@ class Fuzzer:
 class MacroCustomerSales_MCSimulation:
     def __init__(self,
                 debug_level, dict_lookup_list,
-                forward_predictor,
+                forward_value_predictor,
+                forward_std_predictor,
                 prediction_fuzzer,
                 num_simulation):
 
         self.debug_level = debug_level
         self.dict_lookup_list = dict_lookup_list
-        self.forward_predictor = forward_predictor
+        self.forward_value_predictor = forward_value_predictor
+        self.forward_std_predictor = forward_std_predictor
         self.prediction_fuzzer = prediction_fuzzer
         self.num_simulation = num_simulation
 
@@ -213,13 +215,15 @@ class MacroCustomerSales_MCSimulation:
             run_series_map = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
 
             # Iterate through time series, building one future prediction at a time
-            while self.forward_predictor.has_next():
+            while self.forward_value_predictor.has_next():
                 
                 # Predict the next time step
-                predicted_y_values = self.forward_predictor.predict_next()
+                predicted_y_values = self.forward_value_predictor.predict_next()
+                predicted_std_values = self.forward_std_predictor.predict_next()
 
                 # Append time step
                 run_series_map = self.time_series_model_utilities.join_series_maps(run_series_map, predicted_y_values)
+                std_series_map = self.time_series_model_utilities.join_series_maps(std_series_map, predicted_std_values)
 
                 # Fuzz the prediction (apply randomness)
                 run_series_map = self.prediction_fuzzer.fuzz(run_series_map, std_series_map)
