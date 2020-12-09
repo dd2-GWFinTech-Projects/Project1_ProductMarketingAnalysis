@@ -55,34 +55,34 @@ class MacroCustomerSales_HistoricalAnalysis:
 #         return macro_customer_behavior_counts_list[-1]
 
 
-class MacroCustomerSales_PredictionFuzzer:
+# class MacroCustomerSales_PredictionFuzzer:
 
-    def __init__(self, debug_level=0):
-        self.debug_level = debug_level
+#     def __init__(self, debug_level=0):
+#         self.debug_level = debug_level
 
-    def predict_using_distribution(self, macro_customer_behavior_counts_nominal, macro_customer_behavior_counts_std):
-        mean_values = [
-            macro_customer_behavior_counts_nominal.nbr_new_customers,
-            macro_customer_behavior_counts_nominal.nbr_continued_loyal_customers,
-            macro_customer_behavior_counts_nominal.nbr_continued_at_risk_customers,
-            macro_customer_behavior_counts_nominal.nbr_continued_nominal_customers,
-            macro_customer_behavior_counts_nominal.nbr_dropped_customers
-        ]
-        std_values = [
-            macro_customer_behavior_counts_std.nbr_new_customers,
-            macro_customer_behavior_counts_std.nbr_continued_loyal_customers,
-            macro_customer_behavior_counts_std.nbr_continued_at_risk_customers,
-            macro_customer_behavior_counts_std.nbr_continued_nominal_customers,
-            macro_customer_behavior_counts_std.nbr_dropped_customers
-        ]
-        randomized_values = np.random.normal(mean_values, std_values)
-        return MacroCustomerBehaviorCounts(
-            randomized_values[0],
-            randomized_values[1],
-            randomized_values[2],
-            randomized_values[3],
-            randomized_values[4],
-        )
+#     def predict_using_distribution(self, macro_customer_behavior_counts_nominal, macro_customer_behavior_counts_std):
+#         mean_values = [
+#             macro_customer_behavior_counts_nominal.nbr_new_customers,
+#             macro_customer_behavior_counts_nominal.nbr_continued_loyal_customers,
+#             macro_customer_behavior_counts_nominal.nbr_continued_at_risk_customers,
+#             macro_customer_behavior_counts_nominal.nbr_continued_nominal_customers,
+#             macro_customer_behavior_counts_nominal.nbr_dropped_customers
+#         ]
+#         std_values = [
+#             macro_customer_behavior_counts_std.nbr_new_customers,
+#             macro_customer_behavior_counts_std.nbr_continued_loyal_customers,
+#             macro_customer_behavior_counts_std.nbr_continued_at_risk_customers,
+#             macro_customer_behavior_counts_std.nbr_continued_nominal_customers,
+#             macro_customer_behavior_counts_std.nbr_dropped_customers
+#         ]
+#         randomized_values = np.random.normal(mean_values, std_values)
+#         return MacroCustomerBehaviorCounts(
+#             randomized_values[0],
+#             randomized_values[1],
+#             randomized_values[2],
+#             randomized_values[3],
+#             randomized_values[4],
+#         )
 
 
     def compute_annual_sales(self, macro_customer_behavior_counts, macro_customer_average_annual_sales):
@@ -186,7 +186,9 @@ class MacroCustomerSales_MCSimulation:
                 forward_value_predictor,
                 forward_std_predictor,
                 prediction_fuzzer,
-                num_simulation):
+                num_simulation,
+                simulation_value_title,
+                num_prediction_time_steps):
 
         self.debug_level = debug_level
         self.series_key_list = series_key_list
@@ -194,9 +196,15 @@ class MacroCustomerSales_MCSimulation:
         self.forward_std_predictor = forward_std_predictor
         self.prediction_fuzzer = prediction_fuzzer
         self.num_simulation = num_simulation
+        self.simulation_value_title = simulation_value_title
+        self.num_prediction_time_steps = num_prediction_time_steps
 
         self.time_series_model_utilities = TimeSeriesModelUtilities()
         self.simulation_values = None
+
+    # --------------------------------------------------------------------------
+    # Simulation
+    # --------------------------------------------------------------------------
 
     def run(self):
 
@@ -231,23 +239,31 @@ class MacroCustomerSales_MCSimulation:
 
         return self.simulation_values
 
-    def compute_statistics(self):
+    # --------------------------------------------------------------------------
+    # Post-Processing
+    # --------------------------------------------------------------------------
+
+    def extract_last_values(self):
 
         # Extract last values from each run and collect into a last values series map
-        last_values_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
+        self.last_values_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
         last_item_split_index = len(self.simulation_values[0][self.series_key_list]) - 1
 
         for run_series_map in self.simulation_values:
             run_first_values, run_last_values = self.time_series_model_utilities.split_series_map(run_series_map, last_item_split_index)
-            last_values_map = self.time_series_model_utilities.join_series_maps(last_values_map, run_last_values)
+            self.last_values_map = self.time_series_model_utilities.join_series_maps(self.last_values_map, run_last_values)
+        
+        return self.last_values_map
+    
+    def compute_statistics(self):
 
         # Calculate 95% confidence intervals for final estimated values
+        self.confidence_intervals = self.time_series_model_utilities.init_series_map(self.series_key_list)
         for series_key in self.series_key_list:
-            last_values_map
+            series_last_values = self.last_values_map[series_key]
+            self.confidence_intervals[series_key] = np.quantile(np.array(series_last_values), q=[0.025, 0.975])
 
-
-        # self.confidence_interval = portfolio_cumulative_returns.iloc[-1, :].quantile(q=[0.025, 0.975])
-        return None
+        return self.confidence_intervals
 
 
         # TODO Upgrade to compute predicted sales numbers for the selected ind vars;
@@ -256,42 +272,38 @@ class MacroCustomerSales_MCSimulation:
 
         # TODO Switch to enable best-case and worst-case instead of normal distr
 
+    # --------------------------------------------------------------------------
+    # Plotting & Report Generation
+    # --------------------------------------------------------------------------
 
-        
+    def plot_simulation(self, figsize=(20, 8)):
 
+        # Build dataframe for plotting
+        series_simulation_df_map = self.extract_simulation_values_to_df(self.simulation_values)
 
-
-
-
-    def plot_simulation(self):
-        """
-        Visualizes the simulated stock trajectories using calc_cumulative_return method.
-
-        """ 
-        
-        # Check to make sure that simulation has run previously. 
-        if not isinstance(self.simulated_return,pd.DataFrame):
-            self.calc_cumulative_return()
-            
         # Use Pandas plot function to plot the return data
-        plot_title = f"{self.nSim} Simulations of Cumulative {self.value_title} Trajectories Over the Next {self.num_trailing_points} Time Steps."
-        # return (self.simulated_return * self.initial_value).hvplot.line(legend=False, title=plot_title, height=500, responsive=True)
-        return (self.simulated_return * self.initial_value).hvplot(kind="line", legend=False, figsize=(20, 8), title=plot_title)
-        # return (self.simulated_return * self.initial_value).plot(kind="line", legend=False, figsize=(20, 8), title=plot_title)
-        
-    def plot_distribution(self):
-        """
-        Visualizes the distribution of cumulative returns simulated using calc_cumulative_return method.
+        plot_title = f"{self.num_simulation} Simulations of {self.simulation_value_title} Trajectories Over the Next {self.num_prediction_time_steps} Time Steps"
 
-        """
-        
-        # Check to make sure that simulation has run previously. 
-        if not isinstance(self.simulated_return, pd.DataFrame):
-            self.calc_cumulative_return()
-        
-        # Use the `plot` function to create a probability distribution histogram of simulated ending prices
+        plt = None
+        for series_key in self.series_key_list:
+            series_simulation_df = series_simulation_df_map[series_key]
+            if (plt is None):
+                plt = series_simulation_df.plot(kind="line", legend=False, title=plot_title)
+            else:
+                plt.plot(series_simulation_df, kind="line")
+
+        return plt
+
+    def plot_distribution(self):
+
+        # Use the plot function to create a probability distribution histogram of simulated ending values
         # with markings for a 95% confidence interval
-        plot_title = f"Distribution of Final Cumuluative {self.value_title} Across All {self.nSim} Simulations"
+
+        for series_key in self.series_key_list:
+            last_values_seriesmap = self.last_values_map[series_key]
+            last_values_df = self.(last_values_seriesmap)
+
+        plot_title = f"Distribution of Final {self.simulation_value_title} Across All {self.num_simulation} Simulations - {str(series_key)} Series"
         # plt = self.simulated_return.iloc[-1, :].hvplot.hist(bins=10, density=True, title=plot_title, height=500, responsive=True)
         # plt = self.simulated_return.iloc[-1, :].plot(kind='hist', bins=10, density=True, title=plot_title, height=500, width=800)
         plt = (self.simulated_return * self.initial_value).iloc[-1, :].plot(kind='hist', density=True, title=plot_title, height=500, width=800)
@@ -300,16 +312,27 @@ class MacroCustomerSales_MCSimulation:
         return plt
     
     def summarize_cumulative_return(self):
-        """
-        Calculate final summary statistics for Monte Carlo simulated stock data.
-        
-        """
-        
-        # Check to make sure that simulation has run previously. 
-        if not isinstance(self.simulated_return, pd.DataFrame):
-            self.calc_cumulative_return()
-            
+
         metrics = (self.simulated_return * self.initial_value).iloc[-1].describe()
         ci_series = self.confidence_interval
         ci_series.index = ["95% CI Lower","95% CI Upper"]
         return metrics.append(ci_series)
+
+    # --------------------------------------------------------------------------
+    # Utility Functions
+    # --------------------------------------------------------------------------
+
+    def extract_simulation_values_to_df(self, simulation_values):
+        
+        # Populate each series with simulated runs
+        series_simulation_df_map = {}
+        for series_key in self.series_key_list:
+            
+            # Initialize empty DataFrame
+            series_simulation_df_map[series_key] = pd.DataFrame(index = self.forward_value_predictor.all_x_values)
+
+            # Populate with simulated runs
+            for run_index in self.num_simulation:
+                series_simulation_df_map[series_key][run_index] = simulation_values[run_index][series_key]
+
+        return series_simulation_df_map

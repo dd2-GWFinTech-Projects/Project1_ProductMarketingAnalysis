@@ -205,11 +205,71 @@ class TimeSeriesModelUtilities:
     def __init__(self, debug_level=0):
         self.debug_level = debug_level
 
+    # --------------------------------------------------------------------------
+    # Series Map - DataFrame Conversions
+    # --------------------------------------------------------------------------
+
     def convert_df_to_series_map(self, data_df, series_key_list):
         data_dict = {}
         for series_key in series_key_list:
             data_dict[series_key] = data_df[series_key].values
         return data_dict
+    
+    def convert_series_map_to_df(self, data_series_map, index=None):
+
+        series_key_list = list(data_series_map.keys())
+        value_length = len(data_series_map[series_key_list[0]])
+
+        # Build empty DataFrame
+        if index is None:
+            index = range(0, value_length)
+        data_df = pd.DataFrame(index)
+
+        # Append each series as a column
+        for series_key in series_key_list:
+            data_df[series_key] = data_series_map[series_key]
+
+        return data_df
+
+    # def (self, data_series_map, series_key_list, index=None):
+
+    #     value_length = len(data_series_map[series_key_list[0]])
+
+    #     if index is None:
+    #         index = range(0, value_length)
+
+    #     data_map = {}
+
+    #     # Populate with each series data
+    #     for series_key in series_key_list:
+            
+    #         # Build empty dataframe
+    #         data_df = pd.DataFrame(index=index)
+
+    #         # Populate with each simulation run
+    #         for run_index in self.num_simulation:
+    #             data_df[run_index] = data_series_map[run_index][series_key]
+
+    #         data_map[series_key] = data_df
+
+    # def extract_simulation_values_to_df(self, simulation_values):
+
+    #     # Populate each series with simulated runs
+    #     series_simulation_df_map = {}
+    #     for series_key in self.series_key_list:
+            
+    #         # Initialize empty DataFrame
+    #         series_simulation_df_map[series_key] = pd.DataFrame(index = self.forward_value_predictor.all_x_values)
+
+    #         # Populate with simulated runs
+    #         for run_index in self.num_simulation:
+    #             series_simulation_df_map[series_key][run_index] = simulation_values[run_index][series_key]
+
+    #     return series_simulation_df_map
+
+    # --------------------------------------------------------------------------
+    # Series Map Operations
+    # --------------------------------------------------------------------------
 
     def init_series_map(self, series_key_list):
         series_lookup_map = { }
@@ -242,6 +302,10 @@ class TimeSeriesModelUtilities:
             map[series_key] = map1[series_key] + map2[series_key]
 
         return map
+
+    # --------------------------------------------------------------------------
+    # Model Builder
+    # --------------------------------------------------------------------------
 
     def build_model(self, model_type,
                 x, series_key_list,
