@@ -34,23 +34,25 @@ class MacroCustomerSales_HistoricalAnalysis:
 # Simulation tools
 # ------------------------------------------------------------------------------
 
-class MacroCustomerSales_ForwardPredictor:
 
-    def __init__(self, debug_level=0):
-        self.debug_level = debug_level
+#         # TODO Use conversion rates from each behavior classification to each other behavior classification
 
-    def simulate_next_annual_numbers(self, macro_customer_behavior_counts_list):
 
-        # TODO Use average sales per year for each customer???
-        # TODO Use conversion rates from each behavior classification to each other behavior classification
-        # TODO Trend-based prediction. Time series regression?
 
-        conversion_rates = []
-        for macro_customer_behavior_counts in macro_customer_behavior_counts_list:
-            conversion_rates = []  # Compute running-average of year-to-year retention and/or conversion rates (totalcount -> new, new -> cont, new -> dropped, cont -> dropped, cont -> cont x3).
 
-        # For now, simply carry the last year's numbers into the next.
-        return macro_customer_behavior_counts_list[-1]
+# class MacroCustomerSales_ForwardPredictor:
+
+#     def __init__(self, debug_level=0):
+#         self.debug_level = debug_level
+
+#     def simulate_next_annual_numbers(self, macro_customer_behavior_counts_list):
+
+#         conversion_rates = []
+#         for macro_customer_behavior_counts in macro_customer_behavior_counts_list:
+#             conversion_rates = []  # Compute running-average of year-to-year retention and/or conversion rates (totalcount -> new, new -> cont, new -> dropped, cont -> dropped, cont -> cont x3).
+
+#         # For now, simply carry the last year's numbers into the next.
+#         return macro_customer_behavior_counts_list[-1]
 
 
 class MacroCustomerSales_PredictionFuzzer:
@@ -156,6 +158,12 @@ class ForwardPredictor:
         return prediction_map
 
 
+class Fuzzer:
+
+    def ():
+    d = np.random.normal(mean_change, std_change)
+    simvals.append(simvals[-1] * (1 + d))
+
 
 
 
@@ -167,62 +175,56 @@ class MacroCustomerSales_MCSimulation:
                 num_simulation):
 
         self.debug_level = debug_level
+        self.dict_lookup_list = dict_lookup_list
         self.forward_predictor = forward_predictor
         self.prediction_fuzzer = prediction_fuzzer
         self.num_simulation = num_simulation
 
         self.time_series_model_utilities = TimeSeriesModelUtilities()
-        self.init_simulation_values(dict_lookup_list)
-
-    def init_simulation_values(self, dict_lookup_list):
-
-        # Initialize output structure
-        self.simulation_values = self.time_series_model_utilities.init_series_map(dict_lookup_list)
+        self.simulation_values = None
 
     def run(self):
 
-        self.init_simulation_values()
+        # Initialize output structure
+        # empty_simulation_map = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
+        # self.simulation_values = [empty_simulation_map] * self.num_simulation
 
+        self.simulation_values = []
 
+        predictor = ForwardPredictor()
 
-
+        # Iterate over simulations
         for n in self.num_simulation:
 
-            while has_next:
+            if n % 10 == 0:
+                print(f"Running Monte Carlo simulation number {n}.")
 
+            # Initialize empty simulation run map
+            run_values = self.time_series_model_utilities.init_series_map(self.dict_lookup_list)
 
+            # Iterate through time series, building one future prediction at a time
+            while predictor.has_next():
                 
+                # Predict the next time step
+                predicted_y_values = predictor.predict_next()
 
+                # Append time step
+                run_values = self.time_series_model_utilities.join_series_maps(run_values, predicted_y_values)
 
-                a = append_prediction(a, b)
+                # Fuzz the prediction (apply randomness)
+                run_values = .fuzz(run_values)
 
+            # Append simulation run results
+            self.simulation_values.append(run_values)
 
-
-                # Fuzz the prediction (aApply randomness)
-
-
-
-
-        # loop simulations
-            # loop -> build up prediction_year_list/prediction_x_values
-            #     project value   
-            #     add random distribution
-            #     append
-            # append to simulations
+        return self.simulation_values
 
 
 
-
-
-        # # Get closing prices of each stock
-        # value_list = self.value_list  # last_prices
-        # # Calculate the mean and standard deviation of daily returns for each stock
-        # value_list_change = value_list.pct_change().dropna() # daily_returns
-        # mean_change = value_list_change.mean()  # mean_returns
-        # std_change = value_list_change.std()  # std_returns
-        # # Initialize empty Dataframe to hold simulated prices
-        # portfolio_cumulative_returns = None
-        
+    def compute_statistics():
+        # Calculate 95% confidence intervals for final cumulative returns
+        # self.confidence_interval = portfolio_cumulative_returns.iloc[-1, :].quantile(q=[0.025, 0.975])
+        return None
 
 
 
@@ -253,36 +255,20 @@ class MacroCustomerSales_MCSimulation:
 
                 # print(f"simvals type {type(simvals)}")
 
-                # TODO Upgrade to handle multiple ind variables
 
                 # TODO Upgrade to compute predicted sales numbers for the selected ind vars;
                 #   def compute_sales_atinstantintime(nbr_loyal_customers, nbr_new_customers, nbr_renew_customers, nbr_dropouts)
                 #   def compute_sales_atinstantintime(nbr_customers_size_parameter, loyal_customers_rate, new_customers_rate, renew_customers_rate, dropouts_rate)
 
                 # TODO Switch to enable best-case and worst-case instead of normal distr
-                d = np.random.normal(mean_change, std_change)
-                if not self.allow_negative_returns:
-                    d = np.abs(d)
-                simvals.append(simvals[-1] * (1 + d))
 
-    
-            # Calculate the daily returns of simulated prices
-            sim_df = pd.DataFrame(simvals).pct_change()
-    
-            # Calculate the normalized, cumulative return series
-            cumulative_return = (1 + sim_df.fillna(0)).cumprod()
-            if portfolio_cumulative_returns is None:
-                portfolio_cumulative_returns = pd.DataFrame(index=cumulative_return.index)
-            portfolio_cumulative_returns[n] = cumulative_return
+
         
-        # Set attribute to use in plotting
-        self.simulated_return = portfolio_cumulative_returns
-        
-        # Calculate 95% confidence intervals for final cumulative returns
-        self.confidence_interval = portfolio_cumulative_returns.iloc[-1, :].quantile(q=[0.025, 0.975])
-        
-        return portfolio_cumulative_returns
-    
+
+
+
+
+
     def plot_simulation(self):
         """
         Visualizes the simulated stock trajectories using calc_cumulative_return method.
