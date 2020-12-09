@@ -95,48 +95,66 @@ class MacroCustomerSales_InstantaneousVariation:
 
 class MacroCustomerSales_MCSimulation:
     def __init__(self,
-        value_title,
-        value_list,
-        num_simulation=1000, num_trailing_points=50,
-        scale_results=True,
-        allow_negative_returns=True,
-        debug_level=0
-        ):
-        self.value_title = value_title
-        self.value_list = value_list
-        self.nSim = num_simulation
-        self.num_trailing_points = num_trailing_points
-        self.simulated_return = ""
+                debug_level,
+                x, dict_lookup_list,
+                values_dict, change_values_dict,
+                predictor,
+                num_simulation
+    ):
 
-        # Grab initial value to use for scaling the results.
-        if scale_results:
-            self.initial_value = value_list[0]
-        else:
-            self.initial_value = 1.0
+        self.debug_level = debug_level
+        self.x = x
+        self.dict_lookup_list = dict_lookup_list
+        self.values_dict = values_dict
+        self.change_values_dict = change_values_dict
+        self.num_simulation = num_simulation
+
+        # value_title,
+        # value_list,
+        # =1000, num_trailing_points=50,
+        # scale_results=True,
+        # allow_negative_returns=True,
+        # debug_level=0
+        # ):
+        # self.value_title = value_title
+        # self.value_list = value_list
+        # self.nSim = num_simulation
+        # self.num_trailing_points = num_trailing_points
+        # self.simulated_return = ""
+
+
+
         
-        self.allow_negative_returns = allow_negative_returns
+    def run(self):
+
+        simulation_values = { }
+        for dict_lookup in dict_lookup_list:
+            simulation_values[dict_lookup]
+        dict_lookup_list foreach [] = []  build map
 
 
+        loop -> build up prediction_year_list
+            project value   
+            add random distribution
+            append
+
+
+
+
+
+        # # Get closing prices of each stock
+        # value_list = self.value_list  # last_prices
+        # # Calculate the mean and standard deviation of daily returns for each stock
+        # value_list_change = value_list.pct_change().dropna() # daily_returns
+        # mean_change = value_list_change.mean()  # mean_returns
+        # std_change = value_list_change.std()  # std_returns
+        # # Initialize empty Dataframe to hold simulated prices
+        # portfolio_cumulative_returns = None
         
-    def calc_cumulative_return(self):
-        """
-        Calculates the cumulative return of a stock over time using a Monte Carlo simulation (Brownian motion with drift).
 
-        """
 
-        # Get closing prices of each stock
-        value_list = self.value_list  # last_prices
-        
-        # Calculate the mean and standard deviation of daily returns for each stock
-        value_list_change = value_list.pct_change().dropna() # daily_returns
 
-        mean_change = value_list_change.mean()  # mean_returns
-        std_change = value_list_change.std()  # std_returns
 
-        # Initialize empty Dataframe to hold simulated prices
-        portfolio_cumulative_returns = None
-        
-        # Run the simulation of projecting stock prices 'nSim' number of times
         for n in range(self.nSim):
         
             if n % 10 == 0:
