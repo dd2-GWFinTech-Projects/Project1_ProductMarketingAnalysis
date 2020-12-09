@@ -284,39 +284,59 @@ class MacroCustomerSales_MCSimulation:
         # Use Pandas plot function to plot the return data
         plot_title = f"{self.num_simulation} Simulations of {self.simulation_value_title} Trajectories Over the Next {self.num_prediction_time_steps} Time Steps"
 
-        plt = None
+        self.simulation_plt = None
         for series_key in self.series_key_list:
             series_simulation_df = series_simulation_df_map[series_key]
-            if (plt is None):
-                plt = series_simulation_df.plot(kind="line", legend=False, title=plot_title)
+            if (self.simulation_plt is None):
+                self.simulation_plt = series_simulation_df.plot(kind="line", legend=False, title=plot_title)
             else:
-                plt.plot(series_simulation_df, kind="line")
+                self.simulation_plt.plot(series_simulation_df, kind="line")
 
-        return plt
+        return self.simulation_plt
 
-    def plot_distribution(self):
+    def plot_distribution(self, width=800, height=500):
 
         # Use the plot function to create a probability distribution histogram of simulated ending values
         # with markings for a 95% confidence interval
 
-        for series_key in self.series_key_list:
-            last_values_seriesmap = self.last_values_map[series_key]
-            last_values_df = self.(last_values_seriesmap)
+        self.plt_map = {}
+        
+        last_values_df = self.time_series_model_utilities.convert_series_map_to_df(self.last_values_map)
 
-        plot_title = f"Distribution of Final {self.simulation_value_title} Across All {self.num_simulation} Simulations - {str(series_key)} Series"
-        # plt = self.simulated_return.iloc[-1, :].hvplot.hist(bins=10, density=True, title=plot_title, height=500, responsive=True)
-        # plt = self.simulated_return.iloc[-1, :].plot(kind='hist', bins=10, density=True, title=plot_title, height=500, width=800)
-        plt = (self.simulated_return * self.initial_value).iloc[-1, :].plot(kind='hist', density=True, title=plot_title, height=500, width=800)
-        plt.axvline(self.confidence_interval.iloc[0], color='r')
-        plt.axvline(self.confidence_interval.iloc[1], color='r')
-        return plt
+        for series_key in self.series_key_list:
+
+            last_values_series = last_values_df[series_key]
+
+            # Generate plot
+            plot_title = f"Distribution of Final {self.simulation_value_title} Across All {self.num_simulation} Simulations - {str(series_key)} Series"
+            plt = last_values_series.plot(kind='hist', density=True, title=plot_title, width=width, height=height)
+            plt.axvline(self.confidence_intervals[series_key].iloc[0], color='r')
+            plt.axvline(self.confidence_intervals[series_key].iloc[1], color='r')
+
+            # Append to output structure
+            self.plt_map[series_key] = plt
+        
+        return self.plt_map
     
     def summarize_cumulative_return(self):
 
-        metrics = (self.simulated_return * self.initial_value).iloc[-1].describe()
-        ci_series = self.confidence_interval
-        ci_series.index = ["95% CI Lower","95% CI Upper"]
-        return metrics.append(ci_series)
+        self.metrics_map = {}
+        last_values_df = self.time_series_model_utilities.convert_series_map_to_df(self.last_values_map)
+
+        for series_key in self.series_key_list:
+
+            last_values_series = last_values_df[series_key]
+
+            metrics = last_values_series.describe()
+
+            ci_series = self.confidence_intervals[series_key]
+            ci_series.index = ["95% CI Lower", "95% CI Upper"]
+    
+            metrics.append(ci_series)
+
+            self.metrics_map[series_key] = metrics
+
+        return self.metrics_map
 
     # --------------------------------------------------------------------------
     # Utility Functions
