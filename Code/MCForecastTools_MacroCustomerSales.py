@@ -378,7 +378,7 @@ class MCSimulation_MacroCustomerSales:
             if (self.simulation_plt is None):
                 self.simulation_plt = series_simulation_df.plot(kind="line", legend=False, title=plot_title)
             else:
-                self.simulation_plt.plot(series_simulation_df, kind="line")
+                self.simulation_plt.plot(series_simulation_df)
 
         return self.simulation_plt
 
@@ -440,7 +440,7 @@ class MCSimulation_MacroCustomerSales:
             series_simulation_df_map[series_key] = pd.DataFrame(index = self.forward_value_predictor.all_x_values)
 
             # Populate with simulated runs
-            for run_index in self.num_simulation:
+            for run_index in range(0, self.num_simulation):
                 series_simulation_df_map[series_key][run_index] = simulation_values[run_index][series_key]
 
         return series_simulation_df_map
