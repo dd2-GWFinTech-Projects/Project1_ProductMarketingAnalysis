@@ -4,6 +4,9 @@ import pandas as pd
 import os
 import datetime as dt
 import pytz
+import matplotlib
+from matplotlib.ticker import FuncFormatter
+import plotly.express as px
 
 from UpgradeSequenceDataStructures import UpgradeType
 from UpgradeSequenceDataStructures import CustomerBehaviorObservations
@@ -363,9 +366,14 @@ class MCSimulation_MacroCustomerSales:
     # --------------------------------------------------------------------------
     # Plotting & Report Generation
     # --------------------------------------------------------------------------
+    
+    
+
+
+
 
     # def plot_simulation(self, simulation_values_map, figsize=(20, 8)):
-    def plot_simulation(self, scaling=1.0, xlabel="", ylabel="", figsize=(20, 8)):
+    def plot_simulation(self, scaling=1.0, xlabel="", ylabel="", figsize=(20, 8), yformatter="%d"):
 
         # Build dataframe for plotting
         series_simulation_df_map = self.extract_simulation_values_to_df(self.simulation_values)
@@ -375,7 +383,17 @@ class MCSimulation_MacroCustomerSales:
         for series_key in self.series_key_list:
             series_simulation_df = series_simulation_df_map[series_key]
             plot_title = f"{self.num_simulation} Simulations of {self.simulation_value_title} Trajectories Over the Next {self.num_prediction_time_steps} Time Steps - {series_key} Series"
-            self.simulation_plt[series_key] = (scaling * series_simulation_df).plot(kind="line", legend=False, title=plot_title, xlabel=xlabel, ylabel=ylabel, figsize=figsize).opts()
+            plt = (scaling * series_simulation_df).plot(kind="line", legend=False, title=plot_title, 
+            # xlabel=xlabel, ylabel=ylabel,
+             figsize=figsize)
+
+            plt.set_xlabel(xlabel)
+            plt.set_ylabel(ylabel)
+
+
+            plt.get_yaxis().set_major_formatter(FuncFormatter(lambda x, p: format(int(x), ',')))
+            self.simulation_plt[series_key] = plt
+
         return self.simulation_plt
 
     def plot_distribution(self, width=800, height=500):
