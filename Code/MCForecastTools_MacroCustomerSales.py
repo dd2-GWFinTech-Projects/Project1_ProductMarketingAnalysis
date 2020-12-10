@@ -376,7 +376,7 @@ class MCSimulation_MacroCustomerSales:
         for series_key in self.series_key_list:
             series_simulation_df = series_simulation_df_map[series_key]
             if (self.simulation_plt is None):
-                self.simulation_plt = series_simulation_df.plot(kind="line", legend=False, title=plot_title)
+                self.simulation_plt = series_simulation_df.plot(kind="line", legend=False, title=plot_title, figsize=figsize)
             else:
                 self.simulation_plt.plot(series_simulation_df)
 

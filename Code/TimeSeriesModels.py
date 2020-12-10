@@ -406,4 +406,4 @@ class TimeSeriesModelPredictionPreviewUtilities:
         display(merged_predictions_df__values_dict)
         return self.plot_building_tool.generate_plot__hvplot_line(merged_predictions_df__values_dict,
             title="Macro Customer Behavior Counts", xlabel="Year Index", ylabel="Nbr. Customers",
-            width=2000, height=800)
+            width=900, height=300)
