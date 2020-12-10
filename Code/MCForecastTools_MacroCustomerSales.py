@@ -298,6 +298,8 @@ class MCSimulation_MacroCustomerSales:
             std_series_map, foo = self.time_series_model_utilities.split_series_map(self.forward_std_predictor.values_dict, self.forward_value_predictor.min_index)
 
             # Iterate through time series, building one future prediction at a time
+            self.forward_value_predictor.reset()
+            self.forward_std_predictor.reset()
             while self.forward_value_predictor.has_next():
                 
                 # Predict the next time step
@@ -315,6 +317,9 @@ class MCSimulation_MacroCustomerSales:
                 # Fuzz the prediction (apply randomness)
                 run_series_map = self.prediction_fuzzer.fuzz(run_series_map, std_series_map)
 
+                # print(f"simulation.run() - run_series_map {run_series_map}")
+
+
             # Append simulation run results
             self.simulation_values.append(run_series_map)
 
@@ -328,7 +333,9 @@ class MCSimulation_MacroCustomerSales:
 
         # Extract last values from each run and collect into a last values series map
         self.last_values_map = self.time_series_model_utilities.init_series_map(self.series_key_list)
-        last_item_split_index = len(self.simulation_values[0][self.series_key_list]) - 1
+        # print(f"extract_last_values - self.simulation_values[0] {self.simulation_values[0]}")
+        # print(f"extract_last_values - self.series_key_list {self.series_key_list}")
+        last_item_split_index = len(self.simulation_values[0][self.series_key_list[0]]) - 1
 
         for run_series_map in self.simulation_values:
             run_first_values, run_last_values = self.time_series_model_utilities.split_series_map(run_series_map, last_item_split_index)
