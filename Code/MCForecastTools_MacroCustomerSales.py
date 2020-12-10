@@ -407,13 +407,13 @@ class MCSimulation_MacroCustomerSales:
 
         for series_key in self.series_key_list:
 
-            last_values_series = last_values_df[series_key]
+            last_values_series = last_values_df[str(series_key)]
 
             # Generate plot
             plot_title = f"Distribution of Final {self.simulation_value_title} Across All {self.num_simulation} Simulations - {str(series_key)} Series"
             plt = last_values_series.plot(kind='hist', density=True, title=plot_title, width=width, height=height)
-            plt.axvline(self.confidence_intervals[series_key].iloc[0], color='r')
-            plt.axvline(self.confidence_intervals[series_key].iloc[1], color='r')
+            plt.axvline(self.confidence_intervals[series_key][0], color='r')
+            plt.axvline(self.confidence_intervals[series_key][1], color='r')
 
             # Append to output structure
             self.plt_map[series_key] = plt

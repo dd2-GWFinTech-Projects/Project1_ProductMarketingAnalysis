@@ -234,7 +234,7 @@ class TimeSeriesModelUtilities:
 
         # Append each series as a column
         for series_key in series_key_list:
-            data_df[series_key] = data_series_map[series_key]
+            data_df[str(series_key)] = data_series_map[series_key]
 
         return data_df
 
