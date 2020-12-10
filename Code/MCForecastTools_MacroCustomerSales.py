@@ -364,18 +364,18 @@ class MCSimulation_MacroCustomerSales:
     # Plotting & Report Generation
     # --------------------------------------------------------------------------
 
-    def plot_simulation(self, figsize=(20, 8)):
+    # def plot_simulation(self, simulation_values_map, figsize=(20, 8)):
+    def plot_simulation(self, scaling=1.0, xlabel="", ylabel="", figsize=(20, 8)):
 
         # Build dataframe for plotting
         series_simulation_df_map = self.extract_simulation_values_to_df(self.simulation_values)
 
         # Use Pandas plot function to plot the return data
-        plot_title = f"{self.num_simulation} Simulations of {self.simulation_value_title} Trajectories Over the Next {self.num_prediction_time_steps} Time Steps"
-
         self.simulation_plt = {}
         for series_key in self.series_key_list:
             series_simulation_df = series_simulation_df_map[series_key]
-            self.simulation_plt[series_key] = series_simulation_df.plot(kind="line", legend=False, title=plot_title, figsize=figsize)
+            plot_title = f"{self.num_simulation} Simulations of {self.simulation_value_title} Trajectories Over the Next {self.num_prediction_time_steps} Time Steps - {series_key} Series"
+            self.simulation_plt[series_key] = (scaling * series_simulation_df).plot(kind="line", legend=False, title=plot_title, xlabel=xlabel, ylabel=ylabel, figsize=figsize).opts()
         return self.simulation_plt
 
     def plot_distribution(self, width=800, height=500):
