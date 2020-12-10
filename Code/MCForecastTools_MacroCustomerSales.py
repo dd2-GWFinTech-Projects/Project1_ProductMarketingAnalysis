@@ -372,14 +372,10 @@ class MCSimulation_MacroCustomerSales:
         # Use Pandas plot function to plot the return data
         plot_title = f"{self.num_simulation} Simulations of {self.simulation_value_title} Trajectories Over the Next {self.num_prediction_time_steps} Time Steps"
 
-        self.simulation_plt = None
+        self.simulation_plt = {}
         for series_key in self.series_key_list:
             series_simulation_df = series_simulation_df_map[series_key]
-            if (self.simulation_plt is None):
-                self.simulation_plt = series_simulation_df.plot(kind="line", legend=False, title=plot_title, figsize=figsize)
-            else:
-                self.simulation_plt.plot(series_simulation_df)
-
+            self.simulation_plt[series_key] = series_simulation_df.plot(kind="line", legend=False, title=plot_title, figsize=figsize)
         return self.simulation_plt
 
     def plot_distribution(self, width=800, height=500):
