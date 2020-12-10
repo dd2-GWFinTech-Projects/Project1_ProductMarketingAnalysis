@@ -383,14 +383,9 @@ class MCSimulation_MacroCustomerSales:
         for series_key in self.series_key_list:
             series_simulation_df = series_simulation_df_map[series_key]
             plot_title = f"{self.num_simulation} Simulations of {self.simulation_value_title} Trajectories Over the Next {self.num_prediction_time_steps} Time Steps - {series_key} Series"
-            plt = (scaling * series_simulation_df).plot(kind="line", legend=False, title=plot_title, 
-            # xlabel=xlabel, ylabel=ylabel,
-             figsize=figsize)
-
+            plt = (scaling * series_simulation_df).plot(kind="line", legend=False, title=plot_title, figsize=figsize)
             plt.set_xlabel(xlabel)
             plt.set_ylabel(ylabel)
-
-
             plt.get_yaxis().set_major_formatter(FuncFormatter(lambda x, p: format(int(x), ',')))
             self.simulation_plt[series_key] = plt
 
@@ -401,10 +396,9 @@ class MCSimulation_MacroCustomerSales:
         # Use the plot function to create a probability distribution histogram of simulated ending values
         # with markings for a 95% confidence interval
 
-        self.plt_map = {}
-        
         last_values_df = self.time_series_model_utilities.convert_series_map_to_df(self.last_values_map)
 
+        self.plt_map = {}
         for series_key in self.series_key_list:
 
             last_values_series = last_values_df[str(series_key)]
@@ -417,6 +411,8 @@ class MCSimulation_MacroCustomerSales:
 
             # Append to output structure
             self.plt_map[series_key] = plt
+
+            break
         
         return self.plt_map
     
