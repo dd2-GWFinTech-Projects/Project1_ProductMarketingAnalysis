@@ -391,6 +391,9 @@ class MCSimulation_MacroCustomerSales:
 
         return self.simulation_plt
 
+    def get_last_values_df(self):
+        return self.time_series_model_utilities.convert_series_map_to_df(self.extract_last_values())
+    
     def plot_distribution(self, width=800, height=500):
 
         # Use the plot function to create a probability distribution histogram of simulated ending values
