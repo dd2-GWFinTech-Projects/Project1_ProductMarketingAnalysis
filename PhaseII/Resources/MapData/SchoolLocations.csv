@@ -1,0 +1,670 @@
+"Louisiana Board of Regents",Latitude,Longitude,"Accuracy Score","Accuracy Type",Number,Street,"Unit Type","Unit Number",City,State,County,Zip,Country,Source
+"Emporia State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Morehead State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"State University of NY Potsdam",44.668661,-74.978217,1,street_center,,"State St",,,Potsdam,NY,"St. Lawrence County",13676,US,"TIGER/Line® dataset from the US Census Bureau"
+"ST. Mary's College of Maryland",38.18707,-76.4344,0.67,place,,,,,"Saint Marys City",MD,"St. Mary's County",20686,US,"TIGER/Line® dataset from the US Census Bureau"
+"Clark County Education Association",44.891983,-97.832972,1,place,,,,,Clark,SD,"Clark County",57225,US,"TIGER/Line® dataset from the US Census Bureau"
+"BIA Central",34.744649,-82.797267,1,place,,,,,Central,SC,"Pickens County",29630,US,"TIGER/Line® dataset from the US Census Bureau"
+"BIA Central",34.744649,-82.797267,1,place,,,,,Central,SC,"Pickens County",29630,US,"TIGER/Line® dataset from the US Census Bureau"
+"Louisiana Board of Regents",0,0,0,,,,,,,,,,,
+"College of William and Mary",37.66842,-83.536297,0.9,place,,,,,Mary,KY,"Wolfe County",41301,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia College and State University",30.70327,-83.02764,0.67,place,,,,,Statenville,GA,"Echols County",31648,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia College and State University",30.70327,-83.02764,0.67,place,,,,,Statenville,GA,"Echols County",31648,US,"TIGER/Line® dataset from the US Census Bureau"
+"Illinois College",0,0,0,,,,,,,,,,,
+"Illinois College",0,0,0,,,,,,,,,,,
+"Illinois College",0,0,0,,,,,,,,,,,
+"University of Kentucky",0,0,0,,,,,,,,,,,
+"Shorter University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Shorter University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Winthrop University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Emporia State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"St. Bonaventure University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northampton CPS",40.88871,-72.689542,0.8,place,,,,,Northampton,NY,"Suffolk County",11901,US,"TIGER/Line® dataset from the US Census Bureau"
+"Augusta University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"California University of PA",40.046955,-79.894985,1,place,,,,,California,PA,"Washington County",15419,US,"TIGER/Line® dataset from the US Census Bureau"
+"Murrieta Valley Unified School",48.124594,-117.762554,1,place,,,,,Valley,WA,"Stevens County",99181,US,"TIGER/Line® dataset from the US Census Bureau"
+"California University of PA",40.046955,-79.894985,1,place,,,,,California,PA,"Washington County",15419,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Kentucky",0,0,0,,,,,,,,,,,
+"Pierce College",42.224218,-97.581551,1,place,,,,,Pierce,NE,"Pierce County",68767,US,"TIGER/Line® dataset from the US Census Bureau"
+"Southern Connecticut State University",0,0,0,,,,,,,,,,,
+"Rowan University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Illinois State University Board of Trustees",0,0,0,,,,,,,,,,,
+"Teach for America-Kansas City",0,0,0,,,,,,,,,,,
+"St. Mary's College of Maryland",38.18707,-76.4344,0.67,place,,,,,"Saint Marys City",MD,"St. Mary's County",20686,US,"TIGER/Line® dataset from the US Census Bureau"
+"Armstrong State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Detroit Mercy Libraries",42.31296,-83.374549,1,street_center,,University,,,Westland,MI,"Wayne County",48185,US,"TIGER/Line® dataset from the US Census Bureau"
+"Armstrong State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Armstrong State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Alabama Birmingham In-Service  Ctr",0,0,0,,,,,,,,,,,
+"Tuscaloosa City Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of the Cumberland",39.580691,-78.690593,1,place,,,,,Cumberland,MD,"Allegany County",21501,US,"TIGER/Line® dataset from the US Census Bureau"
+"Greenville College",35.580444,-77.392609,1,place,,,,,Greenville,NC,"Pitt County",27833,US,"TIGER/Line® dataset from the US Census Bureau"
+"New York University",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Farleigh Dickinson University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of NC at Greensboro",36.074859,-79.777559,1,street_center,,"University Cir",,,Greensboro,NC,"Guilford County",27401,US,"TIGER/Line® dataset from the US Census Bureau"
+"Miami University-Oxford",33.614271,-85.834965,1,place,,,,,Oxford,AL,"Calhoun County",36203,US,"TIGER/Line® dataset from the US Census Bureau"
+"Orange County Department of Education",33.640302,-117.769442,1,place,,,,,Orange,CA,"Orange County",92856,US,"TIGER/Line® dataset from the US Census Bureau"
+"Piedmont College",37.680181,-121.921498,1,place,,,,,Piedmont,CA,"Alameda County",94620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Morehead State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Christina School District",47.381924,-109.324067,0.9,place,,,,,Christina,MT,"Fergus County",59423,US,"TIGER/Line® dataset from the US Census Bureau"
+"Fayetteville State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kennesaw State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Fort Mill School District",35.050243,-80.990828,1,place,,,,,"Fort Mill",SC,"York County",29708,US,"TIGER/Line® dataset from the US Census Bureau"
+"Saint Andrew's School",0,0,0,,,,,,,,,,,
+"Western Governors University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"California State University",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Hawaii State Teachers Association",0,0,0,,,,,,,,,,,
+"Billings Senior High School",33.612327,-95.747185,0.8,place,,,,,High,TX,"Lamar County",75421,US,"TIGER/Line® dataset from the US Census Bureau"
+"Portland State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"College of William and Mary",37.66842,-83.536297,0.9,place,,,,,Mary,KY,"Wolfe County",41301,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Mississippi",34.365411,-89.53718,1,place,,,,,University,MS,"Lafayette County",38677,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mississippi State University",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Stroudsburg University & Colonial IU",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Missouri-Kansas City",0,0,0,,,,,,,,,,,
+"St. Thomas Aquinas College",48.630369,-97.471056,1,place,,,,,"Saint Thomas",ND,"Pembina County",58276,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mississippi Dept of Education",32.686471,-89.656138,1,state,,,,,,MS,,,US,"US Census Bureau"
+"Lamar CISD",28.139457,-97.005546,0.8,place,,,,,Lamar,TX,"Aransas County",78382,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Virginia",37.57557,-77.53823,0.22,place,,,,,"University Of Richmond",VA,"Richmond city",23173,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Pacific",47.26455,-122.25012,1,place,,,,,Pacific,WA,"King County",98047,US,"TIGER/Line® dataset from the US Census Bureau"
+"South Australia DOE",37.329217,-86.364699,0.9,place,,,,,South,KY,"Grayson County",42754,US,"TIGER/Line® dataset from the US Census Bureau"
+"Delta State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Emporia State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Walla Walla PS",46.1341,-118.291407,1,place,,,,,"Walla Walla",WA,"Walla Walla County",99362,US,"TIGER/Line® dataset from the US Census Bureau"
+"Augusta University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Durham Public Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Detroit Mercy Lib",42.31296,-83.374549,1,street_center,,University,,,Westland,MI,"Wayne County",48185,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of NC Charlotte",35.180557,-80.870862,1,street_center,,"University Dr",,,Charlotte,NC,"Mecklenburg County",28209,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northampton City Public Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"Illinois National Bd Resource Ctr",0,0,0,,,,,,,,,,,
+"Dickinson State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Kentucky",0,0,0,,,,,,,,,,,
+"Winthrop University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Teach for America Kansas City",0,0,0,,,,,,,,,,,
+"Central Connecticut University",0,0,0,,,,,,,,,,,
+"University of Holy Cross (LA)",42.539813,-90.90914,1,place,,,,,"Holy Cross",IA,"Dubuque County",52053,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northwestern State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Region 4 Education Service Ctr",43.971713,-120.622958,1,state,,,,,,OR,,,US,"US Census Bureau"
+"East Tennessee State University",0,0,0,,,,,,,,,,,
+"UAB Regional In Service Center",40.531266,-86.169537,0.8,place,,,,,Center,IN,"Howard County",46901,US,"TIGER/Line® dataset from the US Census Bureau"
+"Morehead State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia Gwinnett College",30.976287,-83.871284,0.67,place,,,,,Coolidge,GA,"Thomas County",31738,US,"TIGER/Line® dataset from the US Census Bureau"
+"Greenville College",35.580444,-77.392609,1,place,,,,,Greenville,NC,"Pitt County",27833,US,"TIGER/Line® dataset from the US Census Bureau"
+"Louisiana State University Shreveport",32.506576,-93.746508,1,street_center,,"Louisiana Ave",,,Shreveport,LA,"Caddo Parish",71101,US,"TIGER/Line® dataset from the US Census Bureau"
+"El Rancho Unified School District",36.024269,-106.066584,0.8,place,,,,,"El Rancho",NM,"Santa Fe County",87533,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kansas State University",0,0,0,,,,,,,,,,,
+"Lake Havasu USD",32.3432,-89.32868,1,place,,,,,Lake,MS,"Scott County",39092,US,"TIGER/Line® dataset from the US Census Bureau"
+"Middle Tennessee State University",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"John P. Ellbogen Foundation",0,0,0,,,,,,,,,,,
+"Pinecrest Academy of Nevada",0,0,0,,,,,,,,,,,
+"Campbell University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Fayetteville State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Billings Senior High School",33.612327,-95.747185,0.8,place,,,,,High,TX,"Lamar County",75421,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of NC Wilmington",34.228209,-77.88113,1,street_center,,"University Dr",,,Wilmington,NC,"New Hanover County",28403,US,"TIGER/Line® dataset from the US Census Bureau"
+"Pierce College",42.224218,-97.581551,1,place,,,,,Pierce,NE,"Pierce County",68767,US,"TIGER/Line® dataset from the US Census Bureau"
+"Portland State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Southern Mississippi ",34.365411,-89.53718,1,place,,,,,University,MS,"Lafayette County",38677,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kentucky EPSB",37.533684,-85.29298,1,state,,,,,,KY,,,US,"US Census Bureau"
+"Murrieta Valley USD ",48.124594,-117.762554,1,place,,,,,Valley,WA,"Stevens County",99181,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Louisiana at Monroe",32.539067,-92.071902,1,street_center,,"University Pl",,,Monroe,LA,"Ouachita Parish",71203,US,"TIGER/Line® dataset from the US Census Bureau"
+"College of William and Mary",37.66842,-83.536297,0.9,place,,,,,Mary,KY,"Wolfe County",41301,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Phoenix Inc.",33.703967,-112.351835,1,place,,,,,Phoenix,AZ,"Maricopa County",85001,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Carolina Gen Admin",0,0,0,,,,,,,,,,,
+"Southern University at New Orleans",29.963254,-90.210745,1,street_center,,"Southern Rd",,,"New Orleans",LA,"Jefferson Parish",70123,US,"TIGER/Line® dataset from the US Census Bureau"
+"Maricopa CC District Rio Salado College",35.691868,-91.598917,1,place,,,,,Salado,AR,"Independence County",72575,US,"TIGER/Line® dataset from the US Census Bureau"
+"Arlington Public Schools",0,0,0,,,,,,,,,,,
+"Alcorn State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Louisiana Tech University ",0,0,0,,,,,,,,,,,
+"Austin Peay State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Orange County Superintendent of Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Stroudsburg University & Colonial IU",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"New York University",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Milligan College",36.30011,-82.29403,1,place,,,,,"Milligan College",TN,"Carter County",37682,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mulligan College",36.30011,-82.29403,1,place,,,,,"Milligan College",TN,"Carter County",37682,US,"TIGER/Line® dataset from the US Census Bureau"
+"Dr.Suzanne Jacquez Gorman",32.221688,-98.719352,1,place,,,,,Gorman,TX,"Eastland County",76454,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Portland",45.507856,-122.690794,1,place,,,,,Portland,OR,"Multnomah County",97201,US,"TIGER/Line® dataset from the US Census Bureau"
+"Piedmont College",37.680181,-121.921498,1,place,,,,,Piedmont,CA,"Alameda County",94620,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Carolina University",27.926018,-82.487126,0.9,street_center,,"S Carolina Ave",,,Tampa,FL,"Hillsborough County",33629,US,"TIGER/Line® dataset from the US Census Bureau"
+"Utah Valley University",0,0,0,,,,,,,,,,,
+"Board of Trustees University of Alabama",0,0,0,,,,,,,,,,,
+"Augusta University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Alabama A&M University-College of Education",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"St. Thomas Aquinas",48.630369,-97.471056,1,place,,,,,"Saint Thomas",ND,"Pembina County",58276,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Virginia",37.57557,-77.53823,0.22,place,,,,,"University Of Richmond",VA,"Richmond city",23173,US,"TIGER/Line® dataset from the US Census Bureau"
+"North Carolina State University",0,0,0,,,,,,,,,,,
+"Northampton County Public Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"Winthrop University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Washington County Schools",45.521516,-122.984856,0.9,street_center,,"SE Washington St",,,Hillsboro,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"Emporia University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Four Corners Coalition ",44.119155,-104.133391,1,place,,,,,"Four Corners",WY,"Weston County",82715,US,"TIGER/Line® dataset from the US Census Bureau"
+"Greenville College",35.580444,-77.392609,1,place,,,,,Greenville,NC,"Pitt County",27833,US,"TIGER/Line® dataset from the US Census Bureau"
+"Columbus State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"NM NBCT Network",34.434684,-106.131618,1,state,,,,,,NM,,,US,"US Census Bureau"
+"Floyd County Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"Union University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"NM NT3 Santa Fe",35.697473,-105.982146,1,place,,,,,"Santa Fe",NM,"Santa Fe County",87501,US,"TIGER/Line® dataset from the US Census Bureau"
+"San Jose State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"NM Northern Coalition",0,0,0,,,,,,,,,,,
+"Albertus Magnus College",35.7005,-91.48084,1,place,,,,,Magness,AR,"Independence County",72553,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of West Alabama",0,0,0,,,,,,,,,,,
+"Birmingham Southern College",33.456412,-86.801904,1,place,,,,,Birmingham,AL,"Jefferson County",35201,US,"TIGER/Line® dataset from the US Census Bureau"
+"New York University",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Missouri Kansas City",0,0,0,,,,,,,,,,,
+"Kennesaw State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Kentucky - TRREE Project",37.910078,-84.694667,0.18,place,,,,,Troy,KY,"Woodford County",40383,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Carolina Wilmington",34.228209,-77.88113,1,street_center,,"University Dr",,,Wilmington,NC,"New Hanover County",28403,US,"TIGER/Line® dataset from the US Census Bureau"
+"Homewood City Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"Pitt County School/DEEL",40.250861,-74.004581,0.67,place,,,,,Deal,NJ,"Monmouth County",07723,US,"TIGER/Line® dataset from the US Census Bureau"
+SDCOE,0,0,0,,,,,,,,,,,
+"Clark County Education Association",44.891983,-97.832972,1,place,,,,,Clark,SD,"Clark County",57225,US,"TIGER/Line® dataset from the US Census Bureau"
+"Department of Defense Education Activity",42.54364,-71.61479,0.7,place,,,,,Devens,MA,"Worcester County",01434,US,"TIGER/Line® dataset from the US Census Bureau"
+"Taos Municipal School District",39.577496,-94.834963,0.8,place,,,,,Taos,MO,"Buchanan County",64448,US,"TIGER/Line® dataset from the US Census Bureau"
+"Pierce College",42.224218,-97.581551,1,place,,,,,Pierce,NE,"Pierce County",68767,US,"TIGER/Line® dataset from the US Census Bureau"
+"Fayetteville State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Carolina at Greensboro",36.074859,-79.777559,1,street_center,,"University Cir",,,Greensboro,NC,"Guilford County",27401,US,"TIGER/Line® dataset from the US Census Bureau"
+"Campbell University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"American University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Indiana University Libraries",39.622129,-87.454769,0.67,place,,,,,Universal,IN,"Vermillion County",47884,US,"TIGER/Line® dataset from the US Census Bureau"
+"College of William and Mary",37.66842,-83.536297,0.9,place,,,,,Mary,KY,"Wolfe County",41301,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Southern Mississippi",34.365411,-89.53718,1,place,,,,,University,MS,"Lafayette County",38677,US,"TIGER/Line® dataset from the US Census Bureau"
+"Virginia Commonwealth University",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"George Gwinnett College",30.976287,-83.871284,0.67,place,,,,,Coolidge,GA,"Thomas County",31738,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of the Pacific",47.26455,-122.25012,1,place,,,,,Pacific,WA,"King County",98047,US,"TIGER/Line® dataset from the US Census Bureau"
+"Portland State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+CERRA,36.75391,-105.61278,1,place,,,,,Cerro,NM,"Taos County",87519,US,"TIGER/Line® dataset from the US Census Bureau"
+"CERRA SCNBN",36.75391,-105.61278,1,place,,,,,Cerro,NM,"Taos County",87519,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Stroudsburg University & Colonial IU",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Orange County Department of Education",33.640302,-117.769442,1,place,,,,,Orange,CA,"Orange County",92856,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of California, Riverside",33.657531,-117.812668,1,street_center,,"University Dr",,,Irvine,CA,"Orange County",92612,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia College & State University",30.70327,-83.02764,0.67,place,,,,,Statenville,GA,"Echols County",31648,US,"TIGER/Line® dataset from the US Census Bureau"
+"Albuquerque Public Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"North Carolina State University",0,0,0,,,,,,,,,,,
+"Young Harris College/Miller Library",40.303119,-79.997567,1,place,,,,,Library,PA,"Allegheny County",15129,US,"TIGER/Line® dataset from the US Census Bureau"
+"SCALE/Graduate School of Education edTPA",33.826229,-93.961022,0.8,place,,,,,Schaal,AR,"Howard County",71851,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kansas State University",0,0,0,,,,,,,,,,,
+"NC New Teacher Support Program-East Carolina University",0,0,0,,,,,,,,,,,
+"St. Thomas Aquinas College",48.630369,-97.471056,1,place,,,,,"Saint Thomas",ND,"Pembina County",58276,US,"TIGER/Line® dataset from the US Census Bureau"
+"Illinois College",0,0,0,,,,,,,,,,,
+"Austin Peay State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia College & State University",30.70327,-83.02764,0.67,place,,,,,Statenville,GA,"Echols County",31648,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Carolina University",27.926018,-82.487126,0.9,street_center,,"S Carolina Ave",,,Tampa,FL,"Hillsborough County",33629,US,"TIGER/Line® dataset from the US Census Bureau"
+"American College of Education",0,0,0,,,,,,,,,,,
+"SCALE/Graduate School of Education edTPA",33.826229,-93.961022,0.8,place,,,,,Schaal,AR,"Howard County",71851,US,"TIGER/Line® dataset from the US Census Bureau"
+"Piedmont College",37.680181,-121.921498,1,place,,,,,Piedmont,CA,"Alameda County",94620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Cleveland County Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"UAB Regional In Service Centers",39.07977,-86.513329,0.8,place,,,,,Sanders,IN,"Monroe County",47401,US,"TIGER/Line® dataset from the US Census Bureau"
+"Charleston Southern University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Augusta University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Southern New Hampshire University",0,0,0,,,,,,,,,,,
+"Governors State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia Southwestern State University",30.70327,-83.02764,0.67,place,,,,,Statenville,GA,"Echols County",31648,US,"TIGER/Line® dataset from the US Census Bureau"
+"Union University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Emporia State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia Southern University",0,0,0,,,,,,,,,,,
+"University of Central Arkansas",34.12708,-93.056583,1,street_center,,"University Dr",,,Arkadelphia,AR,"Clark County",71923,US,"TIGER/Line® dataset from the US Census Bureau"
+"Radford University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northampton County Public Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Tennessee of Tennessee Martin",36.34318,-88.858988,1,street_center,,"University Ct",,,Martin,TN,"Weakley County",38237,US,"TIGER/Line® dataset from the US Census Bureau"
+"Greenville College",35.580444,-77.392609,1,place,,,,,Greenville,NC,"Pitt County",27833,US,"TIGER/Line® dataset from the US Census Bureau"
+"Southeast/South-Central Educational Cooperative",34.744649,-82.797267,1,place,,,,,Central,SC,"Pickens County",29630,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kennesaw State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia Southern University",0,0,0,,,,,,,,,,,
+"San Jose State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Georgia",0,0,0,,,,,,,,,,,
+"VA NBCT Network",37.522251,-78.668194,1,state,,,,,,VA,,,US,"US Census Bureau"
+"Bainbridge Island School District",47.647774,-122.538016,1,place,,,,,"Bainbridge Island",WA,"Kitsap County",98110,US,"TIGER/Line® dataset from the US Census Bureau"
+"Southern Connecticut State University",0,0,0,,,,,,,,,,,
+"John Hopkins University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"New York University",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Birmingham-Southern College",33.456412,-86.801904,1,place,,,,,Birmingham,AL,"Jefferson County",35201,US,"TIGER/Line® dataset from the US Census Bureau"
+"Brenau University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Stanford University/SCALE",36.905612,-88.35976,0.8,place,,,,,Scale,KY,"Marshall County",42025,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northwestern State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Western Governors University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Sam Houston State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Carolina Wilmington",34.228209,-77.88113,1,street_center,,"University Dr",,,Wilmington,NC,"New Hanover County",28403,US,"TIGER/Line® dataset from the US Census Bureau"
+"Fayetteville State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"American University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Indiana University Libraries",39.622129,-87.454769,0.67,place,,,,,Universal,IN,"Vermillion County",47884,US,"TIGER/Line® dataset from the US Census Bureau"
+"Rowan College South Jersey",33.717989,-83.801451,1,place,,,,,Jersey,GA,"Walton County",30018,US,"TIGER/Line® dataset from the US Census Bureau"
+"Monroe County School District",41.33065,-74.18681,1,place,,,,,Monroe,NY,"Orange County",10950,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Carolina at Greensboro",36.074859,-79.777559,1,street_center,,"University Cir",,,Greensboro,NC,"Guilford County",27401,US,"TIGER/Line® dataset from the US Census Bureau"
+"Central Washington University",47.666487,-122.309849,0.9,place,,,,,University,WA,"King County",98105,US,"TIGER/Line® dataset from the US Census Bureau"
+"NM NBCT Network",34.434684,-106.131618,1,state,,,,,,NM,,,US,"US Census Bureau"
+"University of Southern Mississippi",34.365411,-89.53718,1,place,,,,,University,MS,"Lafayette County",38677,US,"TIGER/Line® dataset from the US Census Bureau"
+"Lyndonville Central School District",34.744649,-82.797267,1,place,,,,,Central,SC,"Pickens County",29630,US,"TIGER/Line® dataset from the US Census Bureau"
+"Winthrop University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"TAOS Municipal School District",39.577496,-94.834963,0.8,place,,,,,Taos,MO,"Buchanan County",64448,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of the Pacific",47.26455,-122.25012,1,place,,,,,Pacific,WA,"King County",98047,US,"TIGER/Line® dataset from the US Census Bureau"
+"Pierce College",42.224218,-97.581551,1,place,,,,,Pierce,NE,"Pierce County",68767,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kansas State University",0,0,0,,,,,,,,,,,
+"NC New Teacher Support Program",0,0,0,,,,,,,,,,,
+"East Stroudsburg University & Colonial IU",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"BloomBoard, Inc.",0,0,0,,,,,,,,,,,
+"BloomBoard, Inc.",0,0,0,,,,,,,,,,,
+"Western Governors University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+CERRA,36.75391,-105.61278,1,place,,,,,Cerro,NM,"Taos County",87519,US,"TIGER/Line® dataset from the US Census Bureau"
+"Stanford University/SCALE",36.905612,-88.35976,0.8,place,,,,,Scale,KY,"Marshall County",42025,US,"TIGER/Line® dataset from the US Census Bureau"
+"Pathway to Practice, NCSU",0,0,0,,,,,,,,,,,
+"University of Tennessee at Martin",36.34318,-88.858988,1,street_center,,"University Ct",,,Martin,TN,"Weakley County",38237,US,"TIGER/Line® dataset from the US Census Bureau"
+"Young Harris College/Miller Library",40.303119,-79.997567,1,place,,,,,Library,PA,"Allegheny County",15129,US,"TIGER/Line® dataset from the US Census Bureau"
+"Bowling Green Independent Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of California, River",0,0,0,,,,,,,,,,,
+"Southeast/South-Central Educational Cooperative",34.744649,-82.797267,1,place,,,,,Central,SC,"Pickens County",29630,US,"TIGER/Line® dataset from the US Census Bureau"
+"Four Corners Coalition/Farmington High School",48.049258,-122.819336,0.8,place,,,,,"Four Corners",WA,"Jefferson County",98368,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia Gwinnett College",30.976287,-83.871284,0.67,place,,,,,Coolidge,GA,"Thomas County",31738,US,"TIGER/Line® dataset from the US Census Bureau"
+"NM NT3 Santa Fe Public Schools ",0,0,0,,,,,,,,,,,
+"Orange County DOE",33.640302,-117.769442,1,place,,,,,Orange,CA,"Orange County",92856,US,"TIGER/Line® dataset from the US Census Bureau"
+"Colorado Education Association",38.993867,-105.508319,1,state,,,,,,CO,,,US,"US Census Bureau"
+"Southeast/South-Central Educational Cooperative",34.744649,-82.797267,1,place,,,,,Central,SC,"Pickens County",29630,US,"TIGER/Line® dataset from the US Census Bureau"
+"Austin Peay State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Walla Walla Public Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"Piedmont College School of Education",37.680181,-121.921498,1,place,,,,,Piedmont,CA,"Alameda County",94620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia College and State University",30.70327,-83.02764,0.67,place,,,,,Statenville,GA,"Echols County",31648,US,"TIGER/Line® dataset from the US Census Bureau"
+"Milligan College",36.30011,-82.29403,1,place,,,,,"Milligan College",TN,"Carter County",37682,US,"TIGER/Line® dataset from the US Census Bureau"
+"Stanford University/SCALE",36.905612,-88.35976,0.8,place,,,,,Scale,KY,"Marshall County",42025,US,"TIGER/Line® dataset from the US Census Bureau"
+"St. Thomas Aquinas College",48.630369,-97.471056,1,place,,,,,"Saint Thomas",ND,"Pembina County",58276,US,"TIGER/Line® dataset from the US Census Bureau"
+"Illinois College ",0,0,0,,,,,,,,,,,
+"East Carolina University",27.926018,-82.487126,0.9,street_center,,"S Carolina Ave",,,Tampa,FL,"Hillsborough County",33629,US,"TIGER/Line® dataset from the US Census Bureau"
+"Southeast South-Central Education Cooperative",34.744649,-82.797267,1,place,,,,,Central,SC,"Pickens County",29630,US,"TIGER/Line® dataset from the US Census Bureau"
+"Richland Elementary School",46.28569,-119.28446,1,place,,,,,Richland,WA,"Benton County",99352,US,"TIGER/Line® dataset from the US Census Bureau"
+"Augusta University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Department of Defense Education Activity-Teaching and 
+Learning Division ",36.432632,-80.917853,0.8,place,,,,,Devotion,NC,"Surry County",27017,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Tennessee at Martin",36.34318,-88.858988,1,street_center,,"University Ct",,,Martin,TN,"Weakley County",38237,US,"TIGER/Line® dataset from the US Census Bureau"
+"Illinois National Board Resource Center",39.282538,-87.667527,0.53,place,,,,,Snyder,IL,"Clark County",62477,US,"TIGER/Line® dataset from the US Census Bureau"
+"UNC Wilmington",0,0,0,,,,,,,,,,,
+"Catawba College",34.859604,-80.938257,1,place,,,,,Catawba,SC,"York County",29704,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mercer University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Swarthmore College",39.897162,-75.344083,1,place,,,,,Swarthmore,PA,"Delaware County",19081,US,"TIGER/Line® dataset from the US Census Bureau"
+"James Madison University College of Education ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Midland University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Winthrop University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Augusta University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Piedmont College ",37.680181,-121.921498,1,place,,,,,Piedmont,CA,"Alameda County",94620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Western Carolina University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"College of Coastal Georgia ",0,0,0,,,,,,,,,,,
+KCTCS,0,0,0,,,,,,,,,,,
+"East Tennessee State University ",0,0,0,,,,,,,,,,,
+"George Mason University",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Colgate University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of New Orleans",29.953701,-90.072803,1,street_center,,"University Pl",,,"New Orleans",LA,"Orleans Parish",70112,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of the Arts",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Governors State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Augustana College ",0,0,0,,,,,,,,,,,
+"Georgia Gwinnett College ",30.976287,-83.871284,0.67,place,,,,,Coolidge,GA,"Thomas County",31738,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kutztown University of Pennsylvania ",40.53907,-75.781445,1,place,,,,,Kutztown,PA,"Berks County",19530,US,"TIGER/Line® dataset from the US Census Bureau"
+"State University of New York (SUNY)",0,0,0,,,,,,,,,,,
+"Marietta College",33.912473,-84.557181,1,place,,,,,Marietta,GA,"Cobb County",30006,US,"TIGER/Line® dataset from the US Census Bureau"
+"Purdue University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Guam",0,0,0,,,,,,,,,,,
+"Tennessee Wesleyan University",0,0,0,,,,,,,,,,,
+"Cumberland University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Montclair State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"SUNY College of Oneonta",33.94815,-86.47276,1,place,,,,,Oneonta,AL,"Blount County",35121,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of California, Davis ",38.544956,-121.746159,1,street_center,,"University Ave",,,Davis,CA,"Yolo County",95616,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Hawaii at Manoa",21.970965,-159.714507,0.18,place,,,,,Mana,HI,"Kauai County",96752,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Carolina University ",27.926018,-82.487126,0.9,street_center,,"S Carolina Ave",,,Tampa,FL,"Hillsborough County",33629,US,"TIGER/Line® dataset from the US Census Bureau"
+"Murray State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Marietta College",33.912473,-84.557181,1,place,,,,,Marietta,GA,"Cobb County",30006,US,"TIGER/Line® dataset from the US Census Bureau"
+"Millersville University of Pennsylvania ",39.99788,-76.35413,1,place,,,,,Millersville,PA,"Lancaster County",17551,US,"TIGER/Line® dataset from the US Census Bureau"
+"Teachers College, Columbia University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"SUNY College at Brockport",43.223303,-77.917335,1,place,,,,,Brockport,NY,"Monroe County",14420,US,"TIGER/Line® dataset from the US Census Bureau"
+"Montclair State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of West Alabama",0,0,0,,,,,,,,,,,
+"University of Tennessee at Martin",36.34318,-88.858988,1,street_center,,"University Ct",,,Martin,TN,"Weakley County",38237,US,"TIGER/Line® dataset from the US Census Bureau"
+"Southern Adventist University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Manhattanville College",0,0,0,,,,,,,,,,,
+"Seattle University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia Southern University",0,0,0,,,,,,,,,,,
+"Concordia University Chicago",41.88531,-87.62213,1,place,,,,,Chicago,IL,"Cook County",60601,US,"TIGER/Line® dataset from the US Census Bureau"
+"Syracuse University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Spelman College",39.537043,-77.763883,0.8,place,,,,,Spielman,MD,"Washington County",21733,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Alabama",0,0,0,,,,,,,,,,,
+"Swarthmore College",39.897162,-75.344083,1,place,,,,,Swarthmore,PA,"Delaware County",19081,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Georgia",0,0,0,,,,,,,,,,,
+"University of North Georgia ",0,0,0,,,,,,,,,,,
+"Felician University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of NC Greensboro",36.074859,-79.777559,1,street_center,,"University Cir",,,Greensboro,NC,"Guilford County",27401,US,"TIGER/Line® dataset from the US Census Bureau"
+"NEA Vermont",0,0,0,,,,,,,,,,,
+"CTU Foundation, Inc",0,0,0,,,,,,,,,,,
+"National Louis University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"KYDOE-Educator Recruitment and Development",0,0,0,,,,,,,,,,,
+"Chapman University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Troy University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"City University of New York ",40.83739,-73.92343,0.6,place,,,,,"University Heights",NY,"Bronx County",10452,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Wisconsin Stevens Point",44.510664,-89.638254,1,place,,,,,"Stevens Point",WI,"Portage County",54481,US,"TIGER/Line® dataset from the US Census Bureau"
+"SUNY Erie Community College ",42.074129,-80.072888,1,street_center,,"Sun Ct",,,Erie,PA,"Erie County",16509,US,"TIGER/Line® dataset from the US Census Bureau"
+"Central Washington University ",47.666487,-122.309849,0.9,place,,,,,University,WA,"King County",98105,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Richmond",37.57557,-77.53823,1,place,,,,,"University Of Richmond",VA,"Richmond city",23173,US,"TIGER/Line® dataset from the US Census Bureau"
+"SUNY Plattsburgh ",32.941519,-89.192566,0.8,place,,,,,Plattsburgh,MS,"Winston County",39350,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Alabama ",0,0,0,,,,,,,,,,,
+"Morehead State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"City University of New York ",40.83739,-73.92343,0.6,place,,,,,"University Heights",NY,"Bronx County",10452,US,"TIGER/Line® dataset from the US Census Bureau"
+"Ithaca College",41.147084,-96.523011,1,place,,,,,Ithaca,NE,"Saunders County",68033,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of San Francisco",37.725102,-122.413452,1,street_center,,"University St",,,"San Francisco",CA,"San Francisco County",94134,US,"TIGER/Line® dataset from the US Census Bureau"
+"Union University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Western Governors University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Carolina Charlotte",35.180557,-80.870862,1,street_center,,"University Dr",,,Charlotte,NC,"Mecklenburg County",28209,US,"TIGER/Line® dataset from the US Census Bureau"
+"Auburn University ",32.60242,-85.487341,0.9,place,,,,,"Auburn University",AL,"Lee County",36849,US,"TIGER/Line® dataset from the US Census Bureau"
+"Oregon State University ",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mississippi State University-Meridian ",32.381605,-88.663489,1,place,,,,,Meridian,MS,"Lauderdale County",39301,US,"TIGER/Line® dataset from the US Census Bureau"
+"Piedmont College ",37.680181,-121.921498,1,place,,,,,Piedmont,CA,"Alameda County",94620,US,"TIGER/Line® dataset from the US Census Bureau"
+"College of Mount Saint Vincent ",0,0,0,,,,,,,,,,,
+"University of South Alabama ",0,0,0,,,,,,,,,,,
+"College of Coastal Georgia ",0,0,0,,,,,,,,,,,
+"Texas A&M University",29.543813,-98.295356,0.67,place,,,,,"Universal City",TX,"Bexar County",78148,US,"TIGER/Line® dataset from the US Census Bureau"
+"Birmingham-Southern College",33.456412,-86.801904,1,place,,,,,Birmingham,AL,"Jefferson County",35201,US,"TIGER/Line® dataset from the US Census Bureau"
+"Stanford University/SCALE ",36.905612,-88.35976,0.8,place,,,,,Scale,KY,"Marshall County",42025,US,"TIGER/Line® dataset from the US Census Bureau"
+"Troy University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Bellarmine University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Alabama",0,0,0,,,,,,,,,,,
+"NC A&T State University",0,0,0,,,,,,,,,,,
+"University of California Davis",38.544956,-121.746159,1,street_center,,"University Ave",,,Davis,CA,"Yolo County",95616,US,"TIGER/Line® dataset from the US Census Bureau"
+"Fayetteville State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Saint Joseph’s College ",41.650261,-74.700396,0.9,place,,,,,"Saint Josephs",NY,"Sullivan County",12701,US,"TIGER/Line® dataset from the US Census Bureau"
+"William Paterson University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Louisiana State University Baton Rouge ",30.590585,-91.170285,1,street_center,,"Louisiana Ave",,,Baker,LA,"East Baton Rouge Parish",70714,US,"TIGER/Line® dataset from the US Census Bureau"
+"Sam Houston State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northampton County Public Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kennesaw State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Emporia State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northwestern State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Kentucky Libraries",0,0,0,,,,,,,,,,,
+"John Hopkins University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Louisiana at Monroe ",32.539067,-92.071902,1,street_center,,"University Pl",,,Monroe,LA,"Ouachita Parish",71203,US,"TIGER/Line® dataset from the US Census Bureau"
+"Manhattanville College ",0,0,0,,,,,,,,,,,
+"University of North Carolina ",0,0,0,,,,,,,,,,,
+"Kansas State University ",0,0,0,,,,,,,,,,,
+"New York University-Steinhardt ",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Central Connecticut State University ",0,0,0,,,,,,,,,,,
+"Santa Rosa County District Schools ",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"James Madison University College of Education ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"James Madison University College of Education ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Colorado",0,0,0,,,,,,,,,,,
+"The University of Southern Mississippi  ",34.365411,-89.53718,1,place,,,,,University,MS,"Lafayette County",38677,US,"TIGER/Line® dataset from the US Census Bureau"
+"The Support Network ",0,0,0,,,,,,,,,,,
+"Brigham Young University – Hawaii ",0,0,0,,,,,,,,,,,
+"Tacoma Public Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northern Arizona University ",0,0,0,,,,,,,,,,,
+"San Jose State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Husson University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of California, Riverside ",33.657531,-117.812668,1,street_center,,"University Dr",,,Irvine,CA,"Orange County",92612,US,"TIGER/Line® dataset from the US Census Bureau"
+"Vitero University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"California State Polytechnic University Pomona-Education/CEIS ",34.073692,-117.76523,1,street_center,,"California Pl",,,Pomona,CA,"Los Angeles County",91768,US,"TIGER/Line® dataset from the US Census Bureau"
+"Rider University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"The University of Tennessee, Knoxville ",36.032334,-83.884804,1,place,,,,,Knoxville,TN,"Knox County",37901,US,"TIGER/Line® dataset from the US Census Bureau"
+"Saint Xavier University ",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Clemson University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of St. Francis",42.969865,-87.873732,1,place,,,,,"Saint Francis",WI,"Milwaukee County",53235,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northeastern Illinois University ",41.477816,-87.683188,0.53,place,,,,,"University Park",IL,"Cook County",60466,US,"TIGER/Line® dataset from the US Census Bureau"
+"George Mason University ",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Troy University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Swarthmore College ",39.897162,-75.344083,1,place,,,,,Swarthmore,PA,"Delaware County",19081,US,"TIGER/Line® dataset from the US Census Bureau"
+"SUNY College of Oneonta ",33.94815,-86.47276,1,place,,,,,Oneonta,AL,"Blount County",35121,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Tennessee State University ",0,0,0,,,,,,,,,,,
+"Montclair State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Syracuse University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Belhaven University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"City University of New York ",40.83739,-73.92343,0.6,place,,,,,"University Heights",NY,"Bronx County",10452,US,"TIGER/Line® dataset from the US Census Bureau"
+"Morehead State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Lorain County Community College ",41.450991,-82.166534,1,place,,,,,Lorain,OH,"Lorain County",44052,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mississippi State University Meridian ",32.381605,-88.663489,1,place,,,,,Meridian,MS,"Lauderdale County",39301,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Illinois Springfield ",39.724961,-89.615971,1,street_center,,"University Dr",,,Springfield,IL,"Sangamon County",62703,US,"TIGER/Line® dataset from the US Census Bureau"
+"Southern Adventist University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Skidmore College",40.286914,-95.078313,1,place,,,,,Skidmore,MO,"Nodaway County",64487,US,"TIGER/Line® dataset from the US Census Bureau"
+"Duke University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Augusta University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Roosevelt University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"San Jose State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"National Louis University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"California State University, Stanislaus ",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Salve Regina University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Southeast KCTCS ",0,0,0,,,,,,,,,,,
+"Southeast KCTCS ",0,0,0,,,,,,,,,,,
+"Southern Illinois University Carbondale",37.739004,-89.209109,1,place,,,,,Carbondale,IL,"Jackson County",62901,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Carolina University ",27.926018,-82.487126,0.9,street_center,,"S Carolina Ave",,,Tampa,FL,"Hillsborough County",33629,US,"TIGER/Line® dataset from the US Census Bureau"
+"Brock University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Kentucky, IHE Special Education Consortium ",0,0,0,,,,,,,,,,,
+"Delta State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"CA State University Chico ",39.746159,-121.840083,1,place,,,,,Chico,CA,"Butte County",95926,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of La Verne ",0,0,0,,,,,,,,,,,
+"Utah Valley University ",0,0,0,,,,,,,,,,,
+"Chicago State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Alabama ",0,0,0,,,,,,,,,,,
+"Auburn University",32.60242,-85.487341,0.9,place,,,,,"Auburn University",AL,"Lee County",36849,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Maryland",38.970388,-76.941919,0.53,place,,,,,"University Park",MD,"Prince George's County",20782,US,"TIGER/Line® dataset from the US Census Bureau"
+"Clayton State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Lynchburg",35.117941,-89.93667,1,street_center,,University,,,Memphis,TN,"Shelby County",38111,US,"TIGER/Line® dataset from the US Census Bureau"
+"Western Illinois University",41.477816,-87.683188,0.18,place,,,,,"University Park",IL,"Cook County",60466,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Carolina Chapel Hill",35.969681,-78.934721,1,street_center,,"University Dr",,,Durham,NC,"Durham County",27707,US,"TIGER/Line® dataset from the US Census Bureau"
+"Creighton University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Berea College",41.370548,-81.861757,1,place,,,,,Berea,OH,"Cuyahoga County",44017,US,"TIGER/Line® dataset from the US Census Bureau"
+"Appalachian State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Saint Joseph’s University",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of West Georgia",33.061245,-83.604895,0.18,place,,,,,Wayside,GA,"Jones County",31032,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Carolina University",27.926018,-82.487126,0.9,street_center,,"S Carolina Ave",,,Tampa,FL,"Hillsborough County",33629,US,"TIGER/Line® dataset from the US Census Bureau"
+"Utica College",43.077369,-75.233208,1,place,,,,,Utica,NY,"Oneida County",13501,US,"TIGER/Line® dataset from the US Census Bureau"
+"Appalachian State University       ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Central Arkansas",34.12708,-93.056583,1,street_center,,"University Dr",,,Arkadelphia,AR,"Clark County",71923,US,"TIGER/Line® dataset from the US Census Bureau"
+"Concordia University Irvine",33.651144,-117.814991,1,street_center,,Concordia,,,Irvine,CA,"Orange County",92612,US,"TIGER/Line® dataset from the US Census Bureau"
+"Brenau University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia Gwinnett College",30.976287,-83.871284,0.67,place,,,,,Coolidge,GA,"Thomas County",31738,US,"TIGER/Line® dataset from the US Census Bureau"
+"Francis Marion University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"California State University Long Beach",33.82887,-118.180502,1,street_center,,"California Ave",,,"Long Beach",CA,"Los Angeles County",90807,US,"TIGER/Line® dataset from the US Census Bureau"
+"Manhattanville College ",0,0,0,,,,,,,,,,,
+"Concord University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Humboldt State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Lynchburg",35.117941,-89.93667,1,street_center,,University,,,Memphis,TN,"Shelby County",38111,US,"TIGER/Line® dataset from the US Census Bureau"
+"California University of Pennsylvania",40.046955,-79.894985,1,place,,,,,California,PA,"Washington County",15419,US,"TIGER/Line® dataset from the US Census Bureau"
+"Louisiana State University of Alexandria",31.307468,-92.465779,1,street_center,,"Louisiana Ave",,,Alexandria,LA,"Rapides Parish",71301,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mississippi State University, College of Education",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Bridgewater College",41.973741,-70.976558,1,place,,,,,Bridgewater,MA,"Plymouth County",02324,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Carolina University ",27.926018,-82.487126,0.9,street_center,,"S Carolina Ave",,,Tampa,FL,"Hillsborough County",33629,US,"TIGER/Line® dataset from the US Census Bureau"
+"Arcadia University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Temple University, Tyler School of Art and Architecture",30.73851,-99.11144,1,place,,,,,Art,TX,"Mason County",76820,US,"TIGER/Line® dataset from the US Census Bureau"
+"FSU-Teach Florida State University",0,0,0,,,,,,,,,,,
+"Harding University, College of Education",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kentucky Community & Technical College",0,0,0,,,,,,,,,,,
+"NC Central University ",0,0,0,,,,,,,,,,,
+"University of South Carolina, Beaufort",32.424353,-80.565343,1,place,,,,,Beaufort,SC,"Beaufort County",29901,US,"TIGER/Line® dataset from the US Census Bureau"
+"Providence College",41.82275,-71.414451,1,place,,,,,Providence,RI,"Providence County",02901,US,"TIGER/Line® dataset from the US Census Bureau"
+"The College of Wooster ",35.162396,-92.445162,1,place,,,,,Wooster,AR,"Faulkner County",72181,US,"TIGER/Line® dataset from the US Census Bureau"
+"Reinhardt University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of New Mexico",32.283428,-106.753336,0.18,place,,,,,"University Park",NM,"Doña Ana County",88003,US,"TIGER/Line® dataset from the US Census Bureau"
+"Hope International University",28.052414,-82.560475,1,street_center,,"Hope International Dr",,,Tampa,FL,"Hillsborough County",33625,US,"TIGER/Line® dataset from the US Census Bureau"
+"North Central College",34.744649,-82.797267,1,place,,,,,Central,SC,"Pickens County",29630,US,"TIGER/Line® dataset from the US Census Bureau"
+"Seton Hall University",27.72759,-82.361013,1,street_center,,"Seton Hall Dr",,,"Sun City Center",FL,"Hillsborough County",33573,US,"TIGER/Line® dataset from the US Census Bureau"
+"Lee University School of Music",38.30699,-82.751009,0.8,place,,,,,Music,KY,"Carter County",41168,US,"TIGER/Line® dataset from the US Census Bureau"
+"Cumberland University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"St. Louis Community College ",38.631501,-90.19231,1,place,,,,,"Saint Louis",MO,"St. Louis city",63101,US,"TIGER/Line® dataset from the US Census Bureau"
+"Middle Tennessee State University",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Dakota",0,0,0,,,,,,,,,,,
+"University of Wisconsin-Madison",43.072595,-89.421412,0.9,street_center,,"University Ave",,,Madison,WI,"Dane County",53726,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Montevallo",33.10526,-86.872959,0.8,street_center,,"University Lake Rd",,,Montevallo,AL,"Shelby County",35115,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Hawaii at Manoa",21.970965,-159.714507,0.18,place,,,,,Mana,HI,"Kauai County",96752,US,"TIGER/Line® dataset from the US Census Bureau"
+"Governors State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Seattle University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Salem University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Coastal Carolina University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Shippensburg University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"California State University, Fullerton",33.879768,-117.896341,0.33,place,,,,,Fullerton,CA,"Orange County",92831,US,"TIGER/Line® dataset from the US Census Bureau"
+"Maryville College",40.277742,-94.860299,1,place,,,,,Maryville,MO,"Nodaway County",64468,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mercer University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"CA State University, Stanislaus",0,0,0,,,,,,,,,,,
+"Rutgers University Graduate School of Education",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Georgia Gwinnett College ",30.976287,-83.871284,0.67,place,,,,,Coolidge,GA,"Thomas County",31738,US,"TIGER/Line® dataset from the US Census Bureau"
+"Columbia College",39.206132,-76.887905,1,place,,,,,Columbia,MD,"Howard County",21044,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Carolina at Greensboro ",36.074859,-79.777559,1,street_center,,"University Cir",,,Greensboro,NC,"Guilford County",27401,US,"TIGER/Line® dataset from the US Census Bureau"
+"Bellarmine University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mercer University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"The University of Texas at Tyler",32.321937,-95.302223,1,place,,,,,Tyler,TX,"Smith County",75701,US,"TIGER/Line® dataset from the US Census Bureau"
+"Bard College",32.78921,-114.55606,1,place,,,,,Bard,CA,"Imperial County",92222,US,"TIGER/Line® dataset from the US Census Bureau"
+"The University of New Orleans",29.958304,-90.077,1,place,,,,,"New Orleans",LA,"Orleans Parish",70112,US,"TIGER/Line® dataset from the US Census Bureau"
+"Berry College      ",33.65983,-87.60001,1,place,,,,,Berry,AL,"Fayette County",35546,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Alabama",0,0,0,,,,,,,,,,,
+"Meredith College",43.65818,-71.50445,1,place,,,,,Meredith,NH,"Belknap County",03253,US,"TIGER/Line® dataset from the US Census Bureau"
+"Florida State University ",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Louisiana State University Baton Rouge",30.590585,-91.170285,1,street_center,,"Louisiana Ave",,,Baker,LA,"East Baton Rouge Parish",70714,US,"TIGER/Line® dataset from the US Census Bureau"
+"Humboldt State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Bradley University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mississippi State University, College of Education ",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kutztown University of Pennsylvania",40.53907,-75.781445,1,place,,,,,Kutztown,PA,"Berks County",19530,US,"TIGER/Line® dataset from the US Census Bureau"
+"Kutztown University of Pennsylvania",40.53907,-75.781445,1,place,,,,,Kutztown,PA,"Berks County",19530,US,"TIGER/Line® dataset from the US Census Bureau"
+"Ouachita Baptist University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Ferris State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"St. Bonaventure University-School of Education ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Florida Southwestern State College",40.77893,-77.841359,0.33,place,,,,,"State College",PA,"Centre County",16801,US,"TIGER/Line® dataset from the US Census Bureau"
+"Hanover College",43.70701,-72.27741,1,place,,,,,Hanover,NH,"Grafton County",03755,US,"TIGER/Line® dataset from the US Census Bureau"
+"Western Illinois University ",41.477816,-87.683188,0.18,place,,,,,"University Park",IL,"Cook County",60466,US,"TIGER/Line® dataset from the US Census Bureau"
+"CA State University Chico ",39.746159,-121.840083,1,place,,,,,Chico,CA,"Butte County",95926,US,"TIGER/Line® dataset from the US Census Bureau"
+"Hobart and William Smith Colleges",36.731332,-83.33573,1,place,,,,,Smith,KY,"Harlan County",40867,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of the Arts",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Murray State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Lewis University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Eastern Michigan University",43.556574,-83.994328,0.22,place,,,,,"University Center",MI,"Bay County",48710,US,"TIGER/Line® dataset from the US Census Bureau"
+"CSU San Bernardino",34.104794,-117.29215,1,place,,,,,"San Bernardino",CA,"San Bernardino County",92401,US,"TIGER/Line® dataset from the US Census Bureau"
+"Thomas College",35.709894,-98.81099,1,place,,,,,Thomas,OK,"Custer County",73669,US,"TIGER/Line® dataset from the US Census Bureau"
+"Westfield State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Morgan State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Ramapo College",41.141206,-74.168479,0.8,place,,,,,Ramapo,NY,"Rockland County",10931,US,"TIGER/Line® dataset from the US Census Bureau"
+"Rhodes College",41.906231,-93.154445,1,place,,,,,Rhodes,IA,"Marshall County",50234,US,"TIGER/Line® dataset from the US Census Bureau"
+"The Citadel, Zucker Family School of Education",33.826229,-93.961022,0.8,place,,,,,Schaal,AR,"Howard County",71851,US,"TIGER/Line® dataset from the US Census Bureau"
+"Colorado State University Pueblo",36.809796,-84.708275,0.3,place,,,,,Pueblo,KY,"Wayne County",42633,US,"TIGER/Line® dataset from the US Census Bureau"
+"Southeast Missouri State University",0,0,0,,,,,,,,,,,
+"Lebanon Valley College",48.124594,-117.762554,1,place,,,,,Valley,WA,"Stevens County",99181,US,"TIGER/Line® dataset from the US Census Bureau"
+"Charleston Southern University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"John Carroll University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"John Carroll University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Saint Joseph’s University",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"North Carolina State University (NCSU)",0,0,0,,,,,,,,,,,
+"California State University Northridge ",43.212556,-78.825871,0.27,place,,,,,"North Ridge",NY,"Niagara County",14094,US,"TIGER/Line® dataset from the US Census Bureau"
+"Texas State University TXST ",0,0,0,,,,,,,,,,,
+"College for Creative Studies ",0,0,0,,,,,,,,,,,
+"Barton College",44.73663,-72.199084,1,place,,,,,Barton,VT,"Orleans County",05822,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Minnesota Duluth",46.814054,-92.087367,1,street_center,,"University Dr",,,Duluth,MN,"St. Louis County",55812,US,"TIGER/Line® dataset from the US Census Bureau"
+"Brandeis University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Anderson University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Illinois at Urbana-Champaign",40.10789,-88.244266,1,place,,,,,Champaign,IL,"Champaign County",61820,US,"TIGER/Line® dataset from the US Census Bureau"
+"Oregon State University ",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Wingate University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Concordia University Chicago",41.88531,-87.62213,1,place,,,,,Chicago,IL,"Cook County",60601,US,"TIGER/Line® dataset from the US Census Bureau"
+"Siena College",35.29838,-105.392788,0.9,place,,,,,Sena,NM,"San Miguel County",87568,US,"TIGER/Line® dataset from the US Census Bureau"
+"Gettysburg College",40.114729,-84.493439,1,place,,,,,Gettysburg,OH,"Darke County",45328,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Wisconsin-Eau Claire",44.796635,-91.506154,1,street_center,,"University Dr",,,"Eau Claire",WI,"Eau Claire County",54701,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of California Berkeley",37.869234,-122.289657,1,street_center,,"University Ave",,,Berkeley,CA,"Alameda County",94702,US,"TIGER/Line® dataset from the US Census Bureau"
+"National Louis University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Winthrop University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"East Tennessee State University ",0,0,0,,,,,,,,,,,
+"Austin Peay State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"William Baptist University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"North Carolina Central University ",0,0,0,,,,,,,,,,,
+"Roosevelt University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"CA State University, Stanislaus ",0,0,0,,,,,,,,,,,
+"Clarion University of Pennsylvania ",41.21479,-79.38532,1,place,,,,,Clarion,PA,"Clarion County",16214,US,"TIGER/Line® dataset from the US Census Bureau"
+"Brock University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Salve Regina University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Medaille College",40.434484,-91.776,0.8,place,,,,,Medill,MO,"Clark County",63455,US,"TIGER/Line® dataset from the US Census Bureau"
+"Springfield College",42.170731,-72.604842,1,place,,,,,Springfield,MA,"Hampden County",01101,US,"TIGER/Line® dataset from the US Census Bureau"
+"Wheaton College",41.87272,-88.112442,1,place,,,,,Wheaton,IL,"DuPage County",60187,US,"TIGER/Line® dataset from the US Census Bureau"
+"Humboldt State University – Art Department",30.73851,-99.11144,1,place,,,,,Art,TX,"Mason County",76820,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of the Pacific",47.26455,-122.25012,1,place,,,,,Pacific,WA,"King County",98047,US,"TIGER/Line® dataset from the US Census Bureau"
+"Thiel College",0,0,0,,,,,,,,,,,
+"Minnesota State University Moorhead",46.842028,-96.735563,1,place,,,,,Moorhead,MN,"Clay County",56560,US,"TIGER/Line® dataset from the US Census Bureau"
+"Saint Catherine University",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of California, Davis",38.544956,-121.746159,1,street_center,,"University Ave",,,Davis,CA,"Yolo County",95616,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Wyoming, College of Education",0,0,0,,,,,,,,,,,
+"Calvert County Public Schools",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Central Oklahoma",0,0,0,,,,,,,,,,,
+"Teachers College, Columbia University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Rhode Island (School of Education)",0,0,0,,,,,,,,,,,
+"University of Rhode Island (School of Education)",0,0,0,,,,,,,,,,,
+"University of Louisiana at Lafayette",30.24171,-91.991044,1,place,,,,,Lafayette,LA,"Lafayette Parish",70501,US,"TIGER/Line® dataset from the US Census Bureau"
+"Pathway to Practice NC",35.53971,-79.130864,1,state,,,,,,NC,,,US,"US Census Bureau"
+"Ithaca College",41.147084,-96.523011,1,place,,,,,Ithaca,NE,"Saunders County",68033,US,"TIGER/Line® dataset from the US Census Bureau"
+"UNC Wilmington",0,0,0,,,,,,,,,,,
+"University of North Alabama",0,0,0,,,,,,,,,,,
+"CA State University, Stanislaus",0,0,0,,,,,,,,,,,
+"Mississippi State University Meridian ",32.381605,-88.663489,1,place,,,,,Meridian,MS,"Lauderdale County",39301,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Texas at Tyler",32.283341,-95.263047,1,street_center,,"University Dr",,,Tyler,TX,"Smith County",75707,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northern Virginia Community College",0,0,0,,,,,,,,,,,
+"Alverno College ",45.558622,-84.391695,0.8,place,,,,,Alverno,MI,"Cheboygan County",49721,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Kentucky, IHE ",0,0,0,,,,,,,,,,,
+"University of Maryland College of Education",38.970388,-76.941919,0.53,place,,,,,"University Park",MD,"Prince George's County",20782,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Wisconsin-River Falls ",44.802351,-92.595365,1,place,,,,,"River Falls",WI,"Pierce County",54022,US,"TIGER/Line® dataset from the US Census Bureau"
+"Bowling Green State University        ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Crowder College        ",34.173057,-90.136429,1,place,,,,,Crowder,MS,"Quitman County",38622,US,"TIGER/Line® dataset from the US Census Bureau"
+"Aquinas College        ",0,0,0,,,,,,,,,,,
+"University of Maryland",38.970388,-76.941919,0.53,place,,,,,"University Park",MD,"Prince George's County",20782,US,"TIGER/Line® dataset from the US Census Bureau"
+"Metro RESA ",0,0,0,,,,,,,,,,,
+"Metro RESA ",0,0,0,,,,,,,,,,,
+"Saint Joseph’s College of Maine ",0,0,0,,,,,,,,,,,
+"CA State University, Stanislaus ",0,0,0,,,,,,,,,,,
+"Yakima Valley College ",48.124594,-117.762554,1,place,,,,,Valley,WA,"Stevens County",99181,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of San Francisco ",37.725102,-122.413452,1,street_center,,"University St",,,"San Francisco",CA,"San Francisco County",94134,US,"TIGER/Line® dataset from the US Census Bureau"
+"Houghton College",42.422827,-78.206289,1,place,,,,,Houghton,NY,"Allegany County",14744,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Georgia        ",0,0,0,,,,,,,,,,,
+"University of Montevallo ",33.10526,-86.872959,0.8,street_center,,"University Lake Rd",,,Montevallo,AL,"Shelby County",35115,US,"TIGER/Line® dataset from the US Census Bureau"
+"The Citadel Zucker Family School of Education ",33.826229,-93.961022,0.8,place,,,,,Schaal,AR,"Howard County",71851,US,"TIGER/Line® dataset from the US Census Bureau"
+"Ball State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Morehead State University",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"CA State University Dominguez Hills ",0,0,0,,,,,,,,,,,
+"Washington State University ",35.841039,-90.675602,0.3,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Florida ",0,0,0,,,,,,,,,,,
+"Rochester Institute of Technology ",38.380263,-81.767141,1,place,,,,,Institute,WV,"Kanawha County",25112,US,"TIGER/Line® dataset from the US Census Bureau"
+"Lehigh Carbon Community College",39.591282,-87.113196,1,place,,,,,Carbon,IN,"Clay County",47837,US,"TIGER/Line® dataset from the US Census Bureau"
+"Skidmore College",40.286914,-95.078313,1,place,,,,,Skidmore,MO,"Nodaway County",64487,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Maryland Baltimore County",39.330076,-76.612405,1,street_center,,"University Pl",,,Baltimore,MD,"Baltimore city",21218,US,"TIGER/Line® dataset from the US Census Bureau"
+"Salisbury University      ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Minnesota State University Moorhead ",46.842028,-96.735563,1,place,,,,,Moorhead,MN,"Clay County",56560,US,"TIGER/Line® dataset from the US Census Bureau"
+"CA State University, Stanislaus ",0,0,0,,,,,,,,,,,
+"University of Maryland College of Education ",38.970388,-76.941919,0.53,place,,,,,"University Park",MD,"Prince George's County",20782,US,"TIGER/Line® dataset from the US Census Bureau"
+"Bellarmine University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Miami University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Texas ",0,0,0,,,,,,,,,,,
+"Hudson Valley Community College ",48.124594,-117.762554,1,place,,,,,Valley,WA,"Stevens County",99181,US,"TIGER/Line® dataset from the US Census Bureau"
+"Modesto Junior College",38.978405,-79.949417,1,place,,,,,Junior,WV,"Barbour County",26275,US,"TIGER/Line® dataset from the US Census Bureau"
+"BloomBoard, Inc.",0,0,0,,,,,,,,,,,
+"Niagara University ",43.13867,-79.03893,1,place,,,,,"Niagara University",NY,"Niagara County",14109,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Michigan-Dearborn ",42.31296,-83.374549,1,street_center,,University,,,Westland,MI,"Wayne County",48185,US,"TIGER/Line® dataset from the US Census Bureau"
+"Northern Illinois University ",41.477816,-87.683188,0.18,place,,,,,"University Park",IL,"Cook County",60466,US,"TIGER/Line® dataset from the US Census Bureau"
+"Middlesex County College ",0,0,0,,,,,,,,,,,
+"City University of New York  ",40.83739,-73.92343,0.6,place,,,,,"University Heights",NY,"Bronx County",10452,US,"TIGER/Line® dataset from the US Census Bureau"
+"Ripon College ",37.765177,-121.115411,1,place,,,,,Ripon,CA,"San Joaquin County",95366,US,"TIGER/Line® dataset from the US Census Bureau"
+"San Jose State University      ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Western Washington University",47.666487,-122.309849,0.9,place,,,,,University,WA,"King County",98105,US,"TIGER/Line® dataset from the US Census Bureau"
+"Valdosta State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"Crowley’s Ridge College ",40.905139,-72.888349,1,place,,,,,Ridge,NY,"Suffolk County",11961,US,"TIGER/Line® dataset from the US Census Bureau"
+"Alderson Broaddus University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Arkansas",0,0,0,,,,,,,,,,,
+"Bureau of Indian Affairs",0,0,0,,,,,,,,,,,
+"Southern Illinois University Edwardsville ",38.841819,-89.877841,1,place,,,,,Edwardsville,IL,"Madison County",62025,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Southern Mississippi ",34.365411,-89.53718,1,place,,,,,University,MS,"Lafayette County",38677,US,"TIGER/Line® dataset from the US Census Bureau"
+"Winthrop University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Wisconsin Stevens Point ",44.510664,-89.638254,1,place,,,,,"Stevens Point",WI,"Portage County",54481,US,"TIGER/Line® dataset from the US Census Bureau"
+"Capital University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Rochester-Warner School ",35.49426,-95.30552,1,place,,,,,Warner,OK,"Muskogee County",74469,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Louisville ",39.950948,-105.159078,1,place,,,,,Louisville,CO,"Boulder County",80027,US,"TIGER/Line® dataset from the US Census Bureau"
+"Indiana University Libraries ",39.622129,-87.454769,0.67,place,,,,,Universal,IN,"Vermillion County",47884,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Florida ",0,0,0,,,,,,,,,,,
+"Prince George’s Community College ",0,0,0,,,,,,,,,,,
+"University of Wisconsin-River Falls ",44.802351,-92.595365,1,place,,,,,"River Falls",WI,"Pierce County",54022,US,"TIGER/Line® dataset from the US Census Bureau"
+"Niagara University ",43.13867,-79.03893,1,place,,,,,"Niagara University",NY,"Niagara County",14109,US,"TIGER/Line® dataset from the US Census Bureau"
+"Pierce College ",42.224218,-97.581551,1,place,,,,,Pierce,NE,"Pierce County",68767,US,"TIGER/Line® dataset from the US Census Bureau"
+"The State University of New York (SUNY) ",0,0,0,,,,,,,,,,,
+"Brown University ",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Mississippi State University Meridian ",32.381605,-88.663489,1,place,,,,,Meridian,MS,"Lauderdale County",39301,US,"TIGER/Line® dataset from the US Census Bureau"
+"Purdue University Fort Wayne ",0,0,0,,,,,,,,,,,
+"Winston-Salem State University ",35.841039,-90.675602,0.9,place,,,,,"State University",AR,"Craighead County",72467,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of North Florida ",0,0,0,,,,,,,,,,,
+"Niagara University ",43.13867,-79.03893,1,place,,,,,"Niagara University",NY,"Niagara County",14109,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of St. Thomas ",48.630369,-97.471056,1,place,,,,,"Saint Thomas",ND,"Pembina County",58276,US,"TIGER/Line® dataset from the US Census Bureau"
+"Rio Salado College",35.691868,-91.598917,1,place,,,,,Salado,AR,"Independence County",72575,US,"TIGER/Line® dataset from the US Census Bureau"
+"LaGrange College ",41.64025,-104.16384,1,place,,,,,Lagrange,WY,"Goshen County",82221,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of Texas at San Antonio    ",29.468413,-98.528889,0.33,place,,,,,"San Antonio",TX,"Bexar County",78201,US,"TIGER/Line® dataset from the US Census Bureau"
+"Santa Rosa County District Schools ",45.408173,-122.922323,0.8,place,,,,,Scholls,OR,"Washington County",97123,US,"TIGER/Line® dataset from the US Census Bureau"
+"Prince George’s Community College ",0,0,0,,,,,,,,,,,
+"Lewis University",28.062,-82.413225,0.8,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Saint Xavier University ",28.062,-82.413225,0.27,place,,,,,University,FL,"Hillsborough County",33620,US,"TIGER/Line® dataset from the US Census Bureau"
+"Arkansas Northeastern College ",42.055136,-71.081416,0.33,place,,,,,"North Easton",MA,"Bristol County",02357,US,"TIGER/Line® dataset from the US Census Bureau"
+"University of California, Riverside ",33.657531,-117.812668,1,street_center,,"University Dr",,,Irvine,CA,"Orange County",92612,US,"TIGER/Line® dataset from the US Census Bureau"
+"NHTI-Concord’s Community College ",37.953672,-122.022872,1,place,,,,,Concord,CA,"Contra Costa County",94518,US,"TIGER/Line® dataset from the US Census Bureau"
