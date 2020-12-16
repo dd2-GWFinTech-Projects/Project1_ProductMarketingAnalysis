@@ -1,76 +1,35 @@
 # Project 1: ATLAS Educational Product Marketing Analysis
 
 <style>
-.column {
-  /* float: left; */
-  /* width: 60%; */
-
-
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
-
-    background-color: white;
-}
+    .column {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        background-color: white;
+    }
     body {
         background-color: lightgray;
+        background-image: url(Images/SalesAnalysisBackground.png);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
-    h1   {
-        color: green;
-        background-color: lightgray;
-        }
-    p    {
-
-        
-        color: green;
-            background-color: lightgray;
-    
-        .textshadow .blurry-text {
-        color: transparent;
-        text-shadow: 0 0 5px rgba(0,0,0,0.5);
-        }
-
+    h1 {
+        color: black;
+        background-color: white;
+    }
+    p {
+        color: black;
+        background-color: white;
     }
     .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-
-
-    
-}
-
-/* div {
-  background-image: url('img_girl.jpg');
-} */
-
-body {
-
- background-image: url(Images/SalesAnalysisBackground.png);
- /* background-image: url(Images/MoneyBackground1.jpg); */
- background-color: white;
- /* background-color: #cccccc; */
-
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* background-size: 100% 100%; */
-
-}
-
-
-
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
 </style>
 
-<div class="row">
-  <div class="column"></div>
-  <div class="column">
-  
-
-
-<!-- <img src="Images/SalesAnalysisBackground.png" alt="IntroPicture" class="center" width="400"> -->
-
-<!-- <img src="Images/SalesAnalysisDashboardCartoon.png" alt="IntroPicture" class="center" width="400"> -->
+<div class="column">
 
 ## Objective
 
@@ -95,6 +54,4 @@ A thorough data analysis has the ability to identify factors associated with hig
 
 All product marketing and sales data is sourced from [National Board for Professional Teaching Standard](nbpts.org).
 
-
-  </div>
 </div>
